@@ -1,0 +1,20 @@
+/*******************************
+        User Overrides
+*******************************/
+
+.ui.accordion .title .dropdown.icon,
+.ui.accordion .accordion .title .dropdown.icon {
+  align-items: center;
+  font-family: Icons;
+  justify-content: center;
+
+  &:before {
+    content: '\E313';
+  }
+}
+
+/* Accordion Menu Content */
+.ui.accordion.menu .item .title ~ .menu.content,
+.ui.accordion.menu .item .accordion .title ~ .menu.content {
+  animation-timing-function: cubic-bezier(0.75, 0, 0.24, 1.01);
+}

@@ -1,0 +1,11 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@headerColor: rgba(97,98,99, .88);
+@sortableColor: rgba(97,98,99, .88);
+@headerFontWeight: 400;
+@labelFontSize: 12px;
+@cellVerticalPadding: 16px;
+@cellHorizontalPadding: 20px;
+@sortableIconDistance: .2em;

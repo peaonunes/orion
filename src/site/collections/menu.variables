@@ -1,0 +1,74 @@
+/*******************************
+    User Variable Overrides
+*******************************/
+
+@minHeight: 38px;
+@itemTextColor: @textColor;
+@hoverItemTextColor: @textColor;
+@itemFontWeight: 400;
+@activeItemFontWeight: @itemFontWeight;
+
+@borderRadius: 3px;
+
+@itemVerticalPadding: 8px;
+@itemHorizontalPadding: 32px;
+
+@hoverItemBackground: fade(@n600, 4%);
+@activeHoverItemBackground: fade(@n600, 4%);
+
+@pressedItemBackground: @hoverItemBackground;
+
+@activeItemBackground: fade(@n600, 8%);
+
+@iconWidth: 24px;
+
+@dropdownIconDistance: 4px;
+
+@headerBackground: @gray00;
+@headerTextTransform: none;
+@headerWeight: 400;
+
+@secondaryPointingActiveFontWeight: @itemFontWeight;
+@secondaryPointingItemVerticalPadding: 8px;
+@secondaryPointingItemHorizontalPadding: 32px;
+@secondaryPointingBorderColor: fade(@n600, 15%);
+@secondaryPointingHoverTextColor: @itemTextColor;
+@secondaryPointingActiveTextColor: @n600;
+
+@secondaryPointingPaginationItemBackground: transparent;
+@secondaryPointingPaginationItemBackgroundHover: fade(@n600, 8%);
+@secondaryPointingPaginationItemBackgroundActive: fade(@n600, 12%);
+
+/*--------------
+    Vertical Menu
+---------------*/
+
+@verticalBoxShadow: @z300BoxShadow;
+
+@verticalHeaderColor: fade(@gray800, 88%);
+@verticalHeaderFontSize: 12px;
+
+@verticalIconFloat: none;
+@verticalIconMargin: 0;
+
+@subMenuFontSize: 14px;
+@subMenuTextColor: @textColor;
+
+@smallWidth: 48px;
+
+/*--------------
+    Dropdown Sub Menu
+---------------*/
+
+@dropdownMenuDistance: 12px;
+
+@dropdownItemPadding: 8px 12px;
+@dropdownItemFontSize: 14px;
+@dropdownItemIconFontSize: 20px;
+
+@dropdownActiveItemBackground: @activeItemBackground;
+@dropdownActiveItemFontWeight: 400;
+@dropdownActiveItemColor: @textColor;
+
+@dropdownHoveredItemBackground: @hoverItemBackground;
+@dropdownHoveredItemColor: @textColor;

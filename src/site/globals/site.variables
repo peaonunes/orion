@@ -1,0 +1,146 @@
+/*******************************
+     User Global Variables
+*******************************/
+
+/*-------------------
+       Fonts
+--------------------*/
+
+@fontName          : 'Roboto';
+
+/*--------------
+      Page
+---------------*/
+@pageBackground      : @gray50;
+@textColor           : @gray900;
+@inputPlaceholderColor: fade(@gray900, 40%);
+
+@inputVerticalPadding   : @relative12px;
+@inputHorizontalPadding : @relative12px;
+
+/*-------------------
+      Site Colors
+--------------------*/
+
+/*---  Colors  ---*/
+
+@b50: #F2F9FF;
+@b100: #D9ECFF;
+@b200: #99C5FF;
+@b300: #4F95FF;
+@b400: #3A72FB;
+@b500: #2952E6;
+
+@p50: #FFF2F8;
+@p100: #FFD9E9;
+@p200: #FF99C2;
+@p300: #FF3385;
+@p400: #FA0C64;
+@p500: #E60553;
+
+@g50: #F2F5E9;
+@g100: #E4EBC7;
+@g200: #CEE087;
+@g300: #BBD645;
+@g400: #A7CC0E;
+@g500: #98B200;
+
+@n50: #F7F8F9;
+@n100: #E8EBED;
+@n200: #DCDFE3;
+@n300: #CFD2D9;
+@n400: #9FA4B2;
+@n500: #6E778C;
+@n600: #3E4965; // RGB: 62, 73, 101
+
+// Equal to fade(@n600, 4%), but necessary due to stacking elements with opacity.
+@n600-hex-4: #F7F8F9;
+// Equal to fade(@n600, 8%), but necessary due to stacking elements with opacity.
+@n600-hex-8: #F0F1F3;
+
+@gray00: #FFFFFF;
+@gray50: #FAFBFC;
+@gray100: #F5F6F7;
+@gray200: #EEEFF0;
+@gray300: #E3E4E5;
+@gray400: #D7D8D9;
+@gray500: #BDBEBF;
+@gray600: #9E9FA0;
+@gray700: #757677;
+@gray800: #616263;
+@gray900: #4A4B4C;
+@gray1000: #212223;
+
+@alertRed         : #D92400;
+@alertYellow      : #FFAB00;
+@alertGreen       : #0ACC8B;
+
+@pink             : @p400;
+@pinkHover        : #EB0559;
+@pinkFocus        : #EB0559;
+
+@blue             : @b400;
+@blueHover        : #3063F0;
+@blueFocus        : #3063F0;
+@blueDown         : #2952E6;
+
+@green            : @g400;
+@greenHover       : #A2C204;
+@greenFocus       : #A2C204;
+@greenDown        : #98B200;
+
+@red        : @alertRed; // RGB: 217, 36, 0
+@yellow     : @alertYellow;
+
+@linkColor           : @blue;
+@linkHoverColor      : darken(saturate(@linkColor, 20), 15, relative);
+
+@disabledColor: fade(@n600, 8%);
+
+/*-------------------
+      Base Sizes
+--------------------*/
+
+@fontSize          : 14px;
+
+
+@internalBorderColor       : #CFD1D8;
+
+/*-------------------
+      Borders
+--------------------*/
+
+@circularRadius                : 500rem;
+@borderColorNoAlpha: @n600;
+@borderHoverColor: fade(@borderColorNoAlpha, 35%);
+@borderColor: fade(@borderColorNoAlpha, 25%);
+@selectedBorderColor: fade(@borderColorNoAlpha, 35%);
+
+@shadowHoverColor: fade(@borderColorNoAlpha, 20%);
+@shadowHover: inset 0 0 0 1px @shadowHoverColor;
+
+@shadowFocusColor: fade(@borderColorNoAlpha, 50%);
+
+/*-------------------
+    Focused Input
+--------------------*/
+
+/* Used on inputs, textarea etc */
+@focusedFormBorderColor: fade(@n600, 25%);
+@inputPlaceholderFocusColor: fade(@n600, 25%);
+@focusedFormMutedBorderColor: rgba(34, 36, 38, .35);
+
+/*-------------------
+    Disabled
+--------------------*/
+
+@disabledOpacity: 0.33;
+
+/*-------------------
+    Depths
+--------------------*/
+
+@z200BoxShadow: 0 4px 16px -1px fade(@n600, 16%);
+@z300BoxShadow: 0 8px 10px -4px fade(@n600, 20%);
+@z400BoxShadow: 0 16px 24px -6px fade(@n600, 20%);
+@z500BoxShadow: 0 24px 32px -8px fade(@n600, 20%);

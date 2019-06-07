@@ -1,0 +1,86 @@
+/*******************************
+         Site Overrides
+*******************************/
+
+.ui.button {
+  letter-spacing: @fontSpacing;
+}
+
+.ui.button:not(:active):not(.blue):not(.green):not(.pink) > .icon:not(.button) {
+  color: @gray600;
+}
+
+.ui.secondary.button:hover {
+  box-shadow: @hoverBoxShadow !important; 
+}
+
+.ui.basic.blue.button:hover, 
+.ui.basic.green.button:hover,  
+.ui.basic.pink.button:hover {
+  background: @basicHoverBackground !important;
+}
+
+.ui.basic.blue.button:focus, 
+.ui.basic.green.button:focus,  
+.ui.basic.pink.button:focus {
+  background: @basicFocusBackground !important;
+}
+
+.ui.basic.blue.button:active, 
+.ui.basic.green.button:active,  
+.ui.basic.pink.button:active {
+  background: @basicDownBackground !important;
+}
+
+/*--------------
+     Outline
+---------------*/
+
+.outlineButton(@main, @hover, @activeLight, @activeDark) {
+  background-color: transparent;
+  border: 1px solid @main;
+  line-height: calc(@lineHeight - 2px);
+  color: @main;
+
+  &:not(.icon) {
+    padding: @verticalPadding calc(@horizontalPadding - 1px);
+  }
+  &:hover,
+  &:focus {
+    background-color: @hover;
+  }
+
+  &:active {
+    background-color: @activeLight;
+    border-color: @activeDark;
+    color: @activeDark;
+  }
+}
+
+.ui.outline.blue.buttons .button,
+.ui.outline.blue.button {
+  .outlineButton(@blue, @b50, @b100, @b500)
+}
+
+.ui.outline.pink.buttons .button,
+.ui.outline.pink.button {
+  .outlineButton(@pink, @p50, @p100, @p500)
+}
+
+.ui.outline.green.buttons .button,
+.ui.outline.green.button {
+  .outlineButton(@green, @g50, @g100, @g500)
+}
+
+.ui.icon.button {
+  min-width: @iconWidth;
+  min-height: @iconHeight;
+
+  &.outline > .icon:not(.button){
+    height: calc(@iconHeight - 2px);
+  }
+
+  .icon {
+    font-size: @iconFontSize;
+  }
+}
