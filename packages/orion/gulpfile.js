@@ -11,6 +11,7 @@ var gulp = require('gulp-help')(require('gulp')),
   build = require('./tasks/build'),
   buildJS = require('./tasks/build/javascript'),
   buildCSS = require('./tasks/build/css'),
+  buildOrionCSS = require('./tasks/build/orionCss'),
   buildAssets = require('./tasks/build/assets'),
   // utility
   clean = require('./tasks/clean'),
@@ -31,7 +32,8 @@ gulp.task('watch', 'Watch for site/theme changes', watch)
 
 gulp.task('build', 'Builds all files from source', build)
 gulp.task('build-javascript', 'Builds all javascript from source', buildJS)
-gulp.task('build-css', 'Builds all css from source', buildCSS)
+gulp.task('build-css', "Builds all semantic's css from source", buildCSS)
+gulp.task('build-orion-css', 'Builds the final Orion CSS', buildOrionCSS)
 gulp.task('build-assets', 'Copies all assets from source', buildAssets)
 
 gulp.task('clean', 'Clean dist folder', clean)

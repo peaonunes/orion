@@ -1,6 +1,6 @@
 import { configure } from '@storybook/react'
 
-import '../dist/semantic.css'
+import '../dist/orion.css'
 import './main.css'
 
 const req = require.context('../stories', true, /.stories.js$/)
