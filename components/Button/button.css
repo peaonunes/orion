@@ -1,0 +1,12 @@
+.orion-button > .icon {
+  @apply flex items-center;
+}
+
+.orion-button:not(.icon) > .icon {
+  @apply mr-8;
+  vertical-align: sub;
+}
+
+.orion-button.transition-default {
+  transition-property: background-color opacity;
+}
