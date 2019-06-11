@@ -1,7 +1,8 @@
 import React from 'react'
-import { Checkbox } from 'semantic-ui-react'
 import { storiesOf } from '@storybook/react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs/react'
+
+import { Checkbox } from '../../components'
 
 storiesOf('Checkbox', module)
   .addDecorator(withKnobs)
