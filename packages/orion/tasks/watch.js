@@ -6,6 +6,7 @@ var gulp = require('gulp-help')(require('gulp')),
   // node dependencies
   console = require('better-console'),
   fs = require('fs'),
+  runSequence = require('run-sequence'),
   // gulp dependencies
   autoprefixer = require('gulp-autoprefixer'),
   chmod = require('gulp-chmod'),
@@ -161,6 +162,10 @@ module.exports = function(callback) {
       }
     }
   )
+
+  gulp.watch(['dist/semantic.css', 'components/**/*.css'], function() {
+    runSequence('build-tailwind-css', 'build-orion-css')
+  })
 
   /*--------------
       Watch JS
