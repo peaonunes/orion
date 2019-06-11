@@ -40,5 +40,5 @@ module.exports = function(callback) {
   tasks.push('build-css')
   tasks.push('build-assets')
 
-  runSequence(tasks, 'build-orion-css', callback)
+  runSequence(tasks, 'build-tailwind-css', 'build-orion-css', callback)
 }
