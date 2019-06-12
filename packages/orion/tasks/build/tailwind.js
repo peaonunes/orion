@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
   minifyCSS = require('gulp-clean-css'),
+  plumber = require('gulp-plumber'),
   tasks = require('../config/tasks')
 
 module.exports = function() {
@@ -7,6 +8,7 @@ module.exports = function() {
 
   return gulp
     .src('orion.css')
+    .pipe(plumber())
     .pipe(
       postcss([
         require('postcss-import'),
