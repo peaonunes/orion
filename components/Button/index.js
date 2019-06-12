@@ -4,13 +4,14 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Button as SemanticButton } from 'semantic-ui-react'
 
-const Button = ({ className, ...otherProps }) => {
+import { normalizeIconProp } from '../utils/icons'
+
+const Button = ({ className, icon, ...otherProps }) => {
   const {
     children,
     content,
     disabled,
     ghost,
-    icon,
     primary,
     secondary,
     subtle
@@ -50,7 +51,13 @@ const Button = ({ className, ...otherProps }) => {
       'px-24': !iconOnly && !subtle
     }
   )
-  return <SemanticButton className={classes} {...otherProps} />
+  return (
+    <SemanticButton
+      className={classes}
+      icon={normalizeIconProp(icon)}
+      {...otherProps}
+    />
+  )
 }
 
 Button.propTypes = {
