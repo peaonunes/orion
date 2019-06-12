@@ -8,5 +8,5 @@
 }
 
 .orion-button.transition-default {
-  transition-property: background-color opacity;
+  transition-property: background-color, opacity;
 }

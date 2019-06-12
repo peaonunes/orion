@@ -52,6 +52,7 @@
     "enzyme-to-json": "^3.3.5",
     "gulp-add-src": "^1.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "husky": "^2.4.1",
     "jest": "^24.8.0",

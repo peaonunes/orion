@@ -63,7 +63,7 @@ const StoryLayout = ({ noBreadcrumb, withWarning, ...otherProps }) => (
         <Layout.HeaderTitle>Home Title</Layout.HeaderTitle>
         <Layout.HeaderControls>
           <Button>Cancel</Button>
-          <Button className={otherProps.color}>Save</Button>
+          <Button primary>Save</Button>
         </Layout.HeaderControls>
       </Layout.Header>
       <Layout.MainContent>
@@ -117,9 +117,7 @@ const StoryLayout = ({ noBreadcrumb, withWarning, ...otherProps }) => (
 )
 
 storiesOf('Layout', module)
-  .add('blue', () => <StoryLayout color="blue" />)
-  .add('pink', () => <StoryLayout color="pink" />)
-  .add('green', () => <StoryLayout color="green" />)
-  .add('no breadcrumb', () => <StoryLayout color="blue" noBreadcrumb />)
-  .add('no sidebar', () => <StoryLayout color="blue" noSidebar />)
-  .add('with warning', () => <StoryLayout color="blue" withWarning />)
+  .add('basic', () => <StoryLayout />)
+  .add('no breadcrumb', () => <StoryLayout noBreadcrumb />)
+  .add('no sidebar', () => <StoryLayout noSidebar />)
+  .add('with warning', () => <StoryLayout withWarning />)
