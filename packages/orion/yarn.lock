@@ -1101,10 +1101,10 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@inloco/atomic-bomb@^1.0.0-beta.6":
-  version "1.0.0-beta.6"
-  resolved "https://registry.yarnpkg.com/@inloco/atomic-bomb/-/atomic-bomb-1.0.0-beta.6.tgz#692cd2a7e54077a0e6e538e65dd9d407380dafc0"
-  integrity sha512-l9r/OUsLW7rmRant90TxnQE6LG1yBtixY8RzyVusqw/CVa/Z6ol95kjJBtMzNnzQICPdn+L3HtG/WBfx2XOBjA==
+"@inloco/atomic-bomb@^1.0.0-beta.7":
+  version "1.0.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@inloco/atomic-bomb/-/atomic-bomb-1.0.0-beta.7.tgz#3e7a33b3188d48b3725977677a93bf86c63cb1a2"
+  integrity sha512-fk0V5UYaomII0FBXSEQPF8gu0o97HC5XZhG6UUKbcSLeLzdx3ejSb/hilj5xixTrQ98evYRXMRirePlbZN1TQg==
   dependencies:
     color "^3.1.2"
     pretty-quick "^1.11.0"
