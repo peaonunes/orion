@@ -4,9 +4,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Input as SemanticInput } from 'semantic-ui-react'
 
-const Input = ({ className, small, warning, ...otherProps }) => {
+const Input = ({ className, warning, ...otherProps }) => {
   const classes = cx(className, 'orion-input inline-flex', {
-    small,
     warning
   })
 
@@ -14,7 +13,6 @@ const Input = ({ className, small, warning, ...otherProps }) => {
 }
 
 Input.propTypes = {
-  small: PropTypes.bool,
   warning: PropTypes.bool
 }
 

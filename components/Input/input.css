@@ -2,6 +2,10 @@
   @apply h-48 px-16 flex justify-center outline-none;
 }
 
+.orion-input:not(.labeled) > input {
+  @apply bg-white border border-gray-900-24 rounded;
+}
+
 .orion-input > input::placeholder {
   @apply text-gray-800;
 }
