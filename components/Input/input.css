@@ -1,0 +1,32 @@
+.orion-input > input {
+  @apply h-48 px-16 flex justify-center outline-none;
+}
+
+.orion-input > input::placeholder {
+  @apply text-gray-800;
+}
+
+.orion-input > input:disabled {
+  @apply bg-gray-900-8;
+}
+
+.orion-input > input:hover {
+  @apply shadow-field-hover;
+}
+
+.orion-input > input:active,
+.orion-input > input:focus {
+  @apply shadow-field-focus;
+}
+
+.orion-input.small > input {
+  @apply h-32;
+}
+
+.orion-input.error > input {
+  @apply border-magenta-500;
+}
+
+.orion-input.warning > input {
+  @apply border-yellow-500;
+}
