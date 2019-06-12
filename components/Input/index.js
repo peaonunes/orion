@@ -4,8 +4,13 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Input as SemanticInput } from 'semantic-ui-react'
 
-const Input = ({ className, warning, ...otherProps }) => {
-  const classes = cx(className, 'orion-input inline-flex', {
+const Sizes = {
+  DEFAULT: 'default',
+  SMALL: 'small'
+}
+
+const Input = ({ className, warning, size, ...otherProps }) => {
+  const classes = cx(className, size, 'orion-input inline-flex', {
     warning
   })
 
@@ -13,6 +18,7 @@ const Input = ({ className, warning, ...otherProps }) => {
 }
 
 Input.propTypes = {
+  size: PropTypes.oneOf([Sizes.DEFAULT, Sizes.SMALL]),
   warning: PropTypes.bool
 }
 
