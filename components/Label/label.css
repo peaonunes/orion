@@ -1,0 +1,3 @@
+.orion-label > i.icon {
+  @apply flex items-center mr-4;
+}
