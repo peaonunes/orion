@@ -1,24 +1,25 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import { boolean, radios, withKnobs } from '@storybook/addon-knobs'
 
 import { Input } from '../../components'
 
+const sizeKnob = () =>
+  radios('size', { Default: 'default', Small: 'small' }, 'default')
+
 storiesOf('Input', module)
-  .add('basic', () => <Input placeholder="Input..." />)
-  .add('labeled', () => (
-    <React.Fragment>
-      <Input placeholder="Type a website" label="http://" />
-      <br />
-      <br />
+  .addDecorator(withKnobs)
+  .add('default', () => {
+    const error = boolean('error', false)
+    const warning = boolean('warning', false)
+    const disabled = boolean('disabled', false)
+    return (
       <Input
-        placeholder="Type a number"
-        label="messages"
-        labelPosition="right"
+        placeholder="Input placeholder"
+        warning={warning}
+        error={error}
+        size={sizeKnob()}
+        disabled={disabled}
       />
-    </React.Fragment>
-  ))
-  .add('disabled', () => <Input placeholder="Input..." disabled />)
-  .add('error icon', () => <Input placeholder="Input..." error icon="error" />)
-  .add('warning icon', () => (
-    <Input placeholder="Input..." className="warning" icon="warning" />
-  ))
+    )
+  })
