@@ -1,6 +1,6 @@
 import { shallow } from 'enzyme'
 import React from 'react'
-import { Button } from 'semantic-ui-react'
+import Button from '../../../Button'
 
 import WizardFooterBasicControls from '../BasicControls'
 

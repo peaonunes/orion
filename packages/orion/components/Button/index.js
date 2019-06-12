@@ -22,12 +22,14 @@ const Button = ({ className, icon, ...otherProps }) => {
   const regularPrimary = primary && !subtle
   const subtlePrimary = primary && subtle
 
-  const regularSecondary = secondary && !subtle
-  const subtleSecondary = secondary && subtle
+  const isSecondary = secondary || (!primary && !ghost)
+
+  const regularSecondary = isSecondary && !subtle
+  const subtleSecondary = isSecondary && subtle
 
   const classes = cx(
     className,
-    'orion-button h-40 rounded-full font-default outline-none flex items-center transition-default',
+    'orion-button h-40 rounded-full font-default outline-none inline-flex items-center transition-default',
     {
       'bg-wave-500 text-white': regularPrimary,
       'bg-gray-900-8 text-gray-900': regularSecondary,

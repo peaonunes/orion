@@ -1,7 +1,8 @@
+import _ from 'lodash'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React, { Component } from 'react'
-import { Button } from 'semantic-ui-react'
+import Button from '../../Button'
 
 const Buttons = {
   CANCEL: 'cancel',
@@ -56,50 +57,44 @@ class WizardFooterBasicControls extends Component {
     const isLastStep = currentStep === totalSteps - 1
     return (
       <React.Fragment>
-        {Button.create(buttons[Buttons.CANCEL], {
-          autoGenerateKey: false,
-          defaultProps: {
-            onClick: onCancel,
-            type: 'button'
-          }
+        {this.getButton(buttons[Buttons.CANCEL], {
+          onClick: onCancel,
+          type: 'button'
         })}
         {showSaveButton &&
           !isLastStep &&
-          Button.create(buttons[Buttons.SAVE], {
-            autoGenerateKey: false,
-            defaultProps: {
-              onClick: onSave,
-              type: 'submit'
-            }
+          this.getButton(buttons[Buttons.SAVE], {
+            onClick: onSave,
+            type: 'submit'
           })}
         {(currentStep > 0 || showBackOnFirstStep) &&
-          Button.create(buttons[Buttons.PREVIOUS], {
-            autoGenerateKey: false,
-            defaultProps: {
-              onClick: this.handlePrevious,
-              type: 'button'
-            }
+          this.getButton(buttons[Buttons.PREVIOUS], {
+            onClick: this.handlePrevious,
+            type: 'button'
           })}
         {!isLastStep &&
-          Button.create(buttons[Buttons.NEXT], {
-            autoGenerateKey: false,
-            defaultProps: {
-              className: 'blue',
-              onClick: this.handleNext,
-              type: 'submit'
-            }
+          this.getButton(buttons[Buttons.NEXT], {
+            primary: true,
+            onClick: this.handleNext,
+            type: 'submit'
           })}
         {isLastStep &&
-          Button.create(buttons[Buttons.FINISH], {
-            autoGenerateKey: false,
-            defaultProps: {
-              className: 'blue',
-              onClick: onFinish,
-              type: 'submit'
-            }
+          this.getButton(buttons[Buttons.FINISH], {
+            primary: true,
+            onClick: onFinish,
+            type: 'submit'
           })}
       </React.Fragment>
     )
+  }
+
+  getButton = (options, defaultProps) => {
+    if (React.isValidElement(options)) {
+      return options
+    }
+
+    const customProps = _.isString(options) ? { content: options } : options
+    return <Button {...defaultProps} {...customProps} />
   }
 
   handleNext = () => {
