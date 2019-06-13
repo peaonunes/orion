@@ -34,7 +34,7 @@ Then we run the command below to update css with our customizations:
 To update css on file change:
 
 ```sh
-  yarn run watch:css
+  yarn run watch
 ```
 
 ### Storybook
