@@ -2,9 +2,10 @@ import _ from 'lodash'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Icon, Label as SemanticLabel } from 'semantic-ui-react'
+import { Label as SemanticLabel } from 'semantic-ui-react'
 
-import { normalizeIconProp } from '../utils/icons'
+import Icon from '../Icon'
+import { createShorthandFactory } from '../utils/factories'
 
 const Sizes = {
   DEFAULT: 'default',
@@ -14,12 +15,11 @@ const Sizes = {
 const Label = ({
   children,
   className,
-  icon,
+  content,
   onRemove,
   size,
   ...otherProps
 }) => {
-  const { content } = otherProps
   const classes = cx(
     className,
     'orion-label inline-flex items-center px-8 bg-gray-900-8 rounded leading-20',
@@ -40,7 +40,7 @@ const Label = ({
     children = (
       <React.Fragment>
         <div className={removeIconClasses} onClick={onRemove}>
-          <Icon className="clear" size="big" />
+          <Icon name="clear" size="big" />
         </div>
         {children || content}
       </React.Fragment>
@@ -49,7 +49,7 @@ const Label = ({
   return (
     <SemanticLabel
       className={classes}
-      icon={normalizeIconProp(icon)}
+      content={children ? null : content}
       {...otherProps}>
       {children}
     </SemanticLabel>
@@ -63,5 +63,10 @@ Label.propTypes = {
 Label.defaultProps = {
   size: Sizes.DEFAULT
 }
+
+// Overriding original factory. See src/utils/factories.js for more details.
+SemanticLabel.create = createShorthandFactory(Label, value => ({
+  content: value
+}))
 
 export default Label

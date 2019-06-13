@@ -4,6 +4,8 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Input as SemanticInput } from 'semantic-ui-react'
 
+import { createShorthandFactory } from '../utils/factories'
+
 const Sizes = {
   DEFAULT: 'default',
   SMALL: 'small'
@@ -21,5 +23,8 @@ Input.propTypes = {
   size: PropTypes.oneOf([Sizes.DEFAULT, Sizes.SMALL]),
   warning: PropTypes.bool
 }
+
+// Overriding original factory. See src/utils/factories.js for more details.
+SemanticInput.create = createShorthandFactory(Input, type => ({ type }))
 
 export default Input
