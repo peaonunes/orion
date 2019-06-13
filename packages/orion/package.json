@@ -54,7 +54,6 @@
     "gulp": "^4.0.2",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
-    "gulp-uglify": "^3.0.2",
     "husky": "^2.4.1",
     "jest": "^24.8.0",
     "jest-junit": "^6.4.0",

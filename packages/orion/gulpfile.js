@@ -1,5 +1,4 @@
 const gulp = require('gulp')
-const uglify = require('gulp-uglify')
 const plumber = require('gulp-plumber')
 const postcss = require('gulp-postcss')
 const cssnano = require('cssnano')
