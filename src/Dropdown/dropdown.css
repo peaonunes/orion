@@ -1,3 +1,11 @@
+.orion-dropdown.search input {
+  @apply absolute bg-transparent outline-none;
+}
+
+.orion-dropdown .text {
+  @apply text-gray-900 z-10;
+}
+
 .orion-dropdown .text.default {
   @apply text-gray-800;
 }
