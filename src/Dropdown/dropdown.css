@@ -31,6 +31,10 @@
   transform: rotate(-180deg);
 }
 
+.orion-dropdown.multiple .orion-label {
+  @apply mr-8;
+}
+
 .orion-dropdown__icon {
   @apply -mr-8 transition-default;
 }
