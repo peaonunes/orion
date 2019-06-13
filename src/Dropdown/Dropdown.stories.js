@@ -27,6 +27,7 @@ storiesOf('Dropdown', module)
         placeholder={text('Placeholder', 'Select Developer', 'Content')}
         selection
         options={object('Options', developerOptions, 'Content')}
+        fluid={boolean('Fluid', false, 'Content')}
         search={boolean('Search', false, 'Type')}
         multiple={boolean('Multiple', false, 'Type')}
         size={sizeKnob()}
