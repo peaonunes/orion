@@ -11,8 +11,8 @@ storiesOf('Checkbox', module)
       <Checkbox
         label={text('Label', 'Click Me')}
         defaultChecked
-        indeterminate={boolean('Indeterminate')}
-        disabled={boolean('Disabled')}
+        indeterminate={boolean('Indeterminate', false)}
+        disabled={boolean('Disabled', false)}
       />
     </React.Fragment>
   ))
