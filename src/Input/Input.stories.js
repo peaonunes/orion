@@ -20,6 +20,7 @@ storiesOf('Input', module)
         error={error}
         size={sizeKnob()}
         disabled={disabled}
+        fluid={boolean('fluid', false)}
       />
     )
   })
