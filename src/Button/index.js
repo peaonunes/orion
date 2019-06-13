@@ -4,14 +4,15 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Button as SemanticButton } from 'semantic-ui-react'
 
-import { normalizeIconProp } from '../utils/icons'
+import { createShorthandFactory } from '../utils/factories'
 
-const Button = ({ className, icon, ...otherProps }) => {
+const Button = ({ className, ...otherProps }) => {
   const {
     children,
     content,
     disabled,
     ghost,
+    icon,
     primary,
     secondary,
     subtle
@@ -53,18 +54,17 @@ const Button = ({ className, icon, ...otherProps }) => {
       'px-24': !iconOnly && !subtle
     }
   )
-  return (
-    <SemanticButton
-      className={classes}
-      icon={normalizeIconProp(icon)}
-      {...otherProps}
-    />
-  )
+  return <SemanticButton className={classes} {...otherProps} />
 }
 
 Button.propTypes = {
   ghost: PropTypes.bool,
   subtle: PropTypes.bool
 }
+
+// Overriding original factory. See src/utils/factories.js for more details.
+SemanticButton.create = createShorthandFactory(Button, value => ({
+  content: value
+}))
 
 export default Button
