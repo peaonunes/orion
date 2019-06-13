@@ -1,0 +1,28 @@
+.orion-search > .orion-input {
+  @apply h-full;
+}
+
+.orion-search > .orion-input > input {
+  @apply h-full !important;
+}
+
+.orion-search .results {
+  @apply absolute hidden mt-8 shadow-200 left-0 w-full;
+  top: 100%;
+}
+
+.orion-search.active .results {
+  @apply block rounded;
+}
+
+.orion-search .results > .result {
+  @apply px-16 py-8 cursor-pointer;
+}
+
+.orion-search .results > .result.active {
+  @apply font-medium;
+}
+
+.orion-search .results > .result:hover {
+  @apply bg-gray-900-4;
+}
