@@ -42,7 +42,7 @@
 .orion-checkbox input[type='checkbox']:indeterminate ~ label:after {
   @apply absolute top-0 left-0 h-16 w-16;
   @apply flex items-center justify-center text-white;
-  font-family: 'Icons';
+  font-family: 'Material Icons';
 }
 
 .orion-checkbox input[type='checkbox']:checked ~ label:after {
