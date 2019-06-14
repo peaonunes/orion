@@ -14,13 +14,14 @@ const DROPDOWN_ICON = {
 }
 
 const Dropdown = ({ className, size, ...otherProps }) => {
-  const { disabled } = otherProps
+  const { disabled, fluid } = otherProps
   const classes = cx(
     className,
     'orion-dropdown',
     'inline-flex items-center justify-between relative outline-none',
     'border border-gray-900-24 px-16 rounded',
     {
+      'w-full': fluid,
       'h-48': size === Sizes.DEFAULT,
       'h-32': size === Sizes.SMALL,
       'bg-white cursor-pointer hover:shadow-field-hover focus:shadow-field-focus': !disabled,
