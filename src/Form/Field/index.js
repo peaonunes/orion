@@ -28,17 +28,21 @@ const Field = ({
     setControlFilled(!_.isEmpty(e.target.value))
   }
 
-  let finalChildren
-  let finalSize = size
+  let finalChildren = children
+  let floatingLabel = false
 
   //Case: <Form.Input ... />
+  const controlOnChange =
+    control === Input || control === Dropdown ? { onChange: handleChange } : {}
   if (!_.isNil(control)) {
-    const controlProps =
-      control === Input || control === Dropdown
-        ? {
-            onChange: handleChange
-          }
-        : {}
+    const controlProps = {
+      ...otherProps,
+      size,
+      ...controlOnChange
+    }
+
+    if (size === Sizes.DEFAULT && !_.isEmpty(controlOnChange))
+      floatingLabel = true
 
     finalChildren = [
       React.createElement('label', {
@@ -52,7 +56,7 @@ const Field = ({
   if (!_.isNil(children)) {
     finalChildren = React.Children.map(children, child => {
       if (child.type.name === 'Input' || child.type.name === 'Dropdown') {
-        finalSize = child.props.size
+        if (child.props.size === Sizes.DEFAULT) floatingLabel = true
         return React.cloneElement(child, {
           onChange: e => {
             handleChange(e)
@@ -66,10 +70,11 @@ const Field = ({
 
   const classes = cx(className, {
     filled: controlFilled,
-    floatingLabel: finalSize === Sizes.DEFAULT
+    floatingLabel
   })
 
-  const fieldProps = { ...otherProps, children: finalChildren }
+  const fieldProps = { ...otherProps, children: finalChildren, size }
+  console.log(fieldProps)
 
   return <SemanticFormField className={classes} {...fieldProps} />
 }

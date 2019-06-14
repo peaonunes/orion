@@ -25,3 +25,10 @@
 .ui.form > .field label {
   @apply block mb-4 text-sm;
 }
+
+/* Error */
+
+.ui.form > .field.error input,
+.ui.form > .field.error .dropdown {
+  @apply border-magenta-500;
+}

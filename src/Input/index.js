@@ -17,7 +17,7 @@ const Input = ({ className, warning, size, ...otherProps }) => {
     warning,
     'w-full': fluid
   })
-
+  console.log('Input', size)
   return <SemanticInput className={classes} {...otherProps} />
 }
 
