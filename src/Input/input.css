@@ -38,3 +38,15 @@
 .orion-input.fluid > input {
   @apply w-full;
 }
+
+/**
+ * Icon
+ */
+
+.orion-input.icon > input {
+  @apply pr-40;
+}
+
+.orion-input.icon > input ~ .icon {
+  @apply absolute right-0 w-40 h-full flex items-center justify-center;
+}

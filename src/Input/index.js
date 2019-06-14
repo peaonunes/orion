@@ -13,7 +13,7 @@ const Sizes = {
 
 const Input = ({ className, warning, size, ...otherProps }) => {
   const { fluid } = otherProps
-  const classes = cx(className, size, 'orion-input inline-flex', {
+  const classes = cx(className, size, 'orion-input inline-flex relative', {
     warning,
     'w-full': fluid
   })
