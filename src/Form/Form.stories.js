@@ -6,15 +6,17 @@ import { Button, Checkbox, Input, Form } from '../'
 storiesOf('Form', module).add('basic', () => (
   <Form>
     <Form.Field>
-      <label>First Name</label>
-      <Input placeholder="First Name" />
+      <Input id="one" placeholder="First Name" />
+      <label htmlFor="one">Form Field with input</label>
     </Form.Field>
     <Form.Field>
-      <label>Last Name</label>
-      <Input placeholder="Last Name" />
+      <label>Form Field with small input</label>
+      <Input size="small" placeholder="First Name" />
     </Form.Field>
+
+    <Form.Input label="Form Input" />
     <Form.Field>
-      <label>Website</label>
+      <label>Form Field with input and label</label>
       <Input placeholder="Website" label="https://" />
     </Form.Field>
     <Form.Field>

@@ -1,0 +1,27 @@
+.ui.form > .field {
+  @apply relative mb-24;
+}
+
+/* floated label */
+.ui.form > .field .default ~ label {
+  @apply absolute top-0 block .cursor-text ml-16 text-gray-800 text-base transition-default;
+  margin-top: 12px;
+}
+
+.ui.form > .field .default.filled ~ label,
+.ui.form > .field:focus-within .default ~ label {
+  @apply mt-4 text-sm;
+}
+
+.ui.form > .field .default input {
+  @apply pt-16;
+}
+
+.ui.form > .field .default input::placeholder {
+  color: transparent;
+}
+
+/* Outside label */
+.ui.form > .field label {
+  @apply block mb-4 text-sm;
+}

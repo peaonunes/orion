@@ -12,11 +12,25 @@ const Sizes = {
 }
 
 const Input = ({ className, warning, size, ...otherProps }) => {
+  const [value, setValue] = React.useState(otherProps.value)
+
+  const handleChange = e => {
+    setValue(e.target.value)
+    if (otherProps.onChange) onChange(e)
+  }
+
   const classes = cx(className, size, 'orion-input inline-flex', {
-    warning
+    warning,
+    filled: value
   })
 
-  return <SemanticInput className={classes} {...otherProps} />
+  return (
+    <SemanticInput
+      className={classes}
+      {...otherProps}
+      onChange={handleChange}
+    />
+  )
 }
 
 Input.propTypes = {
@@ -24,7 +38,11 @@ Input.propTypes = {
   warning: PropTypes.bool
 }
 
-// Overriding original factory. See src/utils/factories.js for more details.
-SemanticInput.create = createShorthandFactory(Input, type => ({ type }))
+Input.defaultProps = {
+  size: Sizes.DEFAULT
+}
+
+// // Overriding original factory. See src/utils/factories.js for more details.
+// SemanticInput.create = createShorthandFactory(Input, type => ({ type }))
 
 export default Input

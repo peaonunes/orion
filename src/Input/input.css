@@ -1,5 +1,5 @@
 .orion-input > input {
-  @apply h-48 px-16 flex justify-center outline-none;
+  @apply h-48 pl-16 flex justify-center outline-none;
 }
 
 .orion-input:not(.labeled) > input {
@@ -7,7 +7,7 @@
 }
 
 .orion-input > input::placeholder {
-  @apply text-gray-800;
+  @apply text-gray-800 text-base opacity-100;
 }
 
 .orion-input > input:disabled {
