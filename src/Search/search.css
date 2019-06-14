@@ -1,28 +1,36 @@
-.orion-search > .orion-input {
+.ui.search {
+  @apply relative inline-block h-48;
+}
+
+.ui.search.small {
+  @apply h-32;
+}
+
+.ui.search > .ui.input {
   @apply h-full;
 }
 
-.orion-search > .orion-input > input {
+.ui.search > .ui.input > input {
   @apply h-full !important;
 }
 
-.orion-search .results {
+.ui.search .results {
   @apply absolute hidden mt-8 shadow-200 left-0 w-full;
   top: 100%;
 }
 
-.orion-search.active .results {
+.ui.search.active .results {
   @apply block rounded;
 }
 
-.orion-search .results > .result {
+.ui.search .results > .result {
   @apply px-16 py-8 cursor-pointer;
 }
 
-.orion-search .results > .result.active {
+.ui.search .results > .result.active {
   @apply font-medium;
 }
 
-.orion-search .results > .result:hover {
+.ui.search .results > .result:hover {
   @apply bg-gray-900-4;
 }
