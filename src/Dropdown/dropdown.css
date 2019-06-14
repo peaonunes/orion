@@ -1,3 +1,7 @@
+.orion-dropdown {
+  min-width: 256px;
+}
+
 .orion-dropdown.search input {
   @apply absolute bg-transparent outline-none;
 }
@@ -19,7 +23,8 @@
   @apply block rounded;
 }
 
-.orion-dropdown.selection .menu > .item {
+.orion-dropdown.selection .menu > .item,
+.orion-dropdown.selection .menu > .message {
   @apply px-16 py-8;
 }
 
