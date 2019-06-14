@@ -47,4 +47,10 @@ Dropdown.defaultProps = {
   size: Sizes.DEFAULT
 }
 
+Dropdown.Divider = SemanticDropdown.Divider
+Dropdown.Header = SemanticDropdown.Header
+Dropdown.Item = SemanticDropdown.Item
+Dropdown.Menu = SemanticDropdown.Menu
+Dropdown.SearchInput = SemanticDropdown.SearchInput
+
 export default Dropdown
