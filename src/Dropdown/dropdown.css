@@ -134,3 +134,15 @@
 .ui.dropdown.selection:focus {
   @apply shadow-field-focus;
 }
+
+/**
+ * Validation
+ */
+
+.ui.dropdown.error {
+  @apply border-magenta-500;
+}
+
+.ui.dropdown.warning {
+  @apply border-yellow-500;
+}
