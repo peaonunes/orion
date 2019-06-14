@@ -1,3 +1,7 @@
-.orion-card .header {
+.ui.card {
+  @apply bg-white p-24 rounded shadow-100;
+}
+
+.ui.card .header {
   @apply font-display tracking-h2 text-lg text-gray-800 font-light;
 }
