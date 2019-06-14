@@ -12,8 +12,10 @@ const Sizes = {
 }
 
 const Input = ({ className, warning, size, ...otherProps }) => {
+  const { fluid } = otherProps
   const classes = cx(className, size, 'orion-input inline-flex', {
-    warning
+    warning,
+    'w-full': fluid
   })
 
   return <SemanticInput className={classes} {...otherProps} />

@@ -34,3 +34,7 @@
 .orion-input.warning > input {
   @apply border-yellow-500;
 }
+
+.orion-input.fluid > input {
+  @apply w-full;
+}
