@@ -22,7 +22,7 @@ const Label = ({
 }) => {
   const classes = cx(
     className,
-    'orion-label inline-flex items-center px-8 bg-gray-900-8 rounded leading-20',
+    'orion-label inline-flex items-center px-8 bg-gray-900-8 rounded leading-20 text-gray-900',
     {
       'h-32': size === Sizes.DEFAULT,
       'h-24': size === Sizes.SMALL
@@ -31,7 +31,7 @@ const Label = ({
 
   if (onRemove) {
     const removeIconClasses = cx(
-      'h-24 w-24 flex items-center justify-center mr-4 rounded cursor-pointer hover:bg-gray-900-12 active:bg-gray-900-16',
+      'h-24 w-24 flex items-center justify-center mr-4 rounded cursor-pointer hover:bg-gray-900-12 active:bg-gray-900-16 text-gray-700',
       {
         '-ml-4': size === Sizes.DEFAULT,
         '-ml-8 rounded-r-none': size === Sizes.SMALL
@@ -39,7 +39,9 @@ const Label = ({
     )
     children = (
       <React.Fragment>
-        <div className={removeIconClasses} onClick={onRemove}>
+        <div
+          className={removeIconClasses}
+          onClick={e => onRemove(e, otherProps)}>
           <Icon name="clear" size="big" />
         </div>
         {children || content}
