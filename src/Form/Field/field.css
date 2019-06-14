@@ -3,21 +3,21 @@
 }
 
 /* floated label */
-.ui.form > .field .default ~ label {
-  @apply absolute top-0 block .cursor-text ml-16 text-gray-800 text-base transition-default;
+.ui.form > .field.floatingLabel label {
+  @apply absolute top-0 block .cursor-text ml-16 text-gray-800 text-base transition-default z-10;
   margin-top: 12px;
 }
 
-.ui.form > .field .default.filled ~ label,
-.ui.form > .field:focus-within .default ~ label {
+.ui.form > .field.floatingLabel.filled label,
+.ui.form > .field.floatingLabel:focus-within label {
   @apply mt-4 text-sm;
 }
 
-.ui.form > .field .default input {
+.ui.form > .field.floatingLabel input {
   @apply pt-16;
 }
 
-.ui.form > .field .default input::placeholder {
+.ui.form > .field.floatingLabel input::placeholder {
   color: transparent;
 }
 

@@ -6,8 +6,8 @@ import { Button, Checkbox, Input, Form } from '../'
 storiesOf('Form', module).add('basic', () => (
   <Form>
     <Form.Field>
-      <Input id="one" placeholder="First Name" />
       <label htmlFor="one">Form Field with input</label>
+      <Input id="one" placeholder="First Name" />
     </Form.Field>
     <Form.Field>
       <label>Form Field with small input</label>
