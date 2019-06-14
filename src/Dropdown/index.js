@@ -14,7 +14,7 @@ const DROPDOWN_ICON = {
 }
 
 const Dropdown = ({ className, size, ...otherProps }) => {
-  const { disabled, fluid } = otherProps
+  const { disabled, fluid, search } = otherProps
   const classes = cx(
     className,
     'orion-dropdown',
@@ -24,8 +24,10 @@ const Dropdown = ({ className, size, ...otherProps }) => {
       'w-full': fluid,
       'h-48': size === Sizes.DEFAULT,
       'h-32': size === Sizes.SMALL,
-      'bg-white cursor-pointer hover:shadow-field-hover focus:shadow-field-focus': !disabled,
-      'bg-gray-900-8 cursor-default': disabled
+      'bg-white hover:shadow-field-hover focus:shadow-field-focus': !disabled,
+      'bg-gray-900-8 pointer-events-none': disabled,
+      'cursor-text': search && !disabled,
+      'cursor-pointer': !search && !disabled
     }
   )
   return (
