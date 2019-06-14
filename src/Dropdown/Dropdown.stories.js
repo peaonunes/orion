@@ -14,13 +14,25 @@ const developerOptions = [
 
 storiesOf('Dropdown', module)
   .addDecorator(withKnobs)
+  .add('basic', () => {
+    const menuOptions = [{ text: 'Account' }, { text: 'Logout' }]
+    return (
+      <Dropdown
+        text={text('Label', 'Maira Bello')}
+        options={object('Menu options', menuOptions)}
+        compact={boolean('Compact', true)}
+        size={sizeKnob('small')}
+      />
+    )
+  })
   .add('selection', () => {
     return (
       <Dropdown
         placeholder={text('Placeholder', 'Select Developer', 'Content')}
         selection
         options={object('Options', developerOptions, 'Content')}
-        fluid={boolean('Fluid', false, 'Content')}
+        fluid={boolean('Fluid', false, 'Size')}
+        compact={boolean('Compact', false, 'Size')}
         search={boolean('Search', false, 'Type')}
         multiple={boolean('Multiple', false, 'Type')}
         size={sizeKnob(Sizes.DEFAULT, 'Size')}
