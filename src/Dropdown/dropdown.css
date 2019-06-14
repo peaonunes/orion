@@ -1,7 +1,3 @@
-.orion-dropdown {
-  min-width: 256px;
-}
-
 .orion-dropdown .text.default {
   @apply text-gray-800;
 }
