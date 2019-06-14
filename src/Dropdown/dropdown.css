@@ -1,0 +1,32 @@
+.orion-dropdown .text.default {
+  @apply text-gray-800;
+}
+
+.orion-dropdown .menu {
+  @apply absolute hidden mt-8 shadow-200 left-0 w-full;
+  top: 100%;
+}
+
+.orion-dropdown.active .menu {
+  @apply block rounded;
+}
+
+.orion-dropdown.selection .menu > .item {
+  @apply px-16 py-8;
+}
+
+.orion-dropdown.selection .menu > .item.active {
+  @apply font-medium;
+}
+
+.orion-dropdown.selection .menu > .item:hover {
+  @apply bg-gray-900-4;
+}
+
+.orion-dropdown.selection.active .orion-dropdown__icon {
+  transform: rotate(-180deg);
+}
+
+.orion-dropdown__icon {
+  @apply -mr-8 transition-default;
+}
