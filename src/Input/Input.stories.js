@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { boolean, radios, withKnobs } from '@storybook/addon-knobs'
+import { boolean, radios, text, withKnobs } from '@storybook/addon-knobs'
 
 import Input from './'
 
@@ -20,6 +20,8 @@ storiesOf('Input', module)
         error={error}
         size={sizeKnob()}
         disabled={disabled}
+        fluid={boolean('fluid', false)}
+        icon={text('Icon')}
       />
     )
   })

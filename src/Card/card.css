@@ -1,0 +1,3 @@
+.orion-card .header {
+  @apply font-display tracking-h2 text-lg text-gray-800 font-light;
+}
