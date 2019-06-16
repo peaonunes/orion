@@ -24,8 +24,8 @@ const Field = ({
 }) => {
   const [controlFilled, setControlFilled] = React.useState(false)
 
-  const handleChange = e => {
-    setControlFilled(!_.isEmpty(e.target.value))
+  const handleChange = (e, { value }) => {
+    setControlFilled(!!value)
   }
 
   let finalChildren = children
@@ -58,9 +58,9 @@ const Field = ({
       if (child.type.name === 'Input' || child.type.name === 'Dropdown') {
         if (child.props.size === Sizes.DEFAULT) floatingLabel = true
         return React.cloneElement(child, {
-          onChange: e => {
-            handleChange(e)
-            if (child.props.onChange) child.props.onChange(e)
+          onChange: (e, data) => {
+            handleChange(e, data)
+            if (child.props.onChange) child.props.onChange(e, data)
           }
         })
       }
@@ -74,7 +74,6 @@ const Field = ({
   })
 
   const fieldProps = { ...otherProps, children: finalChildren, size }
-  console.log(fieldProps)
 
   return <SemanticFormField className={classes} {...fieldProps} />
 }

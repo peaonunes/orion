@@ -3,6 +3,12 @@ import { storiesOf } from '@storybook/react'
 
 import { Button, Checkbox, Input, Dropdown, Form } from '../'
 
+const developerOptions = [
+  { text: 'Francisco Gileno', value: 1 },
+  { text: 'Rafael Nunes', value: 2 },
+  { text: 'Maira Bello', value: 3 }
+]
+
 storiesOf('Form', module)
   .add('Input', () => (
     <Form>
@@ -33,15 +39,27 @@ storiesOf('Form', module)
     <Form>
       <Form.Field>
         <label htmlFor="one">Form Field with dropdown</label>
-        <Dropdown id="one" placeholder="First Name" />
+        <Dropdown
+          id="one"
+          placeholder="First Name"
+          options={developerOptions}
+        />
       </Form.Field>
       <Form.Field>
         <label>Form Field with small dropdown</label>
-        <Dropdown size="small" placeholder="First Name" />
+        <Dropdown
+          size="small"
+          placeholder="First Name"
+          options={developerOptions}
+        />
       </Form.Field>
 
-      <Form.Dropdown label="Form Dropdown" />
-      <Form.Dropdown label="Form Dropdown" size="small" />
+      <Form.Dropdown label="Form Dropdown" options={developerOptions} />
+      <Form.Dropdown
+        label="Form Dropdown"
+        size="small"
+        options={developerOptions}
+      />
 
       <Form.Field>
         <label>Form Field with Dropdown and label</label>
