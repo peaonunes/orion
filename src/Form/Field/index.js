@@ -14,54 +14,30 @@ const Sizes = {
   SMALL: 'small'
 }
 
-const Field = ({
-  size,
-  className,
-  children,
-  control,
-  label,
-  ...otherProps
-}) => {
+const Field = ({ className, children, onChange, ...otherProps }) => {
+  const { size, control } = otherProps
   const [controlFilled, setControlFilled] = React.useState(false)
 
-  const handleChange = (e, { value }) => {
-    setControlFilled(!!value)
+  const handleChange = (e, data) => {
+    setControlFilled(!!data.value)
+    if (onChange) onChange(e, data)
   }
 
   let finalChildren = children
   let floatingLabel = false
+  let controlOnChange = onChange
 
-  //Case: <Form.Input ... />
-  const controlOnChange =
-    control === Input || control === Dropdown ? { onChange: handleChange } : {}
-  if (!_.isNil(control)) {
-    const controlProps = {
-      ...otherProps,
-      size,
-      ...controlOnChange
-    }
-
-    if (size === Sizes.DEFAULT && !_.isEmpty(controlOnChange))
-      floatingLabel = true
-
-    finalChildren = [
-      React.createElement('label', {
-        children: label
-      }),
-      React.createElement(control, controlProps)
-    ]
+  if ((control === Input || control === Dropdown) && size === Sizes.DEFAULT) {
+    floatingLabel = true
+    controlOnChange = handleChange
   }
 
-  //Case: <Form.Field ... ><label/><Form.Input /></Form.Field>
   if (!_.isNil(children)) {
     finalChildren = React.Children.map(children, child => {
-      if (child.type.name === 'Input' || child.type.name === 'Dropdown') {
+      if (child.type === Input || child.type === Dropdown) {
         if (child.props.size === Sizes.DEFAULT) floatingLabel = true
         return React.cloneElement(child, {
-          onChange: (e, data) => {
-            handleChange(e, data)
-            if (child.props.onChange) child.props.onChange(e, data)
-          }
+          onChange: handleChange
         })
       }
       return child
@@ -73,12 +49,19 @@ const Field = ({
     floatingLabel
   })
 
-  const fieldProps = { ...otherProps, children: finalChildren, size }
-
-  return <SemanticFormField className={classes} {...fieldProps} />
+  return (
+    <SemanticFormField
+      {...otherProps}
+      className={classes}
+      children={finalChildren}
+      onChange={controlOnChange}
+    />
+  )
 }
 
 Field.propTypes = {
+  className: PropTypes.string,
+  children: PropTypes.node,
   size: PropTypes.oneOf([Sizes.DEFAULT, Sizes.SMALL])
 }
 
