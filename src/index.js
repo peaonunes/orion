@@ -1,7 +1,4 @@
 export * from 'semantic-ui-react'
-export * from './Form'
-export * from './Layout'
-export * from './Wizard'
 
 export { default as Icon } from './Icon'
 export { default as Button } from './Button'
