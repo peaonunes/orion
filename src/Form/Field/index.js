@@ -11,7 +11,7 @@ import { Sizes, sizePropType } from '../../utils/sizes'
 
 const SemanticFormField = Form.Field
 
-const shouldHandleChange = (field, size) =>
+const shouldHaveFloatingLabel = (field, size) =>
   (field === Input || field === Dropdown) && size === Sizes.DEFAULT
 
 const Field = ({ className, children, onChange, ...otherProps }) => {
@@ -24,20 +24,23 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
   }
 
   let finalChildren = children
-  let controlOnChange = onChange
+  let finalOnChange = onChange
   let floatingLabel = false
 
-  if (shouldHandleChange(control, size)) {
-    controlOnChange = handleChange
+  if (shouldHaveFloatingLabel(control, size)) {
+    finalOnChange = handleChange
     floatingLabel = true
   }
 
   if (!_.isNil(children)) {
     finalChildren = React.Children.map(children, child => {
-      if (shouldHandleChange(child.type, child.props.size)) {
+      if (shouldHaveFloatingLabel(child.type, child.props.size)) {
         floatingLabel = true
         return React.cloneElement(child, {
-          onChange: handleChange
+          onChange: (e, data) => {
+            setControlFilled(!!data.value)
+            if (child.props.onChange) child.propsOnChange(e, data)
+          }
         })
       }
       return child
@@ -54,7 +57,7 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
       {...otherProps}
       className={classes}
       children={finalChildren}
-      onChange={controlOnChange}
+      onChange={finalOnChange}
     />
   )
 }
