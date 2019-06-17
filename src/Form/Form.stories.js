@@ -58,6 +58,7 @@ storiesOf('Form', module)
         size={sizeKnob()}
       />
       <Form.Dropdown
+        selection
         fluid={boolean('Fluid', false)}
         id="buddy"
         label={text('Buddy label', 'Buddy')}
