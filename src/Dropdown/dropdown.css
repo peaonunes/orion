@@ -1,49 +1,80 @@
-.orion-dropdown {
+.ui.dropdown {
+  @apply inline-flex items-center justify-between relative outline-none h-48;
+  @apply border border-gray-900-24 px-16 rounded;
+  @apply bg-white cursor-pointer;
   min-width: 256px;
 }
 
-.orion-dropdown.search input {
+.ui.dropdown:hover {
+  @apply shadow-field-hover;
+}
+
+.ui.dropdownfocus {
+  @apply shadow-field-focus;
+}
+
+.ui.dropdown.fluid {
+  @apply w-full;
+}
+
+.ui.dropdown.small {
+  @apply h-32;
+}
+
+.ui.dropdown.search input {
   @apply absolute bg-transparent outline-none;
 }
 
-.orion-dropdown .text {
+.ui.dropdown .text {
   @apply text-gray-900 z-10;
 }
 
-.orion-dropdown .text.default {
+.ui.dropdown .text.default {
   @apply text-gray-800;
 }
 
-.orion-dropdown .menu {
+.ui.dropdown .menu {
   @apply absolute hidden mt-8 shadow-200 left-0 w-full;
   top: 100%;
 }
 
-.orion-dropdown.active .menu {
+.ui.dropdown.active .menu {
   @apply block rounded;
 }
 
-.orion-dropdown.selection .menu > .item,
-.orion-dropdown.selection .menu > .message {
+.ui.dropdown.selection .menu > .item,
+.ui.dropdown.selection .menu > .message {
   @apply px-16 py-8;
 }
 
-.orion-dropdown.selection .menu > .item.active {
+.ui.dropdown.selection .menu > .item.active {
   @apply font-medium;
 }
 
-.orion-dropdown.selection .menu > .item:hover {
+.ui.dropdown.selection .menu > .item:hover {
   @apply bg-gray-900-4;
 }
 
-.orion-dropdown.selection.active .orion-dropdown__icon {
+.ui.dropdown.selection.active .orion-dropdown__icon {
   transform: rotate(-180deg);
 }
 
-.orion-dropdown.multiple .orion-label {
+.ui.dropdown.multiple .orion-label {
   @apply mr-8;
 }
 
 .orion-dropdown__icon {
   @apply -mr-8 transition-default;
+}
+
+.ui.dropdown.disabled {
+  @apply bg-gray-900-8 pointer-events-none cursor-default;
+}
+
+/**
+ * Search
+ */
+
+.ui.dropdown.search {
+  @apply inline-flex cursor-text;
 }
