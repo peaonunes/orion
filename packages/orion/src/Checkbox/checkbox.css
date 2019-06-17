@@ -19,7 +19,8 @@
   content: '';
 }
 
-.ui.checkbox input[type='checkbox'] ~ label:hover:before {
+.ui.checkbox input[type='checkbox'] ~ label:hover:before,
+.ui.checkbox input[type='checkbox']:focus ~ label:before {
   @apply bg-gray-900-8;
 }
 
@@ -35,7 +36,11 @@
 .ui.checkbox:not(.disabled) input[type='checkbox']:checked ~ label:hover:before,
 .ui.checkbox:not(.disabled)
   input[type='checkbox']:indeterminate
-  ~ label:hover:before {
+  ~ label:hover:before,
+.ui.checkbox:not(.disabled) input[type='checkbox']:checked:focus ~ label:before,
+.ui.checkbox:not(.disabled)
+  input[type='checkbox']:indeterminate:focus
+  ~ label:before {
   @apply bg-wave-600;
 }
 
