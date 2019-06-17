@@ -1,63 +1,65 @@
-.orion-checkbox input[type='checkbox'] {
+.ui.checkbox {
+  @apply relative;
+}
+
+.ui.checkbox input[type='checkbox'] {
   @apply absolute top-0 left-0 h-16 w-16;
   @apply opacity-0;
   @apply block !important;
 }
 
-.orion-checkbox input[type='checkbox'] ~ label {
+.ui.checkbox input[type='checkbox'] ~ label {
   @apply block cursor-pointer pl-24;
   line-height: 16px;
 }
 
-.orion-checkbox input[type='checkbox'] ~ label:before {
+.ui.checkbox input[type='checkbox'] ~ label:before {
   @apply absolute top-0 left-0 h-16 w-16;
   @apply border border-gray-900-24 rounded;
   content: '';
 }
 
-.orion-checkbox input[type='checkbox'] ~ label:hover:before {
+.ui.checkbox input[type='checkbox'] ~ label:hover:before {
   @apply bg-gray-900-8;
 }
 
-.orion-checkbox input[type='checkbox'] ~ label:active:before {
+.ui.checkbox input[type='checkbox'] ~ label:active:before {
   @apply bg-gray-900-16;
 }
 
-.orion-checkbox input[type='checkbox']:checked ~ label:before,
-.orion-checkbox input[type='checkbox']:indeterminate ~ label:before {
+.ui.checkbox input[type='checkbox']:checked ~ label:before,
+.ui.checkbox input[type='checkbox']:indeterminate ~ label:before {
   @apply bg-wave-500;
 }
 
-.orion-checkbox:not(.disabled)
-  input[type='checkbox']:checked
-  ~ label:hover:before,
-.orion-checkbox:not(.disabled)
+.ui.checkbox:not(.disabled) input[type='checkbox']:checked ~ label:hover:before,
+.ui.checkbox:not(.disabled)
   input[type='checkbox']:indeterminate
   ~ label:hover:before {
   @apply bg-wave-600;
 }
 
-.orion-checkbox:not(.disabled)
+.ui.checkbox:not(.disabled)
   input[type='checkbox']:checked
   ~ label:active:before,
-.orion-checkbox:not(.disabled)
+.ui.checkbox:not(.disabled)
   input[type='checkbox']:indeterminate
   ~ label:active:before {
   @apply bg-wave-700;
 }
 
-.orion-checkbox input[type='checkbox']:checked ~ label:after,
-.orion-checkbox input[type='checkbox']:indeterminate ~ label:after {
+.ui.checkbox input[type='checkbox']:checked ~ label:after,
+.ui.checkbox input[type='checkbox']:indeterminate ~ label:after {
   @apply absolute top-0 left-0 h-16 w-16;
   @apply flex items-center justify-center text-white;
   font-family: 'Material Icons';
 }
 
-.orion-checkbox input[type='checkbox']:checked ~ label:after {
+.ui.checkbox input[type='checkbox']:checked ~ label:after {
   content: '\E876';
 }
 
-.orion-checkbox input[type='checkbox']:indeterminate ~ label:after {
+.ui.checkbox input[type='checkbox']:indeterminate ~ label:after {
   content: '\E15B';
 }
 
@@ -65,14 +67,14 @@
  * Disabled
  */
 
-.orion-checkbox.disabled input[type='checkbox'] ~ label {
+.ui.checkbox.disabled input[type='checkbox'] ~ label {
   @apply text-gray-800;
 }
 
-.orion-checkbox.disabled input[type='checkbox'] ~ label:before {
+.ui.checkbox.disabled input[type='checkbox'] ~ label:before {
   @apply bg-gray-900-8;
 }
 
-.orion-checkbox.disabled input[type='checkbox'] ~ label:after {
+.ui.checkbox.disabled input[type='checkbox'] ~ label:after {
   @apply text-gray-800;
 }
