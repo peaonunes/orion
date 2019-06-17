@@ -1,44 +1,44 @@
-.input {
+.ui.input {
   @apply inline-flex relative;
 }
-.input > input {
+.ui.input > input {
   @apply h-48 pl-16 flex justify-center outline-none;
 }
 
-.input:not(.labeled) > input {
+.ui.input:not(.labeled) > input {
   @apply bg-white border border-gray-900-24 rounded;
 }
 
-.input > input::placeholder {
+.ui.input > input::placeholder {
   @apply text-gray-800 text-base opacity-100;
 }
 
-.input > input:disabled {
+.ui.input > input:disabled {
   @apply bg-gray-900-8;
 }
 
-.input > input:hover {
+.ui.input > input:not(:disabled):hover {
   @apply shadow-field-hover;
 }
 
-.input > input:active,
-.input > input:focus {
+.ui.input > input:not(:disabled):active,
+.ui.input > input:not(:disabled):focus {
   @apply shadow-field-focus;
 }
 
-.input.small > input {
+.ui.input.small > input {
   @apply h-32;
 }
 
-.input.error > input {
+.ui.input.error > input {
   @apply border-magenta-500;
 }
 
-.input.warning > input {
+.ui.input.warning > input {
   @apply border-yellow-500;
 }
 
-.input.fluid > input {
+.ui.input.fluid > input {
   @apply w-full;
 }
 
@@ -46,10 +46,10 @@
  * Icon
  */
 
-.input.icon > input {
+.ui.input.icon > input {
   @apply pr-40;
 }
 
-.input.icon > input ~ .icon {
+.ui.input.icon > input ~ .icon {
   @apply absolute right-0 w-40 h-full flex items-center justify-center;
 }
