@@ -1,3 +1,29 @@
-.orion-label > i.icon {
+.ui.label {
+  @apply inline-flex items-center px-8 bg-gray-900-8 rounded leading-20 text-gray-900 h-32;
+}
+
+.ui.label.small {
+  @apply h-24;
+}
+
+.ui.label > i.icon {
   @apply flex items-center mr-4;
+}
+
+/** Remove button **/
+
+.label-remove {
+  @apply h-24 w-24 flex items-center justify-center mr-4 rounded cursor-pointer text-gray-700 -ml-4;
+}
+
+.label-remove:hover {
+  @apply bg-gray-900-12;
+}
+
+.label-remove:active {
+  @apply bg-gray-900-16;
+}
+
+.ui.label.small .label-remove {
+  @apply -ml-8 rounded-r-none;
 }
