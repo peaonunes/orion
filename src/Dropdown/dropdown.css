@@ -1,49 +1,148 @@
-.orion-dropdown {
+.ui.dropdown {
+  @apply flex-wrap inline-flex items-center relative;
+  @apply cursor-pointer min-h-48 px-16 outline-none select-none;
   min-width: 256px;
 }
 
-.orion-dropdown.search input {
-  @apply absolute bg-transparent outline-none;
+.ui.dropdown.compact {
+  @apply min-w-0;
 }
 
-.orion-dropdown .text {
+.ui.dropdown.fluid {
+  @apply w-full;
+}
+
+.ui.dropdown.small {
+  @apply min-h-32;
+}
+
+.ui.dropdown .text {
   @apply text-gray-900 z-10;
 }
 
-.orion-dropdown .text.default {
+.ui.dropdown .text.default {
   @apply text-gray-800;
 }
 
-.orion-dropdown .menu {
-  @apply absolute hidden mt-8 shadow-200 left-0 w-full;
+.ui.dropdown .menu {
+  @apply absolute bg-white border border-gray-900-16 hidden mt-8 shadow-200 left-0 w-full;
   top: 100%;
+  min-width: max-content;
 }
 
-.orion-dropdown.active .menu {
+.ui.dropdown.active .menu {
   @apply block rounded;
 }
 
-.orion-dropdown.selection .menu > .item,
-.orion-dropdown.selection .menu > .message {
+.ui.dropdown .menu > .item,
+.ui.dropdown .menu > .message {
   @apply px-16 py-8;
 }
 
-.orion-dropdown.selection .menu > .item.active {
+.ui.dropdown .menu > .item.active {
   @apply font-medium;
 }
 
-.orion-dropdown.selection .menu > .item:hover {
+.ui.dropdown .menu > .item:hover {
   @apply bg-gray-900-4;
 }
 
-.orion-dropdown.selection.active .orion-dropdown__icon {
+.ui.dropdown.disabled {
+  @apply pointer-events-none cursor-default;
+}
+
+.ui.dropdown.selection.active .orion-dropdown__icon {
   transform: rotate(-180deg);
 }
 
-.orion-dropdown.multiple .orion-label {
+.orion-dropdown__icon {
+  @apply ml-auto -mr-8 transition-default;
+}
+
+/**
+ * Search
+ */
+
+.ui.dropdown.search {
+  @apply inline-flex cursor-text;
+}
+
+.ui.dropdown.search input {
+  @apply absolute bg-transparent outline-none;
+}
+
+.ui.dropdown.search.active input:focus + .text {
+  @apply text-gray-800;
+}
+
+/**
+ * Multiple
+ */
+
+.ui.dropdown.multiple .ui.label {
   @apply mr-8;
 }
 
-.orion-dropdown__icon {
-  @apply -mr-8 transition-default;
+.ui.dropdown.multiple.small > .ui.label {
+  @apply h-24 !important;
+}
+
+/**
+ * Search + Multiple
+ */
+
+.ui.dropdown.search.multiple {
+  @apply h-auto py-4;
+}
+
+.ui.dropdown.search.multiple > .ui.label {
+  @apply my-2;
+}
+
+.ui.dropdown.search.multiple > input {
+  @apply h-32 my-2 static w-32 max-w-full;
+}
+
+.ui.dropdown.search.multiple.small > input {
+  @apply h-24;
+}
+
+.ui.dropdown.search.multiple > .sizer {
+  @apply hidden p-2;
+}
+
+.ui.dropdown.search.multiple > .text {
+  @apply absolute;
+}
+
+/**
+ * Selection
+ */
+
+.ui.dropdown.selection {
+  @apply bg-white border border-gray-900-24 rounded;
+}
+
+.ui.dropdown.selection.disabled {
+  @apply bg-gray-900-8;
+}
+
+.ui.dropdown.selection:hover {
+  @apply shadow-field-hover;
+}
+
+.ui.dropdown.selection:focus {
+  @apply shadow-field-focus;
+}
+
+/**
+ * Validation
+ */
+
+.ui.dropdown.error {
+  @apply border-magenta-500;
+}
+
+.ui.dropdown.warning {
+  @apply border-yellow-500;
 }
