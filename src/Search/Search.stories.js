@@ -9,8 +9,7 @@ import {
 } from '@storybook/addon-knobs'
 
 import { Search } from '../'
-
-const sizeKnob = () => radios('size', { Default: '', Small: 'small' }, '')
+import { sizeKnob } from '../utils/stories'
 
 const developerOptions = [
   { title: 'Francisco Gileno', value: 1 },
