@@ -10,14 +10,13 @@ import {
 
 import { Button, Checkbox, Input, Dropdown, Form } from '../'
 
+import { sizeKnob } from '../utils/stories'
+
 const developerOptions = [
   { text: 'Francisco Gileno', value: 1 },
   { text: 'Rafael Nunes', value: 2 },
   { text: 'Maira Bello', value: 3 }
 ]
-
-const sizeKnob = () =>
-  radios('size', { Default: 'default', Small: 'small' }, 'default')
 
 storiesOf('Form', module)
   .addDecorator(withKnobs)

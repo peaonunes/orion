@@ -7,12 +7,9 @@ import { Form } from 'semantic-ui-react'
 import Input from '../../Input'
 import Dropdown from '../../Dropdown'
 
-const SemanticFormField = Form.Field
+import { Sizes, sizePropType } from '../../utils/sizes'
 
-const Sizes = {
-  DEFAULT: 'default',
-  SMALL: 'small'
-}
+const SemanticFormField = Form.Field
 
 const shouldHandleChange = (field, size) =>
   (field === Input || field === Dropdown) && size === Sizes.DEFAULT
@@ -65,7 +62,7 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
 Field.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  size: PropTypes.oneOf([Sizes.DEFAULT, Sizes.SMALL])
+  size: sizePropType
 }
 
 Field.defaultProps = {
