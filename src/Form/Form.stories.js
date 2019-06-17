@@ -27,7 +27,7 @@ storiesOf('Form', module)
         <Input
           fluid={boolean('Fluid', false)}
           id="fullName"
-          placeholder={text('Placholder Label', 'Enter your full name')}
+          placeholder={text('Input placholder', 'Enter your full name')}
           size={sizeKnob()}
         />
       </Form.Field>
@@ -38,7 +38,7 @@ storiesOf('Form', module)
           id="buddy"
           fluid={boolean('Fluid', false)}
           placeholder={text('Dropdown placeholder', 'Choose your buddy')}
-          options={object('Dropdown Options', developerOptions)}
+          options={object('Dropdown options', developerOptions)}
           size={sizeKnob()}
         />
       </Form.Field>
@@ -54,7 +54,7 @@ storiesOf('Form', module)
         fluid={boolean('Fluid', false)}
         id="fullname"
         label={text('Input label', 'Full Name')}
-        placeholder={text('Placholder Label', 'Enter your full name')}
+        placeholder={text('Input placholder', 'Enter your full name')}
         size={sizeKnob()}
       />
       <Form.Dropdown
@@ -63,7 +63,7 @@ storiesOf('Form', module)
         id="buddy"
         label={text('Dropdown label', 'Buddy')}
         placeholder={text('Dropdown placeholder', 'Choose your buddy')}
-        options={object('Dropdown Options', developerOptions)}
+        options={object('Dropdown options', developerOptions)}
         size={sizeKnob()}
       />
       <Form.Checkbox label="I agree to the Terms and Conditions" />
