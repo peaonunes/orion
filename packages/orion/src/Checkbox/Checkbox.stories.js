@@ -2,7 +2,7 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { boolean, text, withKnobs } from '@storybook/addon-knobs/react'
 
-import Checkbox from './'
+import { Checkbox } from '../'
 
 storiesOf('Checkbox', module)
   .addDecorator(withKnobs)
