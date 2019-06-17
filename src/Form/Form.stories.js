@@ -23,7 +23,7 @@ storiesOf('Form', module)
   .add('Subcomponents', () => (
     <Form>
       <Form.Field>
-        <label htmlFor="fullName">{text('Full name label', 'Full Name')}</label>
+        <label htmlFor="fullName">{text('Input label', 'Full Name')}</label>
         <Input
           fluid={boolean('Fluid', false)}
           id="fullName"
@@ -32,13 +32,13 @@ storiesOf('Form', module)
         />
       </Form.Field>
       <Form.Field>
-        <label htmlFor="buddy">{text('Buddy label', 'Buddy')}</label>
+        <label htmlFor="buddy">{text('Dropdown label', 'Buddy')}</label>
         <Dropdown
           selection
           id="buddy"
           fluid={boolean('Fluid', false)}
-          placeholder={text('Buddy placeholder', 'Choose your buddy')}
-          options={object('Buddy Options', developerOptions)}
+          placeholder={text('Dropdown placeholder', 'Choose your buddy')}
+          options={object('Dropdown Options', developerOptions)}
           size={sizeKnob()}
         />
       </Form.Field>
@@ -53,7 +53,7 @@ storiesOf('Form', module)
       <Form.Input
         fluid={boolean('Fluid', false)}
         id="fullname"
-        label={text('Full name label', 'Full Name')}
+        label={text('Input label', 'Full Name')}
         placeholder={text('Placholder Label', 'Enter your full name')}
         size={sizeKnob()}
       />
@@ -61,9 +61,9 @@ storiesOf('Form', module)
         selection
         fluid={boolean('Fluid', false)}
         id="buddy"
-        label={text('Buddy label', 'Buddy')}
-        placeholder={text('Buddy placeholder', 'Choose your buddy')}
-        options={object('Buddy Options', developerOptions)}
+        label={text('Dropdown label', 'Buddy')}
+        placeholder={text('Dropdown placeholder', 'Choose your buddy')}
+        options={object('Dropdown Options', developerOptions)}
         size={sizeKnob()}
       />
       <Form.Checkbox label="I agree to the Terms and Conditions" />
