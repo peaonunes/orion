@@ -15,5 +15,9 @@
 }
 
 .ui.message > .icon:not(.close) {
+  @apply pr-4;
+}
+
+.ui.message.header > .icon:not(.close) {
   @apply pr-16;
 }

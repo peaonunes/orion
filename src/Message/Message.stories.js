@@ -14,3 +14,11 @@ storiesOf('Message', module)
       warning={boolean('Warning', false)}
     />
   ))
+  .add('Inline', () => (
+    <Message
+      content={text('Content', 'Your account was created')}
+      error={boolean('Error', false)}
+      success={boolean('Success', false)}
+      warning={boolean('Warning', false)}
+    />
+  ))

@@ -6,10 +6,13 @@ import { Message as SemanticMessage } from 'semantic-ui-react'
 import Icon from '../Icon'
 
 const Message = ({ error, success, warning, className, ...otherProps }) => {
+  const { header } = otherProps
+
   const classes = cx(className, {
     error,
     success,
-    warning
+    warning,
+    header
   })
 
   const icon = warning ? (
