@@ -6,11 +6,7 @@ import { Label as SemanticLabel } from 'semantic-ui-react'
 
 import Icon from '../Icon'
 import { createShorthandFactory } from '../utils/factories'
-
-const Sizes = {
-  DEFAULT: 'default',
-  SMALL: 'small'
-}
+import { Sizes, sizePropType } from '../utils/sizes'
 
 const Label = ({
   children,
@@ -59,7 +55,7 @@ const Label = ({
 }
 
 Label.propTypes = {
-  size: PropTypes.oneOf([Sizes.DEFAULT, Sizes.SMALL])
+  size: sizePropType
 }
 
 Label.defaultProps = {

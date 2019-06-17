@@ -3,10 +3,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Dropdown as SemanticDropdown } from 'semantic-ui-react'
 
-const Sizes = {
-  DEFAULT: '',
-  SMALL: 'small'
-}
+import { Sizes, sizePropType } from '../utils/sizes'
 
 const DROPDOWN_ICON = {
   className: 'orion-dropdown__icon',
@@ -24,7 +21,7 @@ const Dropdown = ({ className, size, warning, ...otherProps }) => {
 }
 
 Dropdown.propTypes = {
-  size: PropTypes.oneOf([Sizes.DEFAULT, Sizes.SMALL]),
+  size: sizePropType,
   warning: PropTypes.bool
 }
 

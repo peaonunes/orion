@@ -1,11 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { boolean, radios, text, withKnobs } from '@storybook/addon-knobs'
+import { boolean, text, withKnobs } from '@storybook/addon-knobs'
 
 import Input from './'
-
-const sizeKnob = () =>
-  radios('size', { Default: 'default', Small: 'small' }, 'default')
+import { sizeKnob } from '../utils/stories'
 
 storiesOf('Input', module)
   .addDecorator(withKnobs)

@@ -9,9 +9,8 @@ import {
 } from '@storybook/addon-knobs'
 
 import Select from './'
-
-const sizeKnob = () =>
-  radios('size', { Default: '', Small: 'small' }, '', 'Size')
+import { Sizes } from '../utils/sizes'
+import { sizeKnob } from '../utils/stories'
 
 const developerOptions = [
   { text: 'Francisco Gileno', value: 1 },
@@ -29,7 +28,7 @@ storiesOf('Select', module)
         fluid={boolean('Fluid', false, 'Content')}
         search={boolean('Search', false, 'Type')}
         multiple={boolean('Multiple', false, 'Type')}
-        size={sizeKnob()}
+        size={sizeKnob(Sizes.DEFAULT, 'Size')}
         disabled={boolean('Disabled', false, 'State')}
         error={boolean('Error', false, 'State')}
         warning={boolean('Warning', false, 'State')}

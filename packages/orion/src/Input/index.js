@@ -5,11 +5,7 @@ import React from 'react'
 import { Input as SemanticInput } from 'semantic-ui-react'
 
 import { createShorthandFactory } from '../utils/factories'
-
-const Sizes = {
-  DEFAULT: 'default',
-  SMALL: 'small'
-}
+import { sizePropType } from '../utils/sizes'
 
 const Input = ({ className, warning, size, ...otherProps }) => {
   const { fluid } = otherProps
@@ -22,7 +18,7 @@ const Input = ({ className, warning, size, ...otherProps }) => {
 }
 
 Input.propTypes = {
-  size: PropTypes.oneOf([Sizes.DEFAULT, Sizes.SMALL]),
+  size: sizePropType,
   warning: PropTypes.bool
 }
 
