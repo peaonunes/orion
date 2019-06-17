@@ -9,7 +9,7 @@ import { sizePropType } from '../utils/sizes'
 
 const Input = ({ className, warning, size, ...otherProps }) => {
   const { fluid } = otherProps
-  const classes = cx(className, size, 'orion-input inline-flex relative', {
+  const classes = cx(className, size, {
     warning,
     'w-full': fluid
   })

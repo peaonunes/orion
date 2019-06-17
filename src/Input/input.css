@@ -1,41 +1,44 @@
-.orion-input > input {
+.ui.input {
+  @apply inline-flex relative;
+}
+.ui.input > input {
   @apply h-48 pl-16 flex justify-center outline-none;
 }
 
-.orion-input:not(.labeled) > input {
+.ui.input:not(.labeled) > input {
   @apply bg-white border border-gray-900-24 rounded;
 }
 
-.orion-input > input::placeholder {
+.ui.input > input::placeholder {
   @apply text-gray-800 text-base opacity-100;
 }
 
-.orion-input > input:disabled {
-  @apply bg-gray-900-8;
+.ui.input > input:disabled {
+  @apply bg-gray-900-8 pointer-events-none;
 }
 
-.orion-input > input:hover {
+.ui.input > input:hover {
   @apply shadow-field-hover;
 }
 
-.orion-input > input:active,
-.orion-input > input:focus {
+.ui.input > input:active,
+.ui.input > input:focus {
   @apply shadow-field-focus;
 }
 
-.orion-input.small > input {
+.ui.input.small > input {
   @apply h-32;
 }
 
-.orion-input.error > input {
+.ui.input.error > input {
   @apply border-magenta-500;
 }
 
-.orion-input.warning > input {
+.ui.input.warning > input {
   @apply border-yellow-500;
 }
 
-.orion-input.fluid > input {
+.ui.input.fluid > input {
   @apply w-full;
 }
 
@@ -43,10 +46,10 @@
  * Icon
  */
 
-.orion-input.icon > input {
+.ui.input.icon > input {
   @apply pr-40;
 }
 
-.orion-input.icon > input ~ .icon {
+.ui.input.icon > input ~ .icon {
   @apply absolute right-0 w-40 h-full flex items-center justify-center;
 }
