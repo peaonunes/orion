@@ -1,5 +1,12 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
+import {
+  boolean,
+  object,
+  text,
+  radios,
+  withKnobs
+} from '@storybook/addon-knobs'
 
 import { Button, Checkbox, Input, Dropdown, Form } from '../'
 
@@ -9,62 +16,56 @@ const developerOptions = [
   { text: 'Maira Bello', value: 3 }
 ]
 
+const sizeKnob = () =>
+  radios('size', { Default: 'default', Small: 'small' }, 'default')
+
 storiesOf('Form', module)
-  .add('Input', () => (
+  .addDecorator(withKnobs)
+  .add('Subcomponents', () => (
     <Form>
       <Form.Field>
-        <label htmlFor="one">Form Field with input</label>
-        <Input id="one" placeholder="First Name" />
+        <label htmlFor="fullName">{text('Full name label', 'Full Name')}</label>
+        <Input
+          fluid={boolean('Fluid', false)}
+          id="fullName"
+          placeholder={text('Placholder Label', 'Enter your full name')}
+          size={sizeKnob()}
+        />
       </Form.Field>
       <Form.Field>
-        <label>Form Field with small input</label>
-        <Input size="small" placeholder="First Name" />
+        <label htmlFor="buddy">{text('Buddy label', 'Buddy')}</label>
+        <Dropdown
+          id="buddy"
+          fluid={boolean('Fluid', false)}
+          placeholder={text('Buddy placeholder', 'Choose your buddy')}
+          options={object('Buddy Options', developerOptions)}
+          size={sizeKnob()}
+        />
       </Form.Field>
-
-      <Form.Input label="Form Input" />
-      <Form.Input label="Form Input" size="small" />
-
-      <Form.Field>
-        <label>Form Field with input and label</label>
-        <Input placeholder="Website" label="https://" />
-      </Form.Field>
-
       <Form.Field>
         <Checkbox label="I agree to the Terms and Conditions" />
       </Form.Field>
       <Button type="submit">Submit</Button>
     </Form>
   ))
-  .add('Dropdown', () => (
+  .add('Form shorthands', () => (
     <Form>
-      <Form.Field>
-        <label htmlFor="one">Form Field with dropdown</label>
-        <Dropdown
-          id="one"
-          placeholder="First Name"
-          options={developerOptions}
-        />
-      </Form.Field>
-      <Form.Field>
-        <label>Form Field with small dropdown</label>
-        <Dropdown
-          size="small"
-          placeholder="First Name"
-          options={developerOptions}
-        />
-      </Form.Field>
-
-      <Form.Dropdown label="Form Dropdown" options={developerOptions} />
-      <Form.Dropdown
-        label="Form Dropdown"
-        size="small"
-        options={developerOptions}
+      <Form.Input
+        fluid={boolean('Fluid', false)}
+        id="fullname"
+        label={text('Full name label', 'Full Name')}
+        placeholder={text('Placholder Label', 'Enter your full name')}
+        size={sizeKnob()}
       />
-
-      <Form.Field>
-        <label>Form Field with Dropdown and label</label>
-        <Dropdown placeholder="Website" label="https://" />
-      </Form.Field>
+      <Form.Dropdown
+        fluid={boolean('Fluid', false)}
+        id="buddy"
+        label={text('Buddy label', 'Buddy')}
+        placeholder={text('Buddy placeholder', 'Choose your buddy')}
+        options={object('Buddy Options', developerOptions)}
+        size={sizeKnob()}
+      />
+      <Form.Checkbox label="I agree to the Terms and Conditions" />
       <Button type="submit">Submit</Button>
     </Form>
   ))

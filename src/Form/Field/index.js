@@ -14,6 +14,9 @@ const Sizes = {
   SMALL: 'small'
 }
 
+const shouldHandleChange = (field, size) =>
+  (field === Input || field === Dropdown) && size === Sizes.DEFAULT
+
 const Field = ({ className, children, onChange, ...otherProps }) => {
   const { size, control } = otherProps
   const [controlFilled, setControlFilled] = React.useState(false)
@@ -24,18 +27,18 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
   }
 
   let finalChildren = children
-  let floatingLabel = false
   let controlOnChange = onChange
+  let floatingLabel = false
 
-  if ((control === Input || control === Dropdown) && size === Sizes.DEFAULT) {
-    floatingLabel = true
+  if (shouldHandleChange(control, size)) {
     controlOnChange = handleChange
+    floatingLabel = true
   }
 
   if (!_.isNil(children)) {
     finalChildren = React.Children.map(children, child => {
-      if (child.type === Input || child.type === Dropdown) {
-        if (child.props.size === Sizes.DEFAULT) floatingLabel = true
+      if (shouldHandleChange(child.type, child.props.size)) {
+        floatingLabel = true
         return React.cloneElement(child, {
           onChange: handleChange
         })
