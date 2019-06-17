@@ -14,15 +14,15 @@
 }
 
 .ui.input > input:disabled {
-  @apply bg-gray-900-8;
+  @apply bg-gray-900-8 pointer-events-none;
 }
 
-.ui.input > input:not(:disabled):hover {
+.ui.input > input:hover {
   @apply shadow-field-hover;
 }
 
-.ui.input > input:not(:disabled):active,
-.ui.input > input:not(:disabled):focus {
+.ui.input > input:active,
+.ui.input > input:focus {
   @apply shadow-field-focus;
 }
 
