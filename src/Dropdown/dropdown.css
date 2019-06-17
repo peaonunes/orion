@@ -1,16 +1,11 @@
 .ui.dropdown {
-  @apply inline-flex items-center justify-between relative outline-none h-48;
-  @apply border border-gray-900-24 px-16 rounded;
-  @apply bg-white cursor-pointer;
+  @apply inline-flex items-center justify-between relative;
+  @apply cursor-pointer h-48 px-16 outline-none select-none;
   min-width: 256px;
 }
 
-.ui.dropdown:hover {
-  @apply shadow-field-hover;
-}
-
-.ui.dropdownfocus {
-  @apply shadow-field-focus;
+.ui.dropdown.compact {
+  @apply min-w-0;
 }
 
 .ui.dropdown.fluid {
@@ -34,24 +29,25 @@
 }
 
 .ui.dropdown .menu {
-  @apply absolute hidden mt-8 shadow-200 left-0 w-full;
+  @apply absolute bg-white border border-gray-900-16 hidden mt-8 shadow-200 left-0 w-full;
   top: 100%;
+  min-width: max-content;
 }
 
 .ui.dropdown.active .menu {
   @apply block rounded;
 }
 
-.ui.dropdown.selection .menu > .item,
-.ui.dropdown.selection .menu > .message {
+.ui.dropdown .menu > .item,
+.ui.dropdown .menu > .message {
   @apply px-16 py-8;
 }
 
-.ui.dropdown.selection .menu > .item.active {
+.ui.dropdown .menu > .item.active {
   @apply font-medium;
 }
 
-.ui.dropdown.selection .menu > .item:hover {
+.ui.dropdown .menu > .item:hover {
   @apply bg-gray-900-4;
 }
 
@@ -68,7 +64,27 @@
 }
 
 .ui.dropdown.disabled {
-  @apply bg-gray-900-8 pointer-events-none cursor-default;
+  @apply pointer-events-none cursor-default;
+}
+
+/**
+ * Selection
+ */
+
+.ui.dropdown.selection {
+  @apply bg-white border border-gray-900-24 rounded;
+}
+
+.ui.dropdown.selection.disabled {
+  @apply bg-gray-900-8;
+}
+
+.ui.dropdown.selection:hover {
+  @apply shadow-field-hover;
+}
+
+.ui.dropdown.selection:focus {
+  @apply shadow-field-focus;
 }
 
 /**
