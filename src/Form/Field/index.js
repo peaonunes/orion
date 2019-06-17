@@ -52,8 +52,6 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
     floatingLabel
   })
 
-  console.log(floatingLabel)
-
   return (
     <SemanticFormField
       {...otherProps}
