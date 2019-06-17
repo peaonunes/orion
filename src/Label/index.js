@@ -18,9 +18,7 @@ const Label = ({
   if (onRemove) {
     children = (
       <React.Fragment>
-        <div
-          className="orion-label__remove"
-          onClick={e => onRemove(e, otherProps)}>
+        <div className="label-remove" onClick={e => onRemove(e, otherProps)}>
           <Icon name="clear" size="big" />
         </div>
         {children || content}

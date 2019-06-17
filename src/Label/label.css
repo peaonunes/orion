@@ -12,18 +12,18 @@
 
 /** Remove button **/
 
-.orion-label__remove {
+.label-remove {
   @apply h-24 w-24 flex items-center justify-center mr-4 rounded cursor-pointer text-gray-700 -ml-4;
 }
 
-.orion-label__remove:hover {
+.label-remove:hover {
   @apply bg-gray-900-12;
 }
 
-.orion-label__remove:active {
+.label-remove:active {
   @apply bg-gray-900-16;
 }
 
-.ui.label.small .orion-label__remove {
+.ui.label.small .label-remove {
   @apply -ml-8 rounded-r-none;
 }
