@@ -1,12 +1,119 @@
-.orion-button > .icon {
+.ui.button {
+  @apply h-40 rounded-full font-default outline-none inline-flex items-center transition-default;
+  transition-property: background-color, opacity;
+}
+
+.ui.button > .icon {
   @apply flex items-center;
 }
 
-.orion-button:not(.icon) > .icon {
+.ui.button:not(.icon):not(.subtle) {
+  @apply px-24;
+}
+
+/* Icon only */
+
+.ui.button.icon {
+  @apply justify-center p-0 w-40;
+}
+
+.ui.button.icon:hover,
+.ui.button.icon:focus {
+  @apply bg-gray-900-8;
+}
+
+.ui.button.icon:active {
+  @apply bg-gray-900-12;
+}
+
+.ui.button:not(.icon) > .icon {
   @apply mr-8;
   vertical-align: sub;
 }
 
-.orion-button.transition-default {
-  transition-property: background-color, opacity;
+/* Disabled */
+
+.ui.button.disabled {
+  @apply opacity-40 pointer-events-none;
+}
+
+/* Primary */
+
+.ui.button.primary {
+  @apply bg-wave-500 text-white;
+}
+
+.ui.button.primary:hover,
+.ui.button.primary:focus {
+  @apply bg-wave-600;
+}
+
+.ui.button.primary:active {
+  @apply bg-wave-700;
+}
+
+/* Secondary */
+
+.ui.button.secondary {
+  @apply bg-gray-900-8 text-gray-900;
+}
+
+.ui.button.secondary:hover,
+.ui.button.secondary:focus {
+  @apply bg-gray-900-12;
+}
+
+.ui.button.secondary:active {
+  @apply bg-gray-900-16;
+}
+
+/* Subtle */
+
+.ui.button.subtle {
+  @apply bg-transparent;
+}
+
+/* Subtle Primary */
+
+.ui.button.subtle.primary {
+  @apply text-wave-500;
+}
+
+.ui.button.subtle.primary:hover,
+.ui.button.subtle.primary:focus {
+  @apply bg-transparent text-wave-600;
+}
+
+.ui.button.subtle.primary:active {
+  @apply bg-transparent text-wave-700;
+}
+
+/* Subtle Secondary */
+
+.ui.button.subtle.secondary {
+  @apply text-gray-700;
+}
+
+.ui.button.subtle.secondary:hover,
+.ui.button.subtle.secondary:focus {
+  @apply bg-transparent text-gray-800;
+}
+
+.ui.button.subtle.secondary:active {
+  @apply bg-transparent text-gray-900;
+}
+
+/* Ghost */
+
+.ui.button.ghost {
+  @apply bg-white text-wave-500 border border-wave-500;
+}
+
+.ui.button.ghost:hover,
+.ui.button.ghost:focus {
+  @apply bg-wave-500-8;
+}
+
+.ui.button.ghost:active {
+  @apply bg-wave-500-16;
 }
