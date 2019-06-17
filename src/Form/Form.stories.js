@@ -34,6 +34,7 @@ storiesOf('Form', module)
       <Form.Field>
         <label htmlFor="buddy">{text('Buddy label', 'Buddy')}</label>
         <Dropdown
+          selection
           id="buddy"
           fluid={boolean('Fluid', false)}
           placeholder={text('Buddy placeholder', 'Choose your buddy')}

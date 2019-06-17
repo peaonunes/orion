@@ -5,7 +5,7 @@ import React from 'react'
 import { Input as SemanticInput } from 'semantic-ui-react'
 
 import { createShorthandFactory } from '../utils/factories'
-import { sizePropType } from '../utils/sizes'
+import { Sizes, sizePropType } from '../utils/sizes'
 
 const Input = ({ className, warning, size, ...otherProps }) => {
   const { fluid } = otherProps
