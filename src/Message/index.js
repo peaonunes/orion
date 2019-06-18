@@ -5,7 +5,14 @@ import { Message as SemanticMessage } from 'semantic-ui-react'
 
 import Icon from '../Icon'
 
-const Message = ({ error, success, warning, className, ...otherProps }) => {
+const Message = ({
+  error,
+  success,
+  warning,
+  className,
+  onDismiss,
+  ...otherProps
+}) => {
   const { header } = otherProps
 
   const classes = cx(className, {
@@ -23,7 +30,20 @@ const Message = ({ error, success, warning, className, ...otherProps }) => {
     <Icon name="check" className="text-green-500" />
   )
 
-  return <SemanticMessage icon={icon} className={classes} {...otherProps} />
+  const dismissIcon = onDismiss && (
+    <Icon
+      name="close"
+      className="orion-message__close-icon"
+      onClick={onDismiss}
+    />
+  )
+
+  return (
+    <div className="orion-message">
+      {dismissIcon}
+      <SemanticMessage icon={icon} className={classes} {...otherProps} />
+    </div>
+  )
 }
 
 Message.propTypes = {
