@@ -18,6 +18,16 @@
   @apply pr-4;
 }
 
-.ui.message.header > .icon:not(.close) {
+.ui.message.header > .icon {
   @apply pr-16;
+}
+
+.orion-message {
+  @apply relative;
+  max-width: 600px;
+}
+
+.orion-message__close-icon {
+  @apply absolute right-0 cursor-pointer p-16 text-gray-700;
+  top: calc(50% - 26px);
 }
