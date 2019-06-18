@@ -2,11 +2,11 @@ import React from 'react'
 
 const Logo = () => (
   <svg width="88px" height="24px" viewBox="0 0 88 24">
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         transform="translate(-144.000000, -32.000000)"
         fill="#031D30"
-        fill-rule="nonzero">
+        fillRule="nonzero">
         <g transform="translate(144.000000, 32.000000)">
           <g transform="translate(25.635854, 1.964194)">
             <path
