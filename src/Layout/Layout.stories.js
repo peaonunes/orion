@@ -12,7 +12,10 @@ storiesOf('Layout', module)
         <Dropdown
           className="ml-auto"
           text="Maira Bello"
-          options={[{ text: 'Account' }, { text: 'Logout' }]}
+          options={[
+            { text: 'Account', value: 1 },
+            { text: 'Logout', value: 2 }
+          ]}
           compact
           size="small"
         />
