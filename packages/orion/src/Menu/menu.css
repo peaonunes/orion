@@ -1,0 +1,31 @@
+.ui.menu {
+  @apply flex;
+}
+
+.ui.menu .item {
+  @apply cursor-pointer flex items-center ml-40 text-base text-gray-800;
+}
+
+.ui.menu .item:hover {
+  @apply text-gray-900;
+}
+
+.ui.menu .item:first-child {
+  @apply ml-0;
+}
+
+.ui.menu .item > .icon {
+  @apply mr-4;
+}
+
+.ui.menu .item.active {
+  @apply font-medium text-space-900;
+}
+
+.ui.menu .item.right {
+  @apply ml-auto;
+}
+
+.ui.menu .menu.right {
+  @apply flex ml-auto;
+}

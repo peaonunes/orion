@@ -12,6 +12,10 @@
   max-width: 1024px;
 }
 
+.ui.layout .layout-topbar-content .ui.menu {
+  @apply flex-1 ml-40;
+}
+
 .ui.layout .layout-main {
   @apply flex flex-1 justify-center py-24 w-full;
 }
