@@ -9,16 +9,15 @@
   ],
   "main": "./dist/index.js",
   "scripts": {
-    "build:css": "gulp",
-    "build:storybook": "yarn build:css && build-storybook -o .out -s public",
-    "deploy:storybook": "yarn build:storybook && storybook-to-ghpages",
+    "build": "gulp",
+    "watch": "gulp watch",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepublishOnly": "npm run build:css && npm run build",
-    "postpublish": "yarn deploy:storybook",
-    "build": "babel ./src -d ./dist",
+    "build:storybook": "yarn build && build-storybook -o .out -s public",
     "storybook": "start-storybook -p 9001 -s public",
-    "watch": "gulp watch"
+    "deploy:storybook": "yarn build:storybook && storybook-to-ghpages",
+    "prepublishOnly": "yarn build",
+    "postpublish": "yarn deploy:storybook"
   },
   "repository": {
     "type": "git",
@@ -32,10 +31,9 @@
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
-    "semantic-ui-react": "^0.87.1"
+    "semantic-ui-react": "^0.87.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
@@ -44,12 +42,14 @@
     "@storybook/addon-actions": "^5.1.8",
     "@storybook/addon-knobs": "^5.1.8",
     "@storybook/addons": "^5.1.8",
-    "@storybook/react": "^5.1.7",
+    "@storybook/react": "^5.1.8",
     "@testing-library/react": "^8.0.1",
     "autoprefixer": "^9.6.0",
     "babel-loader": "^8.0.6",
     "cssnano": "^4.1.10",
+    "del": "^4.1.1",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",
     "husky": "^2.4.1",
