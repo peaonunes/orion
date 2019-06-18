@@ -8,9 +8,15 @@
 }
 
 .ui.layout .layout-topbar-content {
-  @apply flex w-2/3;
+  @apply flex mx-24 w-full;
+  max-width: 1024px;
 }
 
 .ui.layout .layout-main {
-  @apply flex-1 py-24 w-2/3;
+  @apply flex flex-1 justify-center py-24 w-full;
+}
+
+.ui.layout .layout-main-content {
+  @apply mx-24 w-full;
+  max-width: 1024px;
 }

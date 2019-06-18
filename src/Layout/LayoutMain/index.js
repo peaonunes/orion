@@ -7,7 +7,7 @@ const LayoutMain = ({ className, children, ...otherProps }) => {
   const classes = cx('layout-main', className)
   return (
     <main className={classes} {...otherProps}>
-      {children}
+      <div className="layout-main-content">{children}</div>
     </main>
   )
 }
