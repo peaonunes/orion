@@ -39,7 +39,7 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
         return React.cloneElement(child, {
           onChange: (e, data) => {
             setControlFilled(!!data.value)
-            if (child.props.onChange) child.propsOnChange(e, data)
+            if (child.props.onChange) child.props.onChange(e, data)
           }
         })
       }

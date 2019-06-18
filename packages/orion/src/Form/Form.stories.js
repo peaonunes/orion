@@ -1,15 +1,9 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import {
-  boolean,
-  object,
-  text,
-  radios,
-  withKnobs
-} from '@storybook/addon-knobs'
+import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
+import { action } from '@storybook/addon-actions'
 
 import { Button, Checkbox, Input, Dropdown, Form } from '../'
-
 import { sizeKnob } from '../utils/stories'
 
 const developerOptions = [
@@ -29,6 +23,7 @@ storiesOf('Form', module)
           id="fullName"
           placeholder={text('Input placholder', 'Enter your full name')}
           size={sizeKnob()}
+          onChange={action('onChange')}
         />
       </Form.Field>
       <Form.Field>
@@ -56,6 +51,7 @@ storiesOf('Form', module)
         label={text('Input label', 'Full Name')}
         placeholder={text('Input placholder', 'Enter your full name')}
         size={sizeKnob()}
+        onChange={action('onChange')}
       />
       <Form.Dropdown
         selection
