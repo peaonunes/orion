@@ -1,0 +1,33 @@
+.ui.dropdown.filter {
+  @apply bg-white border border-gray-900-24 items-stretch px-0 rounded transition-default;
+  transition-property: background-color, color;
+}
+
+.ui.dropdown.filter > .filter-trigger:hover {
+  @apply bg-gray-900-8;
+}
+
+.ui.dropdown.filter.active,
+.ui.dropdown.filter.selected {
+  @apply bg-space-100;
+}
+
+.ui.dropdown.filter.selected:hover {
+  @apply bg-space-200;
+}
+
+.ui.dropdown.filter > .filter-trigger {
+  @apply flex items-center px-16 text-gray-800;
+}
+
+.ui.dropdown.filter > .menu {
+  @apply cursor-default;
+}
+
+.ui.dropdown.filter .filter-content {
+  @apply p-24;
+}
+
+.ui.dropdown.filter .filter-buttons {
+  @apply flex justify-between m-4 px-16 pb-16;
+}
