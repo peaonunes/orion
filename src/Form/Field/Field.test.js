@@ -21,7 +21,7 @@ describe('when the fields are passed as child', () => {
     )
 
     const formField = getFormField(container)
-    expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
+    expect(formField).toHaveClass(floatingLabelCssClass)
   })
 
   it('should have a floating label when the child is a Dropdown and the size is default', () => {
@@ -33,7 +33,7 @@ describe('when the fields are passed as child', () => {
     )
 
     const formField = getFormField(container)
-    expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
+    expect(formField).toHaveClass(floatingLabelCssClass)
   })
 
   it('should not have a floating label when the child is an Input and the size is small', () => {
@@ -78,7 +78,7 @@ describe('when the fields are passed as control', () => {
     )
 
     const formField = getFormField(container)
-    expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
+    expect(formField).toHaveClass(floatingLabelCssClass)
   })
 
   it('should have a floating label when the control is a Dropdown and the size is default', () => {
@@ -87,7 +87,7 @@ describe('when the fields are passed as control', () => {
     )
 
     const formField = getFormField(container)
-    expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
+    expect(formField).toHaveClass(floatingLabelCssClass)
   })
 
   it('should not have a floating label when the control is a Dropdown and the size is small', () => {
