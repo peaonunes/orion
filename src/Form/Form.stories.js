@@ -23,6 +23,7 @@ storiesOf('Form', module)
           id="fullName"
           placeholder={text('Input placholder', 'Enter your full name')}
           size={sizeKnob()}
+          warning={boolean('Warning', false)}
           onChange={action('onChange')}
         />
       </Form.Field>
@@ -34,6 +35,7 @@ storiesOf('Form', module)
           fluid={boolean('Fluid', false)}
           placeholder={text('Dropdown placeholder', 'Choose your buddy')}
           options={object('Dropdown options', developerOptions)}
+          warning={boolean('Warning', false)}
           size={sizeKnob()}
         />
       </Form.Field>
@@ -54,6 +56,7 @@ storiesOf('Form', module)
         message={text('Message', '')}
         placeholder={text('Input placholder', 'Enter your full name')}
         size={sizeKnob()}
+        warning={boolean('Warning', false)}
         onChange={action('onChange')}
       />
       <Form.Dropdown
@@ -64,6 +67,7 @@ storiesOf('Form', module)
         message={text('Message', '')}
         placeholder={text('Dropdown placeholder', 'Choose your buddy')}
         options={object('Dropdown options', developerOptions)}
+        warning={boolean('Warning', false)}
         size={sizeKnob()}
       />
       <Form.Checkbox

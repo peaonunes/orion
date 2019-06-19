@@ -9,6 +9,8 @@ const placeholder = 'Enter your full name'
 
 const floatingLabelCssClass = 'floatingLabel'
 
+const getFormField = container => container.querySelector('.field')
+
 describe('when the fields are passed as child', () => {
   it('should have a floating label when the child is an Input and the size is default', () => {
     const { container } = render(
@@ -18,7 +20,7 @@ describe('when the fields are passed as child', () => {
       </Form.Field>
     )
 
-    const formField = container.firstChild.firstChild
+    const formField = getFormField(container)
     expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
   })
 
@@ -30,7 +32,7 @@ describe('when the fields are passed as child', () => {
       </Form.Field>
     )
 
-    const formField = container.firstChild.firstChild
+    const formField = getFormField(container)
     expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
   })
 
@@ -42,7 +44,7 @@ describe('when the fields are passed as child', () => {
       </Form.Field>
     )
 
-    const formField = container.firstChild.firstChild
+    const formField = getFormField(container)
     expect(formField.classList.contains(floatingLabelCssClass)).toBeFalsy()
   })
 
@@ -75,7 +77,7 @@ describe('when the fields are passed as control', () => {
       <Form.Input label={label} placeholder={placeholder} />
     )
 
-    const formField = container.firstChild.firstChild
+    const formField = getFormField(container)
     expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
   })
 
@@ -84,7 +86,7 @@ describe('when the fields are passed as control', () => {
       <Form.Dropdown label={label} placeholder={placeholder} />
     )
 
-    const formField = container.firstChild.firstChild
+    const formField = getFormField(container)
     expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
   })
 
@@ -93,7 +95,7 @@ describe('when the fields are passed as control', () => {
       <Form.Dropdown label={label} size="small" placeholder={placeholder} />
     )
 
-    const formField = container.firstChild.firstChild
+    const formField = getFormField(container)
     expect(formField.classList.contains(floatingLabelCssClass)).toBeFalsy()
   })
 

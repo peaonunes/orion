@@ -43,3 +43,7 @@
 .orion-form-field__message {
   @apply mt-4 text-sm text-magenta-600;
 }
+
+.orion-form-field__message--warning {
+  @apply text-yellow-500;
+}
