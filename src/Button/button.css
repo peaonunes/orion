@@ -1,6 +1,10 @@
 .ui.button {
-  @apply h-40 rounded-full font-default outline-none inline-flex items-center transition-default;
+  @apply h-40 rounded-full text-base font-default outline-none inline-flex items-center transition-default;
   transition-property: background-color, opacity;
+}
+
+.ui.button.fluid {
+  @apply w-full justify-center;
 }
 
 .ui.button > .icon {

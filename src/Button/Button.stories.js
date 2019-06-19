@@ -15,6 +15,7 @@ storiesOf('Button', module)
     return (
       <React.Fragment>
         <Button
+          fluid={boolean('fluid', false)}
           primary
           content={text('content', 'Click Me')}
           disabled={disabled}
@@ -24,6 +25,7 @@ storiesOf('Button', module)
         <br />
         <br />
         <Button
+          fluid={boolean('fluid', false)}
           primary
           disabled={disabled}
           icon={text('icon', 'cloud')}
@@ -37,6 +39,7 @@ storiesOf('Button', module)
     return (
       <React.Fragment>
         <Button
+          fluid={boolean('fluid', false)}
           secondary
           content={text('content', 'Click Me')}
           disabled={disabled}
@@ -46,6 +49,7 @@ storiesOf('Button', module)
         <br />
         <br />
         <Button
+          fluid={boolean('fluid', false)}
           secondary
           disabled={disabled}
           icon={text('icon', 'cloud')}
@@ -59,6 +63,7 @@ storiesOf('Button', module)
     return (
       <React.Fragment>
         <Button
+          fluid={boolean('fluid', false)}
           ghost
           content={text('content', 'Click Me')}
           disabled={disabled}
@@ -68,6 +73,7 @@ storiesOf('Button', module)
         <br />
         <br />
         <Button
+          fluid={boolean('fluid', false)}
           ghost
           disabled={disabled}
           icon={text('icon', 'cloud')}
@@ -81,6 +87,7 @@ storiesOf('Button', module)
     return (
       <React.Fragment>
         <Button
+          fluid={boolean('fluid', false)}
           primary
           subtle
           content={text('content', 'Click Me')}
@@ -91,6 +98,7 @@ storiesOf('Button', module)
         <br />
         <br />
         <Button
+          fluid={boolean('fluid', false)}
           primary
           subtle
           disabled={disabled}
@@ -105,6 +113,7 @@ storiesOf('Button', module)
     return (
       <React.Fragment>
         <Button
+          fluid={boolean('fluid', false)}
           secondary
           subtle
           content={text('content', 'Click Me')}
@@ -115,6 +124,7 @@ storiesOf('Button', module)
         <br />
         <br />
         <Button
+          fluid={boolean('fluid', false)}
           secondary
           subtle
           disabled={disabled}
