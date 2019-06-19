@@ -14,7 +14,7 @@ const SemanticFormField = Form.Field
 const shouldHaveFloatingLabel = (field, size) =>
   (field === Input || field === Dropdown) && size === Sizes.DEFAULT
 
-const Field = ({ className, children, onChange, ...otherProps }) => {
+const Field = ({ className, children, message, onChange, ...otherProps }) => {
   const { size, control } = otherProps
   const [controlFilled, setControlFilled] = React.useState(false)
 
@@ -26,6 +26,7 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
   let finalChildren = children
   let finalOnChange = onChange
   let floatingLabel = false
+  let warning = otherProps.warning
 
   if (shouldHaveFloatingLabel(control, size)) {
     finalOnChange = handleChange
@@ -36,6 +37,7 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
     finalChildren = React.Children.map(children, child => {
       if (shouldHaveFloatingLabel(child.type, child.props.size)) {
         floatingLabel = true
+        warning = child.props.warning
         return React.cloneElement(child, {
           onChange: (e, data) => {
             setControlFilled(!!data.value)
@@ -52,19 +54,27 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
     floatingLabel
   })
 
+  const messageClasses = cx('orion-form-field__message', {
+    'orion-form-field__message--warning': warning
+  })
   return (
-    <SemanticFormField
-      {...otherProps}
-      className={classes}
-      children={finalChildren}
-      onChange={finalOnChange}
-    />
+    <div className="orion-form-field">
+      <SemanticFormField
+        error={!!message && !warning}
+        {...otherProps}
+        className={classes}
+        children={finalChildren}
+        onChange={finalOnChange}
+      />
+      {message && <div className={messageClasses}>{message}</div>}
+    </div>
   )
 }
 
 Field.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  message: PropTypes.string,
   size: sizePropType
 }
 

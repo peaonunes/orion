@@ -16,17 +16,18 @@ storiesOf('Form', module)
   .addDecorator(withKnobs)
   .add('Subcomponents', () => (
     <Form>
-      <Form.Field>
+      <Form.Field message={text('Message', '')}>
         <label htmlFor="fullName">{text('Input label', 'Full Name')}</label>
         <Input
           fluid={boolean('Fluid', false)}
           id="fullName"
           placeholder={text('Input placholder', 'Enter your full name')}
           size={sizeKnob()}
+          warning={boolean('Warning', false)}
           onChange={action('onChange')}
         />
       </Form.Field>
-      <Form.Field>
+      <Form.Field message={text('Message', '')}>
         <label htmlFor="buddy">{text('Dropdown label', 'Buddy')}</label>
         <Dropdown
           selection
@@ -34,13 +35,16 @@ storiesOf('Form', module)
           fluid={boolean('Fluid', false)}
           placeholder={text('Dropdown placeholder', 'Choose your buddy')}
           options={object('Dropdown options', developerOptions)}
+          warning={boolean('Warning', false)}
           size={sizeKnob()}
         />
       </Form.Field>
-      <Form.Field>
+      <Form.Field message={text('Message', '')}>
         <Checkbox label="I agree to the Terms and Conditions" />
       </Form.Field>
-      <Button type="submit">Submit</Button>
+      <Button type="submit" primary>
+        Submit
+      </Button>
     </Form>
   ))
   .add('Form shorthands', () => (
@@ -49,8 +53,10 @@ storiesOf('Form', module)
         fluid={boolean('Fluid', false)}
         id="fullname"
         label={text('Input label', 'Full Name')}
+        message={text('Message', '')}
         placeholder={text('Input placholder', 'Enter your full name')}
         size={sizeKnob()}
+        warning={boolean('Warning', false)}
         onChange={action('onChange')}
       />
       <Form.Dropdown
@@ -58,11 +64,18 @@ storiesOf('Form', module)
         fluid={boolean('Fluid', false)}
         id="buddy"
         label={text('Dropdown label', 'Buddy')}
+        message={text('Message', '')}
         placeholder={text('Dropdown placeholder', 'Choose your buddy')}
         options={object('Dropdown options', developerOptions)}
+        warning={boolean('Warning', false)}
         size={sizeKnob()}
       />
-      <Form.Checkbox label="I agree to the Terms and Conditions" />
-      <Button type="submit">Submit</Button>
+      <Form.Checkbox
+        label="I agree to the Terms and Conditions"
+        message={text('Message', '')}
+      />
+      <Button type="submit" primary>
+        Submit
+      </Button>
     </Form>
   ))
