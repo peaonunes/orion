@@ -1,5 +1,5 @@
 .ui.message {
-  @apply border-1 border-green-500 rounded bg-green-50 p-16 shadow-400 text-base font-light flex items-center;
+  @apply border-1 border-green-500 rounded bg-green-50 p-16 shadow-400 text-base flex items-center;
 }
 
 .ui.message .header {
