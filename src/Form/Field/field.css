@@ -5,6 +5,7 @@
 /* Floated label */
 .ui.form .field.floatingLabel label {
   @apply absolute border-l-1 top-0 block .cursor-text ml-16 text-gray-800 text-base transition-default z-10;
+  transition-property: margin-top, font-size;
   border-color: transparent !important;
   margin-top: 12px;
 }
@@ -21,7 +22,14 @@
 
 .ui.form .field.floatingLabel .dropdown .default.text,
 .ui.form .field.floatingLabel input::placeholder {
+  @apply transition-default;
+  transition-property: color;
   color: transparent;
+}
+
+.ui.form .field.floatingLabel:focus-within .dropdown .default.text,
+.ui.form .field.floatingLabel:focus-within input::placeholder {
+  @apply text-gray-800;
 }
 
 /* Outside label */
