@@ -6,12 +6,12 @@
 .ui.form > .field.floatingLabel label {
   @apply absolute border-l-1 top-0 block .cursor-text ml-16 text-gray-800 text-base transition-default z-10;
   border-color: transparent !important;
-  margin-top: 14px;
+  margin-top: 17px;
 }
 
 .ui.form > .field.floatingLabel.filled label,
 .ui.form > .field.floatingLabel:focus-within label {
-  @apply mt-4;
+  @apply mt-4 text-sm;
 }
 
 .ui.form > .field.floatingLabel .dropdown .text,
