@@ -9,10 +9,6 @@
   @apply bg-white border border-gray-900-24 rounded;
 }
 
-.ui.input > input::placeholder {
-  @apply text-gray-800 text-base opacity-100;
-}
-
 .ui.input > input:disabled {
   @apply bg-gray-900-8 pointer-events-none;
 }
