@@ -1,33 +1,26 @@
-.ui.dropdown.filter {
-  @apply bg-white border border-gray-900-24 items-stretch px-0 rounded transition-default;
+.filter-trigger {
+  @apply bg-white border border-gray-900-24 cursor-pointer rounded transition-default;
+  @apply inline-flex h-32 items-center px-16 text-gray-800;
   transition-property: background-color, color;
 }
 
-.ui.dropdown.filter > .filter-trigger:hover {
+.filter-trigger:hover {
   @apply bg-gray-900-8;
 }
 
-.ui.dropdown.filter.active,
-.ui.dropdown.filter.selected {
+.filter-trigger.active,
+.filter-trigger.selected {
   @apply bg-space-100;
 }
 
-.ui.dropdown.filter.selected:hover {
+.filter-trigger.selected:hover {
   @apply bg-space-200;
 }
 
-.ui.dropdown.filter > .filter-trigger {
-  @apply flex items-center px-16 text-gray-800;
+.ui.popup.filter .filter-content {
+  @apply p-8;
 }
 
-.ui.dropdown.filter > .menu {
-  @apply cursor-default;
-}
-
-.ui.dropdown.filter .filter-content {
-  @apply p-24;
-}
-
-.ui.dropdown.filter .filter-buttons {
-  @apply flex justify-between m-4 px-16 pb-16;
+.ui.popup.filter .filter-buttons {
+  @apply flex justify-between;
 }

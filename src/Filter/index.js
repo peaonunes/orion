@@ -5,7 +5,7 @@ import isNil from 'lodash/isNil'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
-import { Button, ClickOutside, Dropdown } from '../'
+import { Button, ClickOutside, Popup } from '../'
 
 const Filter = ({
   applyButton,
@@ -42,51 +42,50 @@ const Filter = ({
     onClear && onClear()
   }
 
+  const triggerClasses = cx('filter-trigger', {
+    active: open,
+    selected: isSelected
+  })
   const trigger = (
-    <div className="filter-trigger" onClick={() => setOpen(!open)}>
+    <div className={triggerClasses} onClick={() => setOpen(!open)}>
       {isSelected ? selectedText(value) : text}
     </div>
   )
 
   return (
-    <ClickOutside onClickOutside={handleApply}>
-      <Dropdown
-        className={cx(className, 'ui filter', { selected: isSelected })}
-        data-testid="dropdown"
-        compact
-        icon={null}
-        size="small"
-        trigger={trigger}
-        open={open}
-        {...otherProps}>
-        <Dropdown.Menu>
-          <div className="filter-content">
-            {open && children({ onChange: setLocalValue, value: localValue })}
-          </div>
-          <div className="filter-buttons">
-            <div className={cx({ invisible: isPristine })}>
-              {Button.create(clearButton, {
-                autoGenerateKey: false,
-                defaultProps: {
-                  subtle: true,
-                  type: 'button',
-                  onClick: handleClear
-                }
-              })}
-            </div>
-            {Button.create(applyButton, {
+    <Popup
+      className={cx(className, 'ui filter')}
+      basic
+      trigger={trigger}
+      open={open}
+      {...otherProps}>
+      <ClickOutside onClickOutside={handleApply}>
+        <div className="filter-content">
+          {open && children({ onChange: setLocalValue, value: localValue })}
+        </div>
+        <div className="filter-buttons">
+          <div className={cx({ invisible: isPristine })}>
+            {Button.create(clearButton, {
               autoGenerateKey: false,
               defaultProps: {
-                primary: true,
                 subtle: true,
-                type: 'submit',
-                onClick: handleApply
+                type: 'button',
+                onClick: handleClear
               }
             })}
           </div>
-        </Dropdown.Menu>
-      </Dropdown>
-    </ClickOutside>
+          {Button.create(applyButton, {
+            autoGenerateKey: false,
+            defaultProps: {
+              primary: true,
+              subtle: true,
+              type: 'submit',
+              onClick: handleApply
+            }
+          })}
+        </div>
+      </ClickOutside>
+    </Popup>
   )
 }
 

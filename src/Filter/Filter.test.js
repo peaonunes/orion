@@ -11,17 +11,15 @@ const childFn = ({ onChange, value }) => (
   />
 )
 
-it('should open/close the dropdown when the trigger is clicked', () => {
+it('should open/close the popup when the trigger is clicked', () => {
   const triggerText = 'Open'
-  const { getByTestId, getByText } = render(
-    <Filter text={triggerText}>{childFn}</Filter>
-  )
+  const { getByText } = render(<Filter text={triggerText}>{childFn}</Filter>)
 
   fireEvent.click(getByText(triggerText))
-  expect(getByTestId('dropdown')).toHaveClass('active')
+  expect(getByText(triggerText)).toHaveClass('active')
 
   fireEvent.click(getByText(triggerText))
-  expect(getByTestId('dropdown')).not.toHaveClass('active')
+  expect(getByText(triggerText)).not.toHaveClass('active')
 })
 
 describe('when an initial value is given', () => {
@@ -108,7 +106,7 @@ describe("when the filter's value changes", () => {
     )
     const { getByPlaceholderText, getByText } = renderResult
 
-    // Open the dropdown.
+    // Open the popup.
     fireEvent.click(getByText('Open'))
 
     // Type on the input.
