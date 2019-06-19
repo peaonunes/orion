@@ -11,9 +11,9 @@ const ClickOutside = ({ children, onClickOutside }) => {
   }
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClick, true)
+    document.addEventListener('mouseup', handleClick, true)
     return () => {
-      document.removeEventListener('mousedown', handleClick, true)
+      document.removeEventListener('mouseup', handleClick, true)
     }
   }, [onClickOutside])
 
