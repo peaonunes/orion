@@ -3,6 +3,10 @@
   transition-property: background-color, opacity;
 }
 
+.ui.button.fluid {
+  @apply w-full justify-center;
+}
+
 .ui.button > .icon {
   @apply flex items-center;
 }
