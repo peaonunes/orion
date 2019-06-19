@@ -6,9 +6,16 @@ import { Button as SemanticButton } from 'semantic-ui-react'
 
 import { createShorthandFactory } from '../utils/factories'
 
-const Button = ({ className, ghost, subtle, ...otherProps }) => {
+const Button = ({ className, ghost, secondary, subtle, ...otherProps }) => {
+  const { primary } = otherProps
   const classes = cx(className, { ghost, subtle })
-  return <SemanticButton className={classes} {...otherProps} />
+  return (
+    <SemanticButton
+      className={classes}
+      secondary={secondary || (!primary && !ghost)}
+      {...otherProps}
+    />
+  )
 }
 
 Button.propTypes = {
