@@ -18,9 +18,8 @@ describe('when the fields are passed as child', () => {
       </Form.Field>
     )
 
-    expect(
-      container.firstChild.classList.contains(floatingLabelCssClass)
-    ).toBeTruthy()
+    const formField = container.firstChild.firstChild
+    expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
   })
 
   it('should have a floating label when the child is a Dropdown and the size is default', () => {
@@ -31,9 +30,8 @@ describe('when the fields are passed as child', () => {
       </Form.Field>
     )
 
-    expect(
-      container.firstChild.classList.contains(floatingLabelCssClass)
-    ).toBeTruthy()
+    const formField = container.firstChild.firstChild
+    expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
   })
 
   it('should not have a floating label when the child is an Input and the size is small', () => {
@@ -44,9 +42,8 @@ describe('when the fields are passed as child', () => {
       </Form.Field>
     )
 
-    expect(
-      container.firstChild.classList.contains(floatingLabelCssClass)
-    ).toBeFalsy()
+    const formField = container.firstChild.firstChild
+    expect(formField.classList.contains(floatingLabelCssClass)).toBeFalsy()
   })
 
   it('should call onChange when the value changes', () => {
@@ -78,9 +75,8 @@ describe('when the fields are passed as control', () => {
       <Form.Input label={label} placeholder={placeholder} />
     )
 
-    expect(
-      container.firstChild.classList.contains(floatingLabelCssClass)
-    ).toBeTruthy()
+    const formField = container.firstChild.firstChild
+    expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
   })
 
   it('should have a floating label when the control is a Dropdown and the size is default', () => {
@@ -88,9 +84,8 @@ describe('when the fields are passed as control', () => {
       <Form.Dropdown label={label} placeholder={placeholder} />
     )
 
-    expect(
-      container.firstChild.classList.contains(floatingLabelCssClass)
-    ).toBeTruthy()
+    const formField = container.firstChild.firstChild
+    expect(formField.classList.contains(floatingLabelCssClass)).toBeTruthy()
   })
 
   it('should not have a floating label when the control is a Dropdown and the size is small', () => {
@@ -98,9 +93,8 @@ describe('when the fields are passed as control', () => {
       <Form.Dropdown label={label} size="small" placeholder={placeholder} />
     )
 
-    expect(
-      container.firstChild.classList.contains(floatingLabelCssClass)
-    ).toBeFalsy()
+    const formField = container.firstChild.firstChild
+    expect(formField.classList.contains(floatingLabelCssClass)).toBeFalsy()
   })
 
   it('should call onChange when the value changes', () => {

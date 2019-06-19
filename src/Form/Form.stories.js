@@ -40,7 +40,9 @@ storiesOf('Form', module)
       <Form.Field message={text('Message', '')}>
         <Checkbox label="I agree to the Terms and Conditions" />
       </Form.Field>
-      <Button type="submit">Submit</Button>
+      <Button type="submit" primary>
+        Submit
+      </Button>
     </Form>
   ))
   .add('Form shorthands', () => (
@@ -68,6 +70,8 @@ storiesOf('Form', module)
         label="I agree to the Terms and Conditions"
         message={text('Message', '')}
       />
-      <Button type="submit">Submit</Button>
+      <Button type="submit" primary>
+        Submit
+      </Button>
     </Form>
   ))
