@@ -140,10 +140,6 @@ describe("when the filter's value changes", () => {
       fireEvent.click(getByText('Clear'))
     })
 
-    it('should not call "onApply" with the new value', () => {
-      expect(onApply).not.toHaveBeenCalled()
-    })
-
     it('should call "onClear"', () => {
       expect(onClear).toHaveBeenCalled()
     })
