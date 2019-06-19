@@ -16,7 +16,7 @@ storiesOf('Form', module)
   .addDecorator(withKnobs)
   .add('Subcomponents', () => (
     <Form>
-      <Form.Field>
+      <Form.Field message={text('Message', '')}>
         <label htmlFor="fullName">{text('Input label', 'Full Name')}</label>
         <Input
           fluid={boolean('Fluid', false)}
@@ -26,7 +26,7 @@ storiesOf('Form', module)
           onChange={action('onChange')}
         />
       </Form.Field>
-      <Form.Field>
+      <Form.Field message={text('Message', '')}>
         <label htmlFor="buddy">{text('Dropdown label', 'Buddy')}</label>
         <Dropdown
           selection
@@ -37,7 +37,7 @@ storiesOf('Form', module)
           size={sizeKnob()}
         />
       </Form.Field>
-      <Form.Field>
+      <Form.Field message={text('Message', '')}>
         <Checkbox label="I agree to the Terms and Conditions" />
       </Form.Field>
       <Button type="submit">Submit</Button>
@@ -49,6 +49,7 @@ storiesOf('Form', module)
         fluid={boolean('Fluid', false)}
         id="fullname"
         label={text('Input label', 'Full Name')}
+        message={text('Message', '')}
         placeholder={text('Input placholder', 'Enter your full name')}
         size={sizeKnob()}
         onChange={action('onChange')}
@@ -58,11 +59,15 @@ storiesOf('Form', module)
         fluid={boolean('Fluid', false)}
         id="buddy"
         label={text('Dropdown label', 'Buddy')}
+        message={text('Message', '')}
         placeholder={text('Dropdown placeholder', 'Choose your buddy')}
         options={object('Dropdown options', developerOptions)}
         size={sizeKnob()}
       />
-      <Form.Checkbox label="I agree to the Terms and Conditions" />
+      <Form.Checkbox
+        label="I agree to the Terms and Conditions"
+        message={text('Message', '')}
+      />
       <Button type="submit">Submit</Button>
     </Form>
   ))

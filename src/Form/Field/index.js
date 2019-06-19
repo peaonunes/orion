@@ -14,7 +14,7 @@ const SemanticFormField = Form.Field
 const shouldHaveFloatingLabel = (field, size) =>
   (field === Input || field === Dropdown) && size === Sizes.DEFAULT
 
-const Field = ({ className, children, onChange, ...otherProps }) => {
+const Field = ({ className, children, message, onChange, ...otherProps }) => {
   const { size, control } = otherProps
   const [controlFilled, setControlFilled] = React.useState(false)
 
@@ -53,18 +53,23 @@ const Field = ({ className, children, onChange, ...otherProps }) => {
   })
 
   return (
-    <SemanticFormField
-      {...otherProps}
-      className={classes}
-      children={finalChildren}
-      onChange={finalOnChange}
-    />
+    <div className="orion-form-field">
+      <SemanticFormField
+        error={!!message}
+        {...otherProps}
+        className={classes}
+        children={finalChildren}
+        onChange={finalOnChange}
+      />
+      {message && <div className="orion-form-field__message">{message}</div>}
+    </div>
   )
 }
 
 Field.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
+  message: PropTypes.string,
   size: sizePropType
 }
 
