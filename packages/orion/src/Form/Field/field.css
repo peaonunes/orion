@@ -1,37 +1,49 @@
-.ui.form > .field {
-  @apply relative mb-24;
+.ui.form .field {
+  @apply relative;
 }
 
-/* floated label */
-.ui.form > .field.floatingLabel label {
+/* Floated label */
+.ui.form .field.floatingLabel label {
   @apply absolute border-l-1 top-0 block .cursor-text ml-16 text-gray-800 text-base transition-default z-10;
   border-color: transparent !important;
   margin-top: 12px;
 }
 
-.ui.form > .field.floatingLabel.filled label,
-.ui.form > .field.floatingLabel:focus-within label {
+.ui.form .field.floatingLabel.filled label,
+.ui.form .field.floatingLabel:focus-within label {
   @apply mt-4 text-sm;
 }
 
-.ui.form > .field.floatingLabel .dropdown .text,
-.ui.form > .field.floatingLabel input {
+.ui.form .field.floatingLabel .dropdown .text,
+.ui.form .field.floatingLabel input {
   @apply pt-16;
 }
 
-.ui.form > .field.floatingLabel .dropdown .default.text,
-.ui.form > .field.floatingLabel input::placeholder {
+.ui.form .field.floatingLabel .dropdown .default.text,
+.ui.form .field.floatingLabel input::placeholder {
   color: transparent;
 }
 
 /* Outside label */
-.ui.form > .field label {
+.ui.form .field label {
   @apply block mb-4 text-sm;
 }
 
 /* Error */
-
-.ui.form > .field.error input,
-.ui.form > .field.error .dropdown {
+.ui.form .field.error input,
+.ui.form .field.error .dropdown {
   @apply border-magenta-500;
+}
+
+/* Error message */
+.orion-form-field {
+  @apply mb-24;
+}
+
+.orion-form-field__message {
+  @apply mt-4 text-sm text-magenta-600;
+}
+
+.orion-form-field__message--warning {
+  @apply text-yellow-500;
 }
