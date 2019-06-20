@@ -1,19 +1,22 @@
-.filter-trigger {
+.ui.button.filter-trigger {
   @apply bg-white border border-gray-900-24 cursor-pointer rounded transition-default;
   @apply inline-flex h-32 items-center px-16 text-gray-800;
+  @apply outline-none;
   transition-property: background-color, color;
 }
 
-.filter-trigger:hover {
+.ui.button.filter-trigger:hover,
+.ui.button.filter-trigger:focus {
   @apply bg-gray-900-8;
 }
 
-.filter-trigger.active,
-.filter-trigger.selected {
+.ui.button.filter-trigger.active,
+.ui.button.filter-trigger.selected {
   @apply bg-space-100;
 }
 
-.filter-trigger.selected:hover {
+.ui.button.filter-trigger.selected:hover,
+.ui.button.filter-trigger.selected:focus {
   @apply bg-space-200;
 }
 

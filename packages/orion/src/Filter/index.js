@@ -1,7 +1,7 @@
 import cx from 'classnames'
+import keyboardKey from 'keyboard-key'
 import isEqual from 'lodash/isEqual'
 import isEmpty from 'lodash/isEmpty'
-import isNil from 'lodash/isNil'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
@@ -27,14 +27,17 @@ const Filter = ({
 
   const [localValue, setLocalValue] = useState(value)
 
-  const isSelected = !isNil(value)
+  const isSelected = !isEmpty(value)
   const isPristine =
     (isEmpty(value) && isEmpty(localValue)) || isEqual(value, localValue)
 
-  const handleApply = () => {
+  const handleApply = event => {
     setValue(localValue)
     onApply && onApply(localValue)
     setOpen(false)
+
+    // Prevent form submission.
+    event.preventDefault()
   }
 
   const handleClear = () => {
@@ -42,14 +45,20 @@ const Filter = ({
     onClear && onClear()
   }
 
+  const handleKeyDown = event => {
+    if (keyboardKey.getCode(event) === keyboardKey.Escape) {
+      handleApply(event)
+    }
+  }
+
   const triggerClasses = cx('filter-trigger', {
     active: open,
     selected: isSelected
   })
   const trigger = (
-    <div className={triggerClasses} onClick={() => setOpen(!open)}>
+    <Button className={triggerClasses} onClick={() => setOpen(!open)}>
       {isSelected ? selectedText(value) : text}
-    </div>
+    </Button>
   )
 
   return (
@@ -59,9 +68,13 @@ const Filter = ({
       trigger={trigger}
       open={open}
       {...otherProps}>
-      <ClickOutside onClickOutside={handleApply}>
+      <ClickOutside
+        as="form"
+        onClickOutside={handleApply}
+        onKeyDown={handleKeyDown}
+        onSubmit={handleApply}>
         <div className="filter-content">
-          {open && children({ onChange: setLocalValue, value: localValue })}
+          {children({ onChange: setLocalValue, value: localValue })}
         </div>
         <div className="filter-buttons">
           <div className={cx({ invisible: isPristine })}>
@@ -79,8 +92,7 @@ const Filter = ({
             defaultProps: {
               primary: true,
               subtle: true,
-              type: 'submit',
-              onClick: handleApply
+              type: 'submit'
             }
           })}
         </div>
