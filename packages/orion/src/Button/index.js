@@ -28,4 +28,6 @@ SemanticButton.create = createShorthandFactory(Button, value => ({
   content: value
 }))
 
+Button.create = SemanticButton.create
+
 export default Button
