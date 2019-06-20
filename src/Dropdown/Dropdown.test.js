@@ -1,0 +1,65 @@
+import React from 'react'
+import { fireEvent, render } from '@testing-library/react'
+
+import { Dropdown } from '../'
+
+const options = [
+  { text: 'Blue', value: 'blue' },
+  { text: 'Yellow', value: 'yellow' },
+  { text: 'Red', value: 'red' }
+]
+
+describe('when an option is selected', () => {
+  let renderResult
+
+  beforeEach(() => {
+    renderResult = render(
+      <Dropdown
+        placeholder="Select Color"
+        selection
+        multiple="keep"
+        inlineMenu
+        options={options}
+      />
+    )
+
+    const { getByText } = renderResult
+    fireEvent.click(getByText('Red'))
+  })
+
+  it('should render a label with the option', () => {
+    const { getAllByText } = renderResult
+
+    const [label] = getAllByText('Red')
+    expect(label).toBeTruthy()
+    expect(label).toHaveClass('ui label')
+  })
+
+  it('should show option on the list, as selected', () => {
+    const { getAllByText } = renderResult
+
+    const option = getAllByText('Red')[1]
+    expect(option).toBeTruthy()
+    expect(option.parentNode).toHaveClass('item active')
+  })
+
+  describe('when a selected option is clicked', () => {
+    beforeEach(() => {
+      const { getAllByText } = renderResult
+      fireEvent.click(getAllByText('Red')[1])
+    })
+
+    it('should stop rendering a label with the option', () => {
+      const { getByText } = renderResult
+      expect(getByText('Red')).not.toHaveClass('ui label')
+    })
+
+    it('should show option on the list, as unselected', () => {
+      const { getByText } = renderResult
+
+      const option = getByText('Red')
+      expect(option.parentNode).toHaveClass('item')
+      expect(option.parentNode).not.toHaveClass('active')
+    })
+  })
+})
