@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 
-const ClickOutside = ({ children, onClickOutside }) => {
+const ClickOutside = ({ as, children, onClickOutside, ...otherProps }) => {
   const ref = useRef()
 
   const handleClick = event => {
@@ -17,12 +17,22 @@ const ClickOutside = ({ children, onClickOutside }) => {
     }
   }, [onClickOutside])
 
-  return <div ref={ref}>{children}</div>
+  const ElementType = as
+  return (
+    <ElementType ref={ref} {...otherProps}>
+      {children}
+    </ElementType>
+  )
 }
 
 ClickOutside.propTypes = {
+  as: PropTypes.string,
   children: PropTypes.node,
   onClickOutside: PropTypes.func.isRequired
+}
+
+ClickOutside.defaultProps = {
+  as: 'div'
 }
 
 export default ClickOutside

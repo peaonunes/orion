@@ -1,3 +1,4 @@
+import keyboardKey from 'keyboard-key'
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 
@@ -122,6 +123,23 @@ describe("when the filter's value changes", () => {
     beforeEach(() => {
       const { getByText } = renderResult
       fireEvent.click(getByText('Apply'))
+    })
+
+    it('should render the selected value in the trigger', () => {
+      const { queryByText } = renderResult
+      expect(queryByText(newValue)).toBeTruthy()
+    })
+
+    it('should call "onApply" with the new value', () => {
+      expect(onApply).toHaveBeenCalledWith(newValue)
+    })
+  })
+
+  describe('when the "ESC" key is pressed', () => {
+    beforeEach(() => {
+      const { getByPlaceholderText } = renderResult
+      const input = getByPlaceholderText('Input')
+      fireEvent.keyDown(input, { key: 'Escape', code: keyboardKey.Escape })
     })
 
     it('should render the selected value in the trigger', () => {
