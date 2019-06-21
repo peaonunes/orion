@@ -1,5 +1,5 @@
 import cx from 'classnames'
-import values from 'lodash/values'
+import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { Dropdown as SemanticDropdown } from 'semantic-ui-react'
@@ -50,7 +50,7 @@ Dropdown.propTypes = {
   inlineMenu: PropTypes.bool,
   multiple: PropTypes.oneOfType([
     PropTypes.bool,
-    PropTypes.oneOf(values(MultipleModes))
+    PropTypes.oneOf(_.values(MultipleModes))
   ]),
   size: sizePropType,
   warning: PropTypes.bool
