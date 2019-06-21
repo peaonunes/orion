@@ -4,6 +4,10 @@
   width: 600px;
 }
 
+.orion-notification-center.Toastify__toast-container--top-center {
+  margin-left: -300px;
+}
+
 .orion-notification-center__toast.Toastify__toast {
   @apply shadow-none p-0 m-0 mb-8 min-h-0;
   color: inherit;
