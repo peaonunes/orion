@@ -51,12 +51,16 @@
   @apply pointer-events-none cursor-default;
 }
 
-.ui.dropdown.selection.active .orion-dropdown__icon {
+.ui.dropdown > .icon {
+  @apply ml-auto -mr-8;
+}
+
+.ui.dropdown.active .dropdown-icon {
   transform: rotate(-180deg);
 }
 
-.orion-dropdown__icon {
-  @apply ml-auto -mr-8 transition-default;
+.dropdown-icon {
+  @apply transition-default;
 }
 
 /**
@@ -133,6 +137,20 @@
 
 .ui.dropdown.selection:focus {
   @apply shadow-field-focus;
+}
+
+.ui.dropdown.selection > .menu {
+  @apply cursor-pointer;
+}
+
+/** Inline Menu **/
+
+.ui.dropdown.inline-menu > .menu {
+  @apply block border-0 shadow-none;
+}
+
+.ui.dropdown.inline-menu > .dropdown-icon {
+  @apply hidden;
 }
 
 /**

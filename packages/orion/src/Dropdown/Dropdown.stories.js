@@ -26,15 +26,18 @@ storiesOf('Dropdown', module)
     )
   })
   .add('selection', () => {
+    const icon = text('Icon', '', 'Content')
     return (
       <Dropdown
         placeholder={text('Placeholder', 'Select Developer', 'Content')}
         selection
         options={object('Options', developerOptions, 'Content')}
+        icon={icon || Dropdown.ICON}
         fluid={boolean('Fluid', false, 'Size')}
         compact={boolean('Compact', false, 'Size')}
         search={boolean('Search', false, 'Type')}
         multiple={boolean('Multiple', false, 'Type')}
+        inlineMenu={boolean('Inline Menu', false, 'Type')}
         size={sizeKnob(Sizes.DEFAULT, 'Size')}
         disabled={boolean('Disabled', false, 'State')}
         error={boolean('Error', false, 'State')}
