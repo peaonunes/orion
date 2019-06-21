@@ -14,7 +14,7 @@ const developerOptions = [
 
 storiesOf('Dropdown', module)
   .addDecorator(withKnobs)
-  .add('basic', () => {
+  .add('Basic', () => {
     const menuOptions = [{ text: 'Account' }, { text: 'Logout' }]
     return (
       <Dropdown
@@ -25,7 +25,7 @@ storiesOf('Dropdown', module)
       />
     )
   })
-  .add('selection', () => {
+  .add('Selection', () => {
     const icon = text('Icon', '', 'Content')
     return (
       <Dropdown
@@ -43,5 +43,40 @@ storiesOf('Dropdown', module)
         error={boolean('Error', false, 'State')}
         warning={boolean('Warning', false, 'State')}
       />
+    )
+  })
+  .add('Multiple selection, keeping selected', () => {
+    return (
+      <div style={{ width: '400px' }}>
+        <Dropdown
+          placeholder="Select Developer"
+          selection
+          icon="search"
+          search
+          multiple="keep"
+          inlineMenu
+          fluid
+          options={object('Options', developerOptions)}
+        />
+      </div>
+    )
+  })
+  .add('Detailed items', () => {
+    const fruits = [
+      { text: 'Strawberry', description: 'Red', value: 1 },
+      { text: 'Banana', description: 'Yellow', value: 2 },
+      { text: 'Watermelon', description: 'Green', value: 3 }
+    ]
+    return (
+      <div style={{ width: '400px' }}>
+        <Dropdown
+          placeholder="Select Developer"
+          selection
+          search
+          multiple="keep"
+          fluid
+          options={object('Options', fruits)}
+        />
+      </div>
     )
   })
