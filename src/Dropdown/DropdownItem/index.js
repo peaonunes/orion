@@ -1,4 +1,4 @@
-import isNil from 'lodash/isNil'
+import _ from 'lodash'
 import React from 'react'
 import { Dropdown as SemanticDropdown } from 'semantic-ui-react'
 
@@ -14,8 +14,8 @@ const DropdownItem = ({
   if (!children) {
     children = (
       <React.Fragment>
-        <div className="text">{isNil(content) ? text : content}</div>
-        {!isNil(description) && (
+        <div className="text">{_.isNil(content) ? text : content}</div>
+        {!_.isNil(description) && (
           <div className="description">{description}</div>
         )}
       </React.Fragment>
