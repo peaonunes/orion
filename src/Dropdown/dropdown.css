@@ -1,3 +1,5 @@
+@import './DropdownItem/dropdown-item.css';
+
 .ui.dropdown {
   @apply flex-wrap inline-flex items-center relative;
   @apply cursor-pointer min-h-48 px-16 outline-none select-none;
@@ -6,6 +8,10 @@
 
 .ui.dropdown.compact {
   @apply min-w-0;
+}
+
+.ui.dropdown.compact > .menu {
+  min-width: max-content;
 }
 
 .ui.dropdown.fluid {
@@ -27,28 +33,10 @@
 .ui.dropdown > .menu {
   @apply absolute bg-white border border-gray-900-16 hidden mt-8 shadow-200 left-0 w-full;
   top: 100%;
-  min-width: max-content;
 }
 
 .ui.dropdown.active > .menu {
   @apply block rounded;
-}
-
-.ui.dropdown .menu > .item,
-.ui.dropdown .menu > .message {
-  @apply px-16 py-8;
-}
-
-.ui.dropdown .menu > .item.active {
-  @apply font-medium;
-}
-
-.ui.dropdown .menu > .item:hover {
-  @apply bg-gray-900-8;
-}
-
-.ui.dropdown .menu > .item.selected {
-  @apply bg-gray-100;
 }
 
 .ui.dropdown.disabled {
