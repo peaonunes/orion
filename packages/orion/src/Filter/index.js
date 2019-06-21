@@ -1,7 +1,6 @@
 import cx from 'classnames'
 import keyboardKey from 'keyboard-key'
-import isEqual from 'lodash/isEqual'
-import isEmpty from 'lodash/isEmpty'
+import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 
@@ -27,9 +26,9 @@ const Filter = ({
 
   const [localValue, setLocalValue] = useState(value)
 
-  const isSelected = !isEmpty(value)
+  const isSelected = !_.isEmpty(value)
   const isPristine =
-    (isEmpty(value) && isEmpty(localValue)) || isEqual(value, localValue)
+    (_.isEmpty(value) && _.isEmpty(localValue)) || _.isEqual(value, localValue)
 
   const handleApply = event => {
     setValue(localValue)
