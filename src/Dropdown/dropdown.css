@@ -44,7 +44,11 @@
 }
 
 .ui.dropdown .menu > .item:hover {
-  @apply bg-gray-900-4;
+  @apply bg-gray-900-8;
+}
+
+.ui.dropdown .menu > .item.selected {
+  @apply bg-gray-100;
 }
 
 .ui.dropdown.disabled {
@@ -89,6 +93,29 @@
 
 .ui.dropdown.multiple.small > .ui.label {
   @apply h-24 !important;
+}
+
+/**
+ * Multiple + Keep selected
+ */
+
+.ui.dropdown.multiple.keep-selected > .menu > .item.active {
+  @apply font-normal .relative;
+}
+
+.ui.dropdown.multiple.keep-selected > .menu > .item::after {
+  @apply absolute text-lg text-wave-500;
+  top: calc(50% - 10px);
+  right: 16px;
+}
+
+.ui.dropdown.multiple.keep-selected > .menu > .item.active::after {
+  content: 'check';
+  font-family: 'Material Icons';
+}
+
+.ui.dropdown.multiple.keep-selected.disabled > .menu {
+  @apply hidden;
 }
 
 /**
