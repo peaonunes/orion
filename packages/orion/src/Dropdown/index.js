@@ -5,6 +5,7 @@ import React from 'react'
 import { Dropdown as SemanticDropdown } from 'semantic-ui-react'
 
 import { Sizes, sizePropType } from '../utils/sizes'
+import DropdownItem from './DropdownItem'
 import DropdownKeepSelected from './DropdownKeepSelected'
 
 const DROPDOWN_ICON = {
@@ -61,7 +62,7 @@ Dropdown.defaultProps = {
 
 Dropdown.Divider = SemanticDropdown.Divider
 Dropdown.Header = SemanticDropdown.Header
-Dropdown.Item = SemanticDropdown.Item
+Dropdown.Item = DropdownItem
 Dropdown.Menu = SemanticDropdown.Menu
 Dropdown.SearchInput = SemanticDropdown.SearchInput
 
