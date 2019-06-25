@@ -45,7 +45,7 @@
 
 /* Error message */
 .orion-form-field {
-  @apply mb-24;
+  @apply mb-16;
 }
 
 .orion-form-field__message {
