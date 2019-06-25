@@ -1,8 +1,9 @@
 .ui.layout {
-  @apply bg-gray-50 flex flex-col h-screen items-center relative;
+  @apply bg-gray-50 flex flex-col min-h-screen items-center relative;
 }
 
 .ui.layout .layout-topbar {
+  @apply fixed top-0 left-0 z-50;
   @apply flex flex-shrink-0 items-center justify-center h-48 w-full bg-white;
   @apply border-b-1 border-gray-900-16;
 }
@@ -17,7 +18,7 @@
 }
 
 .ui.layout .layout-main {
-  @apply flex flex-1 justify-center py-24 w-full;
+  @apply flex flex-1 justify-center py-24 w-full mt-48;
 }
 
 .ui.layout .layout-main-content {
