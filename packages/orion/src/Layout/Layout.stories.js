@@ -1,3 +1,5 @@
+import _ from 'lodash'
+import { loremIpsum } from 'lorem-ipsum'
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { object, withKnobs } from '@storybook/addon-knobs'
@@ -34,6 +36,10 @@ storiesOf('Layout', module)
           size="small"
         />
       </Layout.Topbar>
-      <Layout.Main>Main Content</Layout.Main>
+      <Layout.Main>
+        {_.times(10, () => (
+          <p>{loremIpsum({ count: 1, units: 'paragraph' })}</p>
+        ))}
+      </Layout.Main>
     </Layout>
   ))
