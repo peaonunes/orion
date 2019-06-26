@@ -1095,9 +1095,9 @@
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
 "@inloco/atomic-bomb@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@inloco/atomic-bomb/-/atomic-bomb-1.0.2.tgz#e18f88535ed652f0356df645c9b6de24a860e4f4"
-  integrity sha512-I+ViNtB3HWaWa5G+8aswQcK/BRy03QSDUY4T7rD0FLSUHZFGF9UC2peSTFktsN5nAj3+X2Xh+r6Kz+AXgWECKA==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@inloco/atomic-bomb/-/atomic-bomb-1.0.3.tgz#e3f120567f2c045bfc281d70391f0d3b24d29e75"
+  integrity sha512-CAGa/9UrmrwNIT9xIFf6l0kD8y0CrN/c1BFMH72rnlLkzDTeK9781dG4uXBMTmQGSw2xt0TTEX8pvKlyjmocyg==
   dependencies:
     color "^3.1.2"
     pretty-quick "^1.11.0"
