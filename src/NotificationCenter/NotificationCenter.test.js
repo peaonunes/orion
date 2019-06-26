@@ -1,17 +1,12 @@
 import React from 'react'
-import {
-  render,
-  fireEvent,
-  waitForElement,
-  waitForElementToBeRemoved
-} from '@testing-library/react'
+import { render, fireEvent, waitForElement } from '@testing-library/react'
 
 import NotificationCenter from './index'
 
 it('should show a success notification', async () => {
   const successMessage = 'Success Message'
   const buttonText = 'Click me'
-  const { getByText } = render(
+  const { getByText, queryByText, debug } = render(
     <>
       <NotificationCenter />
       <button onClick={() => NotificationCenter.success(successMessage)}>
@@ -22,9 +17,32 @@ it('should show a success notification', async () => {
 
   fireEvent.click(getByText(buttonText))
 
-  const notification = await waitForElement(() => getByText(successMessage))
+  const message = await waitForElement(() => getByText(successMessage))
+  expect(message).toBeTruthy()
 
-  expect(notification).toBeTruthy()
+  const title = queryByText('Success')
+  expect(title).toBeTruthy()
+})
+
+it('should show an inline notification', async () => {
+  const errorMessage = 'Error Message'
+  const buttonText = 'Click me'
+  const { getByText, queryByText } = render(
+    <>
+      <NotificationCenter />
+      <button onClick={() => NotificationCenter.inlineError(errorMessage)}>
+        {buttonText}
+      </button>
+    </>
+  )
+
+  fireEvent.click(getByText(buttonText))
+
+  const message = await waitForElement(() => getByText(errorMessage))
+  expect(message).toBeTruthy()
+
+  const title = queryByText('Success')
+  expect(title).toBeFalsy()
 })
 
 it('should not show the same notification twice', async () => {

@@ -3,7 +3,14 @@ import { ToastContainer, toast } from 'react-toastify'
 
 import Message from '../Message'
 
-const NotificationCenter = props => {
+const DEFAULTS = {
+  errorTitle: 'Error',
+  errorMessage: 'Unexpected Error',
+  warningTitle: 'Warning',
+  successTitle: 'Success'
+}
+const NotificationCenter = ({ defaults, ...props }) => {
+  NotificationCenter.defaults = { ...DEFAULTS, ...defaults }
   return <ToastContainer {...props} />
 }
 
@@ -24,14 +31,28 @@ const NotitificationTypes = {
   WARNING: 'warning'
 }
 
-const buildNotification = ({ options, type }) => message => {
-  const toastId = `${type}-${message}`
+const buildNotification = ({ options, type, inline = false }) => (
+  message,
+  title
+) => {
+  const content = message || NotificationCenter.defaults[`${type}Message`]
+  const header = inline
+    ? null
+    : title || NotificationCenter.defaults[`${type}Title`]
+
+  const toastId = `${type}-${header}-${content}`
   if (toast.isActive(toastId)) return
 
   const messageType = { [type]: true }
+
   toast(
     ({ closeToast }) => (
-      <Message content={message} {...messageType} onDismiss={closeToast} />
+      <Message
+        content={content}
+        header={header}
+        {...messageType}
+        onDismiss={closeToast}
+      />
     ),
     { ...options, toastId }
   )
@@ -50,4 +71,22 @@ NotificationCenter.success = buildNotification({
 
 NotificationCenter.warning = buildNotification({
   type: NotitificationTypes.WARNING
+})
+
+NotificationCenter.inlineError = buildNotification({
+  type: NotitificationTypes.ERROR,
+  inline: true
+})
+
+NotificationCenter.inlineSuccess = buildNotification({
+  options: {
+    autoClose: 5000
+  },
+  type: NotitificationTypes.SUCCESS,
+  inline: true
+})
+
+NotificationCenter.inlineWarning = buildNotification({
+  type: NotitificationTypes.WARNING,
+  inline: true
 })
