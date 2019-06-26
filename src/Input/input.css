@@ -26,12 +26,32 @@
   @apply h-32;
 }
 
+/* Error */
 .ui.input.error > input {
   @apply border-magenta-500;
 }
 
+.ui.input.error > input:hover {
+  @apply shadow-error-field-hover;
+}
+
+.ui.input.error > input:active,
+.ui.input.error > input:focus {
+  @apply shadow-error-field-focus;
+}
+
+/* Warning */
 .ui.input.warning > input {
   @apply border-yellow-500;
+}
+
+.ui.input.warning > input:hover {
+  @apply shadow-warning-field-hover;
+}
+
+.ui.input.warning > input:active,
+.ui.input.warning > input:focus {
+  @apply shadow-warning-field-focus;
 }
 
 .ui.input.fluid > input {

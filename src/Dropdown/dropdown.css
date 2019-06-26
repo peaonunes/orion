@@ -150,6 +150,7 @@
   @apply shadow-field-hover;
 }
 
+.ui.dropdown.selection:active,
 .ui.dropdown.selection:focus {
   @apply shadow-field-focus;
 }
@@ -176,6 +177,24 @@
   @apply border-magenta-500;
 }
 
+.ui.dropdown.error.selection:hover {
+  @apply shadow-error-field-hover;
+}
+
+.ui.dropdown.error.selection:active,
+.ui.dropdown.error.selection:focus {
+  @apply shadow-error-field-focus;
+}
+
 .ui.dropdown.warning {
   @apply border-yellow-500;
+}
+
+.ui.dropdown.warning.selection:hover {
+  @apply shadow-warning-field-hover;
+}
+
+.ui.dropdown.warning.selection:active,
+.ui.dropdown.warning.selection:focus {
+  @apply shadow-warning-field-focus;
 }
