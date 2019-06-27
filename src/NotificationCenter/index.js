@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { ToastContainer, toast } from 'react-toastify'
 
 import Message from '../Message'
@@ -12,6 +13,17 @@ const DEFAULTS = {
 const NotificationCenter = ({ defaults, ...props }) => {
   NotificationCenter.defaults = { ...DEFAULTS, ...defaults }
   return <ToastContainer {...props} />
+}
+
+NotificationCenter.propTypes = {
+  defaults: PropTypes.shape({
+    errorTitle: PropTypes.object,
+    errorMessage: PropTypes.object,
+    successTitle: PropTypes.object,
+    successMessage: PropTypes.object,
+    warningTitle: PropTypes.object,
+    warningMessage: PropTypes.object
+  })
 }
 
 NotificationCenter.defaultProps = {
