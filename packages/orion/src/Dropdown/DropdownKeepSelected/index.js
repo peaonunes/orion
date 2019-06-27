@@ -71,7 +71,7 @@ const DropdownKeepSelected = ({
     <SemanticDropdown
       options={options}
       onChange={handleChange}
-      value={value}
+      value={value || []}
       {...otherProps}
     />
   )

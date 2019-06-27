@@ -7,6 +7,7 @@ import { Dropdown as SemanticDropdown } from 'semantic-ui-react'
 import { Sizes, sizePropType } from '../utils/sizes'
 import DropdownItem from './DropdownItem'
 import DropdownKeepSelected from './DropdownKeepSelected'
+import useInlineMenuWrapper from './useInlineMenuWrapper'
 
 const DROPDOWN_ICON = {
   className: 'dropdown-icon',
@@ -43,7 +44,18 @@ const Dropdown = ({
   const ElementType = shouldKeepSelected
     ? DropdownKeepSelected
     : SemanticDropdown
-  return <ElementType {...dropdownProps} />
+  const element = <ElementType {...dropdownProps} />
+
+  const [wrapperRef, wrapperMargin] = useInlineMenuWrapper(options)
+  if (inlineMenu) {
+    return (
+      <div ref={wrapperRef} style={{ marginBottom: `${wrapperMargin}px` }}>
+        {element}
+      </div>
+    )
+  }
+
+  return element
 }
 
 Dropdown.propTypes = {
