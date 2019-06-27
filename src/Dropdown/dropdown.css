@@ -146,13 +146,13 @@
   @apply bg-gray-900-8;
 }
 
-.ui.dropdown.selection:hover {
+.ui.dropdown.selection:hover,
+.ui.dropdown.selection:focus {
   @apply shadow-field-hover;
 }
 
-.ui.dropdown.selection:active,
-.ui.dropdown.selection:focus {
-  @apply shadow-field-focus;
+.ui.dropdown.selection:active {
+  @apply shadow-field-active;
 }
 
 .ui.dropdown.selection > .menu {
@@ -177,24 +177,24 @@
   @apply border-magenta-500;
 }
 
-.ui.dropdown.error.selection:hover {
+.ui.dropdown.error.selection:hover,
+.ui.dropdown.error.selection:focus {
   @apply shadow-error-field-hover;
 }
 
-.ui.dropdown.error.selection:active,
-.ui.dropdown.error.selection:focus {
-  @apply shadow-error-field-focus;
+.ui.dropdown.error.selection:active {
+  @apply shadow-error-field-active;
 }
 
 .ui.dropdown.warning {
   @apply border-yellow-500;
 }
 
-.ui.dropdown.warning.selection:hover {
+.ui.dropdown.warning.selection:hover,
+.ui.dropdown.warning.selection:focus {
   @apply shadow-warning-field-hover;
 }
 
-.ui.dropdown.warning.selection:active,
-.ui.dropdown.warning.selection:focus {
-  @apply shadow-warning-field-focus;
+.ui.dropdown.warning.selection:active {
+  @apply shadow-warning-field-active;
 }
