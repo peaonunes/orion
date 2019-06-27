@@ -13,25 +13,45 @@
   @apply bg-gray-900-8 pointer-events-none;
 }
 
-.ui.input > input:hover {
+.ui.input > input:hover,
+.ui.input > input:focus {
   @apply shadow-field-hover;
 }
 
-.ui.input > input:active,
-.ui.input > input:focus {
-  @apply shadow-field-focus;
+.ui.input > input:active {
+  @apply shadow-field-active;
 }
 
 .ui.input.small > input {
   @apply h-32;
 }
 
+/* Error */
 .ui.input.error > input {
   @apply border-magenta-500;
 }
 
+.ui.input.error > input:hover,
+.ui.input.error > input:focus {
+  @apply shadow-error-field-hover;
+}
+
+.ui.input.error > input:active {
+  @apply shadow-error-field-active;
+}
+
+/* Warning */
 .ui.input.warning > input {
   @apply border-yellow-500;
+}
+
+.ui.input.warning > input:hover,
+.ui.input.warning > input:focus {
+  @apply shadow-warning-field-hover;
+}
+
+.ui.input.warning > input:active {
+  @apply shadow-warning-field-active;
 }
 
 .ui.input.fluid > input {

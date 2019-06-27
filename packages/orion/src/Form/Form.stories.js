@@ -24,6 +24,7 @@ storiesOf('Form', module)
           placeholder={text('Input placholder', 'Enter your full name')}
           size={sizeKnob()}
           warning={boolean('Warning', false)}
+          error={boolean('Error', false)}
           onChange={action('onChange')}
         />
       </Form.Field>
@@ -36,6 +37,7 @@ storiesOf('Form', module)
           placeholder={text('Dropdown placeholder', 'Choose your buddy')}
           options={object('Dropdown options', developerOptions)}
           warning={boolean('Warning', false)}
+          error={boolean('Error', false)}
           size={sizeKnob()}
         />
       </Form.Field>
