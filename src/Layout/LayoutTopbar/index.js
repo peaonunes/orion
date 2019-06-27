@@ -3,7 +3,7 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-import Logo from './Logo'
+import Logo from '../../Logo'
 
 const LayoutTopbar = ({ className, children, logo, ...otherProps }) => {
   const classes = cx('layout-topbar', className)
