@@ -1,5 +1,5 @@
 import _ from 'lodash'
-import { useEffect, useRef, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 
 /**
  * Semantic UI's dropdown has the dropdown menu with `position: absolute`.
@@ -21,7 +21,7 @@ const useInlineMenuWrapper = options => {
   const optionsCountRef = useRef()
   const [wrapperMargin, setWrapperMargin] = useState()
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const { current: wrapperEl } = wrapperRef
     const { current: prevOptionsCount } = optionsCountRef
     if (wrapperEl && options && prevOptionsCount !== options.length) {
