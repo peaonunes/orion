@@ -14,6 +14,14 @@
 .ui.button.filter-trigger.active,
 .ui.button.filter-trigger.selected {
   @apply bg-space-100 border-none text-space-900;
+
+  /*
+   * We remove the border for the selected filter, but need its width
+   * to be the same as before (to avoid movement between states). We
+   * achieve this by adding an extra 1px padding on both sides.
+   */
+  padding-left: 17px !important;
+  padding-right: 17px !important;
 }
 
 .ui.button.filter-trigger.active:hover,
