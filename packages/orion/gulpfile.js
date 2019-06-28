@@ -24,7 +24,7 @@ const buildCSS = () => {
       postcss([
         require('postcss-import'),
         require('tailwindcss')(
-          'node_modules/@inloco/atomic-bomb/tailwind.config.js'
+          '../../node_modules/@inloco/atomic-bomb/tailwind.config.js'
         ),
         require('autoprefixer'),
         cssnano()
