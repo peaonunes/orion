@@ -14,12 +14,4 @@ We highly recommend this VS Code plugin. It auto-completes `atomic-bomb` css rul
 
 ## Release
 
-To release, follow these steps:
-
-1. Run `yarn publish`.
-2. Type the version to be released.
-3. Push the generated commit and the tag to master:
-
-```sh
-git push origin master --tags
-```
+Since atomic-bomb is part of a monorepo, follow [Monorepo README](https://github.com/inloco/orion) for instructions.
