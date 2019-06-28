@@ -16,3 +16,10 @@ storiesOf('Checkbox', module)
       />
     </React.Fragment>
   ))
+  .add('multiple', () => (
+    <React.Fragment>
+      <Checkbox label="First" />
+      <Checkbox label="Second" />
+      <Checkbox label="Third" />
+    </React.Fragment>
+  ))
