@@ -24,6 +24,7 @@
   "scripts": {
     "atomic-bomb:build": "yarn workspace @inloco/atomic-bomb build",
     "orion:watch": "yarn workspace @inloco/orion start",
-    "orion:storybook": "yarn workspace @inloco/orion storybook"
+    "orion:storybook": "yarn workspace @inloco/orion storybook",
+    "orion:deploy:storybook": "yarn workspace @inloco/orion deploy:storybook"
   }
 }
