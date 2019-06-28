@@ -11,124 +11,124 @@ export const actions = {
 storiesOf('Button', module)
   .addDecorator(withKnobs)
   .add('primary', () => {
-    const disabled = boolean('disabled')
+    const disabled = boolean('Disabled')
     return (
       <React.Fragment>
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           primary
-          content={text('content', 'Click Me')}
+          content={text('Content', 'Click Me')}
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('First Icon', '') || null}
           {...actions}
         />
         <br />
         <br />
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           primary
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('Second Icon', 'cloud')}
           {...actions}
         />
       </React.Fragment>
     )
   })
   .add('secondary', () => {
-    const disabled = boolean('disabled')
+    const disabled = boolean('Disabled')
     return (
       <React.Fragment>
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           secondary
-          content={text('content', 'Click Me')}
+          content={text('Content', 'Click Me')}
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('First Icon', '') || null}
           {...actions}
         />
         <br />
         <br />
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           secondary
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('Second Icon', 'cloud')}
           {...actions}
         />
       </React.Fragment>
     )
   })
   .add('ghost', () => {
-    const disabled = boolean('disabled')
+    const disabled = boolean('Disabled')
     return (
       <React.Fragment>
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           ghost
-          content={text('content', 'Click Me')}
+          content={text('Content', 'Click Me')}
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('First Icon', '') || null}
           {...actions}
         />
         <br />
         <br />
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           ghost
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('Second Icon', 'cloud')}
           {...actions}
         />
       </React.Fragment>
     )
   })
   .add('subtle primary', () => {
-    const disabled = boolean('disabled')
+    const disabled = boolean('Disabled')
     return (
       <React.Fragment>
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           primary
           subtle
-          content={text('content', 'Click Me')}
+          content={text('Content', 'Click Me')}
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('First Icon', '') || null}
           {...actions}
         />
         <br />
         <br />
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           primary
           subtle
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('Second Icon', 'add')}
           {...actions}
         />
       </React.Fragment>
     )
   })
   .add('subtle secondary', () => {
-    const disabled = boolean('disabled')
+    const disabled = boolean('Disabled')
     return (
       <React.Fragment>
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           secondary
           subtle
-          content={text('content', 'Click Me')}
+          content={text('Content', 'Click Me')}
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('First Icon', '') || null}
           {...actions}
         />
         <br />
         <br />
         <Button
-          fluid={boolean('fluid', false)}
+          fluid={boolean('Fluid', false)}
           secondary
           subtle
           disabled={disabled}
-          icon={text('icon', 'cloud')}
+          icon={text('Second Icon', 'add')}
           {...actions}
         />
       </React.Fragment>

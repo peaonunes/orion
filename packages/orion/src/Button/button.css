@@ -11,6 +11,12 @@
   @apply flex items-center;
 }
 
+.ui.button:not(.icon) > .icon {
+  @apply flex justify-center;
+  @apply h-24 w-24;
+  vertical-align: sub;
+}
+
 .ui.button:not(.icon):not(.subtle) {
   @apply px-24;
 }
@@ -28,11 +34,6 @@
 
 .ui.button.icon:active {
   @apply bg-gray-900-12;
-}
-
-.ui.button:not(.icon) > .icon {
-  @apply mr-8;
-  vertical-align: sub;
 }
 
 /* Disabled */
