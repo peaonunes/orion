@@ -83,3 +83,11 @@
 .ui.checkbox.disabled input[type='checkbox'] ~ label:after {
   @apply text-gray-800;
 }
+
+/**
+ * Space between checkboxes
+ */
+
+.ui.checkbox + .ui.checkbox {
+  @apply mt-16;
+}
