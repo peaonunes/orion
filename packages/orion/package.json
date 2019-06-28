@@ -14,6 +14,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "build:storybook": "yarn build && build-storybook -o .out -s public",
+    "start": "yarn build && yarn watch",
     "storybook": "start-storybook -p 9001 -s public",
     "deploy:storybook": "yarn build:storybook && storybook-to-ghpages",
     "prepublishOnly": "yarn build",
