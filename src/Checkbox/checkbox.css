@@ -1,5 +1,5 @@
 .ui.checkbox {
-  @apply relative;
+  @apply my-2 relative;
 }
 
 .ui.checkbox input[type='checkbox'] {
@@ -9,7 +9,7 @@
 }
 
 .ui.checkbox input[type='checkbox'] ~ label {
-  @apply block cursor-pointer pl-24;
+  @apply block cursor-pointer text-base text-gray-900 pl-24;
   line-height: 16px;
 }
 
