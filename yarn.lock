@@ -1094,7 +1094,7 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@inloco/atomic-bomb@^1.0.4":
+"@inloco/atomic-bomb@^1.0.5":
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/@inloco/atomic-bomb/-/atomic-bomb-1.0.5.tgz#b9bc48940bf7ae8ba1f9cb0aa63ba601e715e0f2"
   integrity sha512-Td8bt62tfE/sLQKBA0ywgULKWYDf/H6tFuZxbhr+LWj55HeLwCOpb7jFV8Vyrg37JV5idVTDcmsFUTK2isBY0A==
