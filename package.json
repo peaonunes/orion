@@ -1,0 +1,29 @@
+{
+  "name": "orion-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "husky": "^2.7.0",
+    "lerna": "^3.15.0",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "jsxBracketSameLine": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "scripts": {
+    "atomic-bomb-watch": "yarn workspace @inloco/atomic-bomb watch",
+    "orion-watch": "yarn workspace @inloco/orion start",
+    "orion-storybook": "yarn workspace @inloco/orion storybook"
+  }
+}
