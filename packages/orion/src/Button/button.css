@@ -18,7 +18,8 @@
 }
 
 .ui.button:not(.icon):not(.subtle) {
-  @apply px-24;
+  @apply px-24 justify-center;
+  min-width: 96px;
 }
 
 /* Icon only */
