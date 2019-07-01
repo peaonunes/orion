@@ -56,7 +56,7 @@ git push origin master --tags
 
 ### Deploying Storybook
 
-After releasing a new version, our gh page with Storybook is automatically.
+After releasing a new version, our gh page with Storybook is automatically deployed.
 
 In case it's necessary to do this manually though, just run this simple yarn script:
 
