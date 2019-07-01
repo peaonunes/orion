@@ -46,7 +46,7 @@ Then open it at the url indicated on the terminal, probably: `http://localhost:9
 
 To release, follow these steps:
 
-1. Run `yarn release` (yes, it's **release**, not **publish**!) ou `lerna publish` (nesse caso tem que ter o Lerna instalado globalmente).
+1. Run `yarn release` (yes, it's **release**, not **publish**!) or `lerna publish` (in this case you'll need a globally installed Lerna).
 2. Select the versions you wish to publish for each modified package.
 3. You're done!
 
