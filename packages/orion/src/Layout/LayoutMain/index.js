@@ -3,18 +3,15 @@ import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const LayoutMain = ({ className, children, ...otherProps }) => {
+import LayoutCenter from '../LayoutCenter'
+
+const LayoutMain = ({ className, ...otherProps }) => {
   const classes = cx('layout-main', className)
-  return (
-    <main className={classes} {...otherProps}>
-      <div className="layout-main-content">{children}</div>
-    </main>
-  )
+  return <LayoutCenter as="main" className={classes} {...otherProps} />
 }
 
 LayoutMain.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node
+  className: PropTypes.string
 }
 
 export default LayoutMain
