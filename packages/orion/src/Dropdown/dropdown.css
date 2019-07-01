@@ -79,6 +79,10 @@
   @apply mr-8;
 }
 
+.ui.dropdown.multiple .ui.label:first-child {
+  @apply -ml-8;
+}
+
 .ui.dropdown.multiple.small > .ui.label {
   @apply h-24 !important;
 }
