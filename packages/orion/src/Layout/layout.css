@@ -2,26 +2,29 @@
   @apply bg-gray-50 flex flex-col min-h-screen items-center relative;
 }
 
-.ui.layout .layout-topbar {
-  @apply fixed top-0 left-0 z-40;
-  @apply flex flex-shrink-0 items-center justify-center h-48 w-full bg-white;
-  @apply border-b-1 border-gray-900-16;
+.ui.layout .layout-center {
+  @apply flex justify-center w-full;
 }
 
-.ui.layout .layout-topbar-content {
-  @apply flex items-center mx-24 w-full;
+.ui.layout .layout-center-content {
+  @apply mx-24 w-full;
   max-width: 1024px;
 }
 
-.ui.layout .layout-topbar-content .ui.menu {
+.ui.layout .layout-topbar {
+  @apply fixed top-0 left-0 z-40;
+  @apply flex-shrink-0 items-center h-48 bg-white;
+  @apply border-b-1 border-gray-900-16;
+}
+
+.ui.layout .layout-topbar > .layout-center-content {
+  @apply flex items-center;
+}
+
+.ui.layout .layout-topbar .ui.menu {
   @apply flex-1 ml-40;
 }
 
 .ui.layout .layout-main {
-  @apply flex flex-1 justify-center py-24 w-full mt-48;
-}
-
-.ui.layout .layout-main-content {
-  @apply mx-24 w-full;
-  max-width: 1024px;
+  @apply flex-1 py-24 mt-48;
 }
