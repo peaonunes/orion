@@ -1,4 +1,5 @@
 @import '../../node_modules/react-toastify/dist/ReactToastify.css';
+@import '../../node_modules/react-dates/lib/css/_datepicker.css';
 
 @import '../../node_modules/tailwindcss/base.css';
 @import '../../node_modules/@inloco/atomic-bomb/css/base.css';

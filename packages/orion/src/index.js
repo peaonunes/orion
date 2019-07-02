@@ -2,6 +2,7 @@ export * from 'semantic-ui-react'
 
 export { default as Button } from './Button'
 export { default as ClickOutside } from './ClickOutside'
+export { default as Datepicker } from './Datepicker'
 export { default as Dropdown } from './Dropdown'
 export { default as Filter } from './Filter'
 export * from './Form'
