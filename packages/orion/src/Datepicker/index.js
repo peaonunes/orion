@@ -4,6 +4,8 @@ import { DayPickerSingleDateController } from 'react-dates'
 
 import 'react-dates/initialize'
 
+import Button from '../Button'
+
 const Datepicker = ({
   date: dateProp,
   defaultDate,
@@ -22,6 +24,10 @@ const Datepicker = ({
       date={date}
       onDateChange={handleChange}
       hideKeyboardShortcutsPanel
+      horizontalMonthPadding={15}
+      daySize={40}
+      navPrev={<Button icon="keyboard_arrow_left" />}
+      navNext={<Button icon="keyboard_arrow_right" />}
       {...otherProps}
     />
   )

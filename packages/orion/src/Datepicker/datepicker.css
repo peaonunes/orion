@@ -1,0 +1,107 @@
+.DayPicker {
+  @apply bg-white border border-gray-900-16 rounded shadow-200;
+}
+
+.DayPicker_focusRegion {
+  @apply relative;
+}
+
+/** Navigation **/
+
+.DayPickerNavigation {
+  @apply absolute flex justify-between p-24 w-full z-10;
+}
+
+/** Week headers **/
+.DayPicker_weekHeaders {
+  @apply relative;
+  margin-left: 9px;
+}
+
+.DayPicker_weekHeader {
+  @apply absolute;
+  top: 88px;
+  z-index: 1;
+}
+
+.DayPicker_weekHeader_ul {
+  @apply flex;
+}
+
+.DayPicker_weekHeader_li {
+  @apply flex justify-center;
+}
+
+/** Transition container **/
+.DayPicker_transitionContainer {
+  @apply relative overflow-hidden;
+}
+
+/** Calendar month **/
+
+.CalendarMonth_caption {
+  @apply flex justify-center mt-32;
+  margin-bottom: 60px;
+}
+
+.CalendarMonth_caption > strong {
+  @apply font-display font-normal text-gray-800 text-lg tracking-h2;
+}
+
+/** Calendar month grid **/
+
+.CalendarMonthGrid {
+  margin-left: 9px;
+}
+
+.CalendarMonthGrid__horizontal {
+  @apply absolute;
+}
+
+.CalendarMonthGrid_month__horizontal {
+  @apply inline-block;
+}
+
+.CalendarMonthGrid_month__hidden {
+  @apply invisible;
+}
+
+.CalendarMonthGrid_month__hideForAnimation {
+  @apply absolute opacity-0 pointer-events-none;
+  z-index: -1;
+}
+
+/** Calendar day **/
+
+.CalendarDay {
+  @apply border outline-none text-center transition-default select-none;
+  transition-property: background-color, border-color, color;
+
+  /*
+   * The same as gray-900-16, but in RGB. Necessary because
+   * the opacity from RGBA is causing issues here.
+   */
+  border-color: #e0e0e0;
+}
+
+.CalendarDay:hover {
+  @apply bg-gray-900-12;
+}
+
+.CalendarDay:active,
+.CalendarDay:focus {
+  @apply bg-gray-900-16;
+}
+
+.CalendarDay__selected {
+  @apply bg-wave-500 border-wave-500 text-white;
+}
+
+.CalendarDay__selected:hover {
+  @apply bg-wave-600;
+}
+
+.CalendarDay__selected:active,
+.CalendarDay__selected:focus {
+  @apply bg-wave-700;
+}
