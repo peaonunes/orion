@@ -1,0 +1,3 @@
+.CalendarDay__selected_span {
+  @apply border-wave-200 bg-wave-500-8 text-gray-800;
+}
