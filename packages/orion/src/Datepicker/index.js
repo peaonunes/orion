@@ -24,7 +24,7 @@ const Datepicker = ({
       date={date}
       onDateChange={handleChange}
       hideKeyboardShortcutsPanel
-      horizontalMonthPadding={15}
+      horizontalMonthPadding={0}
       daySize={40}
       navPrev={<Button icon="keyboard_arrow_left" />}
       navNext={<Button icon="keyboard_arrow_right" />}
