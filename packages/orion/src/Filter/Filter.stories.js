@@ -13,7 +13,10 @@ const actions = {
 storiesOf('Filter', module)
   .addDecorator(withKnobs)
   .add('With input', () => (
-    <Filter text={text('Label', 'Open')} {...actions}>
+    <Filter
+      text={text('Label', 'Open')}
+      extraFooterContent={text('Extra footer content', '')}
+      {...actions}>
       {({ onChange, value }) => (
         <Input
           autoFocus

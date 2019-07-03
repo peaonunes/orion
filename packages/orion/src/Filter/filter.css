@@ -37,3 +37,7 @@
 .ui.popup.filter .filter-buttons {
   @apply flex justify-between;
 }
+
+.ui.popup.filter .filter-footer-content {
+  @apply leading-14 font-display mr-8 text-sm text-gray-800;
+}
