@@ -28,15 +28,17 @@ const RangedDatepicker = ({
   }
 
   return (
-    <ReactDatesDatepicker
-      as={DayPickerRangeController}
-      startDate={_.get(dates, 'startDate')}
-      endDate={_.get(dates, 'endDate')}
-      onDatesChange={handleDatesChange}
-      focusedInput={focusedInput || 'startDate'}
-      onFocusChange={handleFocusChange}
-      {...otherProps}
-    />
+    <div className="ui ranged-datepicker">
+      <ReactDatesDatepicker
+        as={DayPickerRangeController}
+        startDate={_.get(dates, 'startDate')}
+        endDate={_.get(dates, 'endDate')}
+        onDatesChange={handleDatesChange}
+        focusedInput={focusedInput || 'startDate'}
+        onFocusChange={handleFocusChange}
+        {...otherProps}
+      />
+    </div>
   )
 }
 

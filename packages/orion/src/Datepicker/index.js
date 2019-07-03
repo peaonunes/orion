@@ -18,12 +18,14 @@ const Datepicker = ({
 
   const date = dateProp || dateState
   return (
-    <ReactDatesDatepicker
-      as={DayPickerSingleDateController}
-      date={date}
-      onDateChange={handleChange}
-      {...otherProps}
-    />
+    <div className="ui datepicker">
+      <ReactDatesDatepicker
+        as={DayPickerSingleDateController}
+        date={date}
+        onDateChange={handleChange}
+        {...otherProps}
+      />
+    </div>
   )
 }
 

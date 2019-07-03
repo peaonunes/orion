@@ -1,3 +1,7 @@
+.ui.datepicker {
+  @apply -mx-24;
+}
+
 .DayPicker_focusRegion {
   @apply relative;
 }
