@@ -76,7 +76,11 @@
 /* Subtle */
 
 .ui.button.subtle {
-  @apply bg-transparent;
+  @apply bg-transparent h-auto;
+}
+
+.ui.button.subtle.icon {
+  @apply h-24 w-24;
 }
 
 /* Subtle Primary */

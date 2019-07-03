@@ -31,7 +31,7 @@
 }
 
 .ui.popup.filter .filter-content {
-  @apply p-8;
+  @apply p-8 pb-24;
 }
 
 .ui.popup.filter .filter-buttons {
