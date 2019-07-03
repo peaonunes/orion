@@ -5,7 +5,7 @@
 /** Navigation **/
 
 .DayPickerNavigation {
-  @apply absolute flex justify-between w-full z-10;
+  @apply absolute flex justify-between px-24 w-full z-10;
 }
 
 /** Week headers **/

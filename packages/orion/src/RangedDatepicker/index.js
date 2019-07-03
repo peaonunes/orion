@@ -3,9 +3,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { DayPickerRangeController } from 'react-dates'
 
-import 'react-dates/initialize'
-
-import Button from '../Button'
+import ReactDatesDatepicker from '../Datepicker/ReactDatesDatepicker'
 
 const RangedDatepicker = ({
   dates: dateProp,
@@ -30,17 +28,13 @@ const RangedDatepicker = ({
   }
 
   return (
-    <DayPickerRangeController
+    <ReactDatesDatepicker
+      as={DayPickerRangeController}
       startDate={_.get(dates, 'startDate')}
       endDate={_.get(dates, 'endDate')}
       onDatesChange={handleDatesChange}
       focusedInput={focusedInput || 'startDate'}
       onFocusChange={handleFocusChange}
-      hideKeyboardShortcutsPanel
-      horizontalMonthPadding={15}
-      daySize={40}
-      navPrev={<Button icon="keyboard_arrow_left" />}
-      navNext={<Button icon="keyboard_arrow_right" />}
       {...otherProps}
     />
   )

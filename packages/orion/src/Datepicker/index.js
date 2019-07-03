@@ -2,9 +2,7 @@ import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { DayPickerSingleDateController } from 'react-dates'
 
-import 'react-dates/initialize'
-
-import Button from '../Button'
+import ReactDatesDatepicker from './ReactDatesDatepicker'
 
 const Datepicker = ({
   date: dateProp,
@@ -20,14 +18,10 @@ const Datepicker = ({
 
   const date = dateProp || dateState
   return (
-    <DayPickerSingleDateController
+    <ReactDatesDatepicker
+      as={DayPickerSingleDateController}
       date={date}
       onDateChange={handleChange}
-      hideKeyboardShortcutsPanel
-      horizontalMonthPadding={0}
-      daySize={40}
-      navPrev={<Button icon="keyboard_arrow_left" />}
-      navNext={<Button icon="keyboard_arrow_right" />}
       {...otherProps}
     />
   )
