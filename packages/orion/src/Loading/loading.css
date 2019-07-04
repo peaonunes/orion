@@ -1,0 +1,7 @@
+.ui.loading-spinner {
+  @apply w-48;
+}
+
+.ui.loading-spinner.small {
+  width: 20px;
+}
