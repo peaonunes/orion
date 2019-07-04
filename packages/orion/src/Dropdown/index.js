@@ -14,6 +14,10 @@ const DROPDOWN_ICON = {
   name: 'keyboard_arrow_down'
 }
 
+const LOADING_ICON = {
+  className: 'dropdown-loading-icon'
+}
+
 const MultipleModes = {
   FILTER_SELECTED: true,
   KEEP_SELECTED: 'keep'
@@ -38,11 +42,7 @@ const Dropdown = ({
 
   const dropdownProps = {
     className: classes,
-    icon: loading ? (
-      <i className="dropdown-loading-icon icon" />
-    ) : (
-      icon || DROPDOWN_ICON
-    ),
+    icon: loading ? LOADING_ICON : icon,
     multiple: !!multiple,
     ...otherProps
   }
@@ -75,6 +75,7 @@ Dropdown.propTypes = {
 }
 
 Dropdown.defaultProps = {
+  icon: DROPDOWN_ICON,
   size: Sizes.DEFAULT
 }
 
