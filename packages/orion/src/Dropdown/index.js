@@ -21,22 +21,28 @@ const MultipleModes = {
 
 const Dropdown = ({
   className,
+  icon,
   inlineMenu,
   multiple,
   size,
   warning,
   ...otherProps
 }) => {
-  const { options } = otherProps
+  const { loading, options } = otherProps
   const shouldKeepSelected = options && multiple === MultipleModes.KEEP_SELECTED
   const classes = cx(className, size, {
     'inline-menu': inlineMenu,
     'keep-selected': shouldKeepSelected,
     warning
   })
+
   const dropdownProps = {
     className: classes,
-    icon: DROPDOWN_ICON,
+    icon: loading ? (
+      <i className="dropdown-loading-icon icon" />
+    ) : (
+      icon || DROPDOWN_ICON
+    ),
     multiple: !!multiple,
     ...otherProps
   }

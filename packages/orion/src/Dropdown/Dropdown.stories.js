@@ -40,6 +40,7 @@ storiesOf('Dropdown', module)
         inlineMenu={boolean('Inline Menu', false, 'Type')}
         size={sizeKnob(Sizes.DEFAULT, 'Size')}
         disabled={boolean('Disabled', false, 'State')}
+        loading={boolean('Loading', false, 'State')}
         error={boolean('Error', false, 'State')}
         warning={boolean('Warning', false, 'State')}
       />
