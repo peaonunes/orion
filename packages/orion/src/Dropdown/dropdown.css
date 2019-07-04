@@ -31,7 +31,7 @@
 }
 
 .ui.dropdown > .menu {
-  @apply absolute bg-white border border-gray-900-16 hidden mt-8 shadow-200 left-0 w-full;
+  @apply absolute bg-white border border-gray-900-16 hidden mt-8 shadow-200 left-0 overflow-y-auto w-full;
   top: 100%;
 }
 
