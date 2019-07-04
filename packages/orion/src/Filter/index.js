@@ -11,6 +11,7 @@ const Filter = ({
   clearButton,
   children,
   className,
+  extraFooterContent,
   initialValue,
   onClear,
   onApply,
@@ -86,14 +87,19 @@ const Filter = ({
               }
             })}
           </div>
-          {Button.create(applyButton, {
-            autoGenerateKey: false,
-            defaultProps: {
-              primary: true,
-              subtle: true,
-              type: 'submit'
-            }
-          })}
+          <div className="flex items-baseline">
+            {extraFooterContent && (
+              <div className="filter-footer-content">{extraFooterContent}</div>
+            )}
+            {Button.create(applyButton, {
+              autoGenerateKey: false,
+              defaultProps: {
+                primary: true,
+                subtle: true,
+                type: 'submit'
+              }
+            })}
+          </div>
         </div>
       </ClickOutside>
     </Popup>
@@ -105,6 +111,7 @@ Filter.propTypes = {
   clearButton: PropTypes.oneOfType([PropTypes.node, PropTypes.object]),
   children: PropTypes.func.isRequired,
   className: PropTypes.string,
+  extraFooterContent: PropTypes.node,
   initialValue: PropTypes.any,
   onClear: PropTypes.func,
   onApply: PropTypes.func,
