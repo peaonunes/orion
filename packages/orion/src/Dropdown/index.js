@@ -14,6 +14,10 @@ const DROPDOWN_ICON = {
   name: 'keyboard_arrow_down'
 }
 
+const LOADING_ICON = {
+  className: 'dropdown-loading-icon'
+}
+
 const MultipleModes = {
   FILTER_SELECTED: true,
   KEEP_SELECTED: 'keep'
@@ -21,22 +25,24 @@ const MultipleModes = {
 
 const Dropdown = ({
   className,
+  icon,
   inlineMenu,
   multiple,
   size,
   warning,
   ...otherProps
 }) => {
-  const { options } = otherProps
+  const { loading, options } = otherProps
   const shouldKeepSelected = options && multiple === MultipleModes.KEEP_SELECTED
   const classes = cx(className, size, {
     'inline-menu': inlineMenu,
     'keep-selected': shouldKeepSelected,
     warning
   })
+
   const dropdownProps = {
     className: classes,
-    icon: DROPDOWN_ICON,
+    icon: loading ? LOADING_ICON : icon,
     multiple: !!multiple,
     ...otherProps
   }
@@ -69,6 +75,7 @@ Dropdown.propTypes = {
 }
 
 Dropdown.defaultProps = {
+  icon: DROPDOWN_ICON,
   size: Sizes.DEFAULT
 }
 
