@@ -9,6 +9,16 @@ const options = [
   { text: 'Red', value: 'red' }
 ]
 
+describe('when the dropdown is loading', () => {
+  it('should render a special icon instead of the regular dropdown icon', () => {
+    const { container } = render(<Dropdown loading />)
+
+    const iconElement = container.querySelector('.icon')
+    expect(iconElement).not.toHaveClass('dropdown-icon')
+    expect(iconElement).toHaveClass('dropdown-loading-icon')
+  })
+})
+
 describe('when an option is selected', () => {
   let renderResult
 
