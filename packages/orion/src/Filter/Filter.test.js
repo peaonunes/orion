@@ -93,15 +93,21 @@ describe('when a value is given', () => {
 
 describe("when the filter's value changes", () => {
   const newValue = 'New Value'
+  let onChange
   let onApply
   let onClear
   let renderResult
 
   beforeEach(() => {
+    onChange = jest.fn()
     onApply = jest.fn()
     onClear = jest.fn()
     renderResult = render(
-      <Filter text="Open" onApply={onApply} onClear={onClear}>
+      <Filter
+        text="Open"
+        onChange={onChange}
+        onApply={onApply}
+        onClear={onClear}>
         {childFn}
       </Filter>
     )
@@ -117,6 +123,10 @@ describe("when the filter's value changes", () => {
 
   it('should not call "onApply" with the new value', () => {
     expect(onApply).not.toHaveBeenCalled()
+  })
+
+  it('should call "onChange" with the new value', () => {
+    expect(onChange).toHaveBeenCalledWith(newValue)
   })
 
   describe('when the "apply" button is clicked', () => {
@@ -160,6 +170,10 @@ describe("when the filter's value changes", () => {
 
     it('should call "onClear"', () => {
       expect(onClear).toHaveBeenCalled()
+    })
+
+    it('should call "onChange" with the initial value', () => {
+      expect(onChange).toHaveBeenCalledWith(undefined)
     })
   })
 })

@@ -13,6 +13,7 @@ const Filter = ({
   className,
   extraFooterContent,
   initialValue,
+  onChange,
   onClear,
   onApply,
   selectedText,
@@ -42,6 +43,7 @@ const Filter = ({
 
   const handleClear = () => {
     setLocalValue(value)
+    onChange && onChange(value)
     onClear && onClear()
   }
 
@@ -49,6 +51,11 @@ const Filter = ({
     if (keyboardKey.getCode(event) === keyboardKey.Escape) {
       handleApply(event)
     }
+  }
+
+  const handleChange = newLocalValue => {
+    setLocalValue(newLocalValue)
+    onChange && onChange(newLocalValue)
   }
 
   const triggerClasses = cx('filter-trigger', {
@@ -74,7 +81,7 @@ const Filter = ({
         onKeyDown={handleKeyDown}
         onSubmit={handleApply}>
         <div className="filter-content">
-          {children({ onChange: setLocalValue, value: localValue })}
+          {children({ onChange: handleChange, value: localValue })}
         </div>
         <div className="filter-buttons">
           <div className={cx({ invisible: isPristine })}>
@@ -113,6 +120,7 @@ Filter.propTypes = {
   className: PropTypes.string,
   extraFooterContent: PropTypes.node,
   initialValue: PropTypes.any,
+  onChange: PropTypes.func,
   onClear: PropTypes.func,
   onApply: PropTypes.func,
   selectedText: PropTypes.func,

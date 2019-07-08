@@ -6,6 +6,7 @@ import { object, text, withKnobs } from '@storybook/addon-knobs'
 import { Dropdown, Filter, Input } from '../'
 
 const actions = {
+  onChange: action('onChange'),
   onApply: action('onApply'),
   onClear: action('onClear')
 }
