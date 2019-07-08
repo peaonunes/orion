@@ -35,6 +35,12 @@ import '@inloco/orion/dist/orion.css'
 import { Button, Dropdown } from '@inloco/orion'
 ```
 
+### Testing
+
+Apps using Orion will have failing Jest tests due to canvas usage, which is not supported by default.
+To fix this, just include the `jest-canvas-mock` dev dependency and follow its
+[setup instructions](https://www.npmjs.com/package/jest-canvas-mock#setup).
+
 ## Contributing
 
 Since Orion is part of a monorepo, follow [Monorepo README](https://github.com/inloco/orion) for instructions.
