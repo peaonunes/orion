@@ -76,10 +76,10 @@
  */
 
 .ui.dropdown.multiple .ui.label {
-  @apply mr-8;
+  @apply -ml-8 mr-16;
 }
 
-.ui.dropdown.multiple .ui.label:first-child {
+.ui.dropdown.multiple .ui.label + input {
   @apply -ml-8;
 }
 
