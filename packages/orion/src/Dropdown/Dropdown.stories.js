@@ -9,7 +9,7 @@ import { sizeKnob } from '../utils/stories'
 const developerOptions = [
   { text: 'Francisco Gileno', value: 1 },
   { text: 'Rafael Nunes', value: 2 },
-  { text: 'Maira Bello', value: 3 }
+  { text: 'Maíra Bello', value: 3 }
 ]
 
 storiesOf('Dropdown', module)

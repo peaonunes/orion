@@ -75,6 +75,7 @@ Dropdown.propTypes = {
 }
 
 Dropdown.defaultProps = {
+  deburr: true,
   icon: DROPDOWN_ICON,
   size: Sizes.DEFAULT
 }
