@@ -34,3 +34,17 @@ storiesOf('Menu', module)
       </Menu>
     )
   })
+  .add('Switcher', () => {
+    return (
+      <Menu
+        switcher
+        items={object('Items', [
+          { name: 'Switcher #1', key: 0, icon: 'error' },
+          { name: 'Switcher #2', key: 1 },
+          { name: 'Switcher #3', key: 2 }
+        ])}
+        defaultActiveIndex={0}
+        onItemClick={action('onItemClick')}
+      />
+    )
+  })
