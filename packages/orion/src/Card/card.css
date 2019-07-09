@@ -1,7 +1,20 @@
 .ui.card {
-  @apply bg-white p-24 rounded shadow-100;
+  @apply bg-white inline-block rounded shadow-100;
+}
+
+.ui.card.fluid {
+  @apply w-full;
 }
 
 .ui.card .header {
-  @apply font-display tracking-h2 text-lg text-gray-800;
+  @apply font-display mb-24 tracking-h2 text-lg text-gray-800;
+}
+
+.ui.card > .content {
+  @apply p-24;
+}
+
+.ui.card > .extra {
+  @apply flex items-center justify-end px-24 py-8;
+  @apply border-t-1 border-gray-900-16;
 }
