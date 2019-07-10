@@ -1,3 +1,91 @@
+.ui.popup {
+  @apply bg-white border border-gray-900-8 p-16 rounded shadow-300 text-gray-800 z-50;
+}
+
+.ui.popup:before {
+  @apply absolute bg-white;
+
+  content: '';
+  height: 12px;
+  transform: rotate(45deg);
+  width: 12px;
+}
+
+.ui.popup.small {
+  @apply text-sm;
+}
+
+/** Positions **/
+
+.ui.popup.top {
+  @apply mb-8;
+}
+
+.ui.popup.bottom {
+  @apply mt-8;
+}
+
+.ui.popup.left.center {
+  @apply mr-8;
+}
+
+.ui.popup.right.center {
+  @apply ml-8;
+}
+
+.ui.popup.top:before {
+  @apply top-auto right-auto;
+  bottom: -6px;
+  box-shadow: 1px 1px 0 0 rgba(61, 62, 63, 0.08);
+}
+
+.ui.popup.bottom:before {
+  @apply bottom-auto right-auto;
+  top: -6px;
+  box-shadow: -1px -1px 0 0 rgba(61, 62, 63, 0.08);
+}
+
+.ui.popup.left:before {
+  left: 10px;
+}
+
+.ui.popup.right:before {
+  @apply left-auto;
+
+  right: 10px;
+}
+
+.ui.popup.top.center:before,
+.ui.popup.bottom.center:before {
+  left: 50%;
+  margin-left: -6px;
+}
+
+.ui.popup.left.center:before,
+.ui.popup.right.center:before {
+  @apply bottom-auto;
+  margin-top: -6px;
+  top: 50%;
+}
+
+.ui.popup.left.center:before {
+  @apply left-auto;
+  right: -6px;
+  box-shadow: 1px -1px 0 0 rgba(61, 62, 63, 0.08);
+}
+
+.ui.popup.right.center:before {
+  @apply right-auto;
+  left: -6px;
+  box-shadow: -1px 1px 0 0 rgba(61, 62, 63, 0.08);
+}
+
+/** Basic (not pointing) **/
+
 .ui.popup.basic {
-  @apply bg-white border border-gray-900-16 mt-8 p-16 rounded shadow-200 z-50;
+  @apply border-gray-900-16 shadow-200 text-gray-900;
+}
+
+.ui.popup.basic:before {
+  @apply hidden;
 }
