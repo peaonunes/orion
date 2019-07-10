@@ -1,17 +1,29 @@
 import cx from 'classnames'
+import PropTypes from 'prop-types'
 import React from 'react'
 import { Popup } from 'semantic-ui-react'
 
 import Icon from '../Icon'
 import { Sizes } from '../utils/sizes'
 
-const InfoIcon = props => (
+const InfoIcon = ({ className, content, ...otherProps }) => (
   <Popup
     size={Sizes.SMALL}
-    trigger={<Icon className="info-icon" name="info" />}
+    trigger={
+      <Icon
+        className={cx('info-icon', className)}
+        name="info"
+        {...otherProps}
+      />
+    }
     position="right center"
-    {...props}
+    content={content}
   />
 )
+
+InfoIcon.propTypes = {
+  className: PropTypes.string,
+  content: PropTypes.node
+}
 
 export default InfoIcon
