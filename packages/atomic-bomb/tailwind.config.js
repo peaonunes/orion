@@ -327,7 +327,7 @@ module.exports = {
     },
     textColor: theme => ({
       white: theme('colors.white'),
-      gray: _.pick(theme('colors.gray'), ['700', '800', '900']),
+      gray: _.pick(theme('colors.gray'), ['600', '700', '800', '900']),
       wave: _.pick(theme('colors.wave'), ['500', '600', '700', '800']),
       green: _.pick(theme('colors.green'), ['500']),
       magenta: _.pick(theme('colors.magenta'), ['500', '600']),
