@@ -7,7 +7,7 @@ import { Icon as SemanticIcon } from 'semantic-ui-react'
 import { createShorthandFactory } from '../utils/factories'
 
 const Icon = ({ className, name, ...otherProps }) => {
-  const classes = cx(className, 'icon material-icons text-lg')
+  const classes = cx(className, 'icon material-icons')
   return (
     <i className={classes} {...otherProps}>
       {name}
