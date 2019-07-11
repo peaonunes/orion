@@ -30,7 +30,7 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "keyboard-key": "^1.0.4",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.14",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
     "react-dates": "^20.2.5",
