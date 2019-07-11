@@ -1,5 +1,5 @@
 .ui.dropdown .menu > .item .text {
-  @apply truncate;
+  @apply leading-20 truncate;
 }
 
 .ui.dropdown .menu > .item,
@@ -20,5 +20,5 @@
 }
 
 .ui.dropdown .menu > .item .description {
-  @apply mb-4 leading-14 text-gray-800 text-sm truncate;
+  @apply mt-4 leading-14 text-gray-800 text-sm truncate;
 }
