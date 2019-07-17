@@ -16,7 +16,7 @@ const Message = ({
   const { header } = otherProps
 
   const orionMessageClasses = cx('orion-message', {
-    'orion-message--shadow': onDimiss
+    'orion-message--shadow': onDismiss
   })
 
   const semanticMessageClasses = cx(className, {
