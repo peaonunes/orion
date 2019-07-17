@@ -15,7 +15,11 @@ const Message = ({
 }) => {
   const { header } = otherProps
 
-  const classes = cx(className, {
+  const orionMessageClasses = cx('orion-message', {
+    'orion-message--shadow': onDimiss
+  })
+
+  const semanticMessageClasses = cx(className, {
     error,
     success,
     warning,
@@ -30,18 +34,20 @@ const Message = ({
     <Icon name="check" className="text-green-500" />
   )
 
-  const dismissIcon = onDismiss && (
-    <Icon
-      name="close"
-      className="orion-message__close-icon"
-      onClick={onDismiss}
-    />
-  )
-
   return (
-    <div className="orion-message">
-      {dismissIcon}
-      <SemanticMessage icon={icon} className={classes} {...otherProps} />
+    <div className={orionMessageClasses}>
+      {onDismiss && (
+        <Icon
+          name="close"
+          className="orion-message__close-icon"
+          onClick={onDismiss}
+        />
+      )}
+      <SemanticMessage
+        icon={icon}
+        className={semanticMessageClasses}
+        {...otherProps}
+      />
     </div>
   )
 }
