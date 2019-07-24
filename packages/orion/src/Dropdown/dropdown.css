@@ -19,7 +19,7 @@
 }
 
 .ui.dropdown.small {
-  @apply min-h-32;
+  @apply min-h-24;
 }
 
 .ui.dropdown .text {
