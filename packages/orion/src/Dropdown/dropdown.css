@@ -19,7 +19,7 @@
 }
 
 .ui.dropdown.small {
-  @apply min-h-32;
+  @apply min-h-24;
 }
 
 .ui.dropdown .text {
@@ -148,6 +148,10 @@
 
 .ui.dropdown.selection {
   @apply bg-white border border-gray-900-24 rounded;
+}
+
+.ui.dropdown.selection.small {
+  @apply min-h-32;
 }
 
 .ui.dropdown.selection.disabled {
