@@ -156,6 +156,7 @@ module.exports = {
     }),
     borderRadius: {
       none: '0',
+      small: '2px',
       default: '4px',
       full: '9999px'
     },
