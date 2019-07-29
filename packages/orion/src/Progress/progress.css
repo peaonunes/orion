@@ -1,0 +1,12 @@
+.ui.progress {
+  @apply bg-gray-900-8 rounded-small;
+}
+
+.ui.progress .bar {
+  @apply h-24 rounded-small transition-default;
+  transition-property: width;
+}
+
+.ui.progress.small .bar {
+  @apply h-4;
+}
