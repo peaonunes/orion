@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
-import { number, withKnobs } from '@storybook/addon-knobs'
+import { number, withKnobs, text } from '@storybook/addon-knobs'
 
 import { RangedDatepicker } from '../'
 
@@ -12,9 +12,12 @@ export const actions = {
 storiesOf('RangedDatepicker', module)
   .addDecorator(withKnobs)
   .add('basic', () => {
+    const startDate = text('Start Date') || null
+    const endDate = text('End Date') || null
     return (
       <RangedDatepicker
         numberOfMonths={number('Number of months', 1)}
+        dates={startDate || endDate ? { startDate, endDate } : null}
         {...actions}
       />
     )

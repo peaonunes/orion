@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { DayPickerRangeController } from 'react-dates'
 
 import ReactDatesDatepicker from '../Datepicker/ReactDatesDatepicker'
+import { toMoment } from '../utils/datetime'
 
 const RangedDatepicker = ({
   dates: dateProp,
@@ -31,8 +32,8 @@ const RangedDatepicker = ({
     <div className="ui ranged-datepicker">
       <ReactDatesDatepicker
         as={DayPickerRangeController}
-        startDate={_.get(dates, 'startDate')}
-        endDate={_.get(dates, 'endDate')}
+        startDate={toMoment(_.get(dates, 'startDate'))}
+        endDate={toMoment(_.get(dates, 'endDate'))}
         onDatesChange={handleDatesChange}
         focusedInput={focusedInput || 'startDate'}
         onFocusChange={handleFocusChange}

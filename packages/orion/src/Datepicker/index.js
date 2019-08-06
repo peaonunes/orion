@@ -1,3 +1,4 @@
+import { toMoment } from '../utils/datetime'
 import PropTypes from 'prop-types'
 import React, { useState } from 'react'
 import { DayPickerSingleDateController } from 'react-dates'
@@ -21,7 +22,7 @@ const Datepicker = ({
     <div className="ui datepicker">
       <ReactDatesDatepicker
         as={DayPickerSingleDateController}
-        date={date}
+        date={toMoment(date)}
         onDateChange={handleChange}
         {...otherProps}
       />
