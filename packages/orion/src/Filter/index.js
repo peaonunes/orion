@@ -58,12 +58,19 @@ const Filter = ({
     onChange && onChange(newLocalValue)
   }
 
+  const handleTriggerClick = () => {
+    if (!open) {
+      setLocalValue(value)
+    }
+    setOpen(!open)
+  }
+
   const triggerClasses = cx('filter-trigger', {
     active: open,
     selected: isSelected
   })
   const trigger = (
-    <Button className={triggerClasses} onClick={() => setOpen(!open)}>
+    <Button className={triggerClasses} onClick={handleTriggerClick}>
       {isSelected ? selectedText(value) : text}
     </Button>
   )

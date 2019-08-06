@@ -88,6 +88,25 @@ describe('when a value is given', () => {
       )
       expect(queryByText(newValue)).toBeTruthy()
     })
+
+    it("should pass this new given value to the filter's contents", () => {
+      const { getByText, getByPlaceholderText, rerender } = render(
+        <Filter text="Open" value={value}>
+          {childFn}
+        </Filter>
+      )
+
+      const newValue = 'New controlled value'
+      rerender(
+        <Filter text="Open" value={newValue}>
+          {childFn}
+        </Filter>
+      )
+
+      fireEvent.click(getByText(newValue))
+      const input = getByPlaceholderText('Input')
+      expect(input.value).toEqual(newValue)
+    })
   })
 })
 
