@@ -8,7 +8,9 @@ import { Dropdown, Filter, Input } from '../'
 const actions = {
   onChange: action('onChange'),
   onApply: action('onApply'),
-  onClear: action('onClear')
+  onClear: action('onClear'),
+  onOpen: action('onOpen'),
+  onClose: action('onClose')
 }
 
 storiesOf('Filter', module)
