@@ -1,5 +1,5 @@
 .ui.button {
-  @apply h-40 rounded-full text-base font-medium outline-none inline-flex items-center transition-default;
+  @apply h-40 rounded-full text-base font-default font-medium outline-none inline-flex items-center transition-default;
   transition-property: background-color, opacity;
 }
 
