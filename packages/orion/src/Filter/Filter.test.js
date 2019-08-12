@@ -12,15 +12,35 @@ const childFn = ({ onChange, value }) => (
   />
 )
 
-it('should open/close the popup when the trigger is clicked', () => {
-  const triggerText = 'Open'
-  const { getByText } = render(<Filter text={triggerText}>{childFn}</Filter>)
+describe('when the trigger is clicked', () => {
+  it('should open/close the popup', () => {
+    const triggerText = 'Open'
+    const { getByText } = render(<Filter text={triggerText}>{childFn}</Filter>)
 
-  fireEvent.click(getByText(triggerText))
-  expect(getByText(triggerText)).toHaveClass('active')
+    fireEvent.click(getByText(triggerText))
+    expect(getByText(triggerText)).toHaveClass('active')
 
-  fireEvent.click(getByText(triggerText))
-  expect(getByText(triggerText)).not.toHaveClass('active')
+    fireEvent.click(getByText(triggerText))
+    expect(getByText(triggerText)).not.toHaveClass('active')
+  })
+
+  it('should call the "onOpen" and "onClose"', () => {
+    const onOpen = jest.fn()
+    const onClose = jest.fn()
+    const triggerText = 'Open'
+    const { getByText } = render(
+      <Filter onClose={onClose} onOpen={onOpen} text={triggerText}>
+        {childFn}
+      </Filter>
+    )
+
+    fireEvent.click(getByText(triggerText))
+    expect(onOpen).toHaveBeenCalled()
+    expect(onClose).not.toHaveBeenCalled()
+
+    fireEvent.click(getByText(triggerText))
+    expect(onClose).toHaveBeenCalled()
+  })
 })
 
 describe('when an initial value is given', () => {
@@ -113,18 +133,21 @@ describe('when a value is given', () => {
 describe("when the filter's value changes", () => {
   const newValue = 'New Value'
   let onChange
+  let onClose
   let onApply
   let onClear
   let renderResult
 
   beforeEach(() => {
     onChange = jest.fn()
+    onClose = jest.fn()
     onApply = jest.fn()
     onClear = jest.fn()
     renderResult = render(
       <Filter
         text="Open"
         onChange={onChange}
+        onClose={onClose}
         onApply={onApply}
         onClear={onClear}>
         {childFn}
@@ -161,6 +184,10 @@ describe("when the filter's value changes", () => {
 
     it('should call "onApply" with the new value', () => {
       expect(onApply).toHaveBeenCalledWith(newValue)
+    })
+
+    it('should call "onClose"', () => {
+      expect(onClose).toHaveBeenCalled()
     })
   })
 

@@ -13,9 +13,11 @@ const Filter = ({
   className,
   extraFooterContent,
   initialValue,
+  onApply,
   onChange,
   onClear,
-  onApply,
+  onClose,
+  onOpen,
   selectedText,
   text,
   value: propValue,
@@ -35,7 +37,9 @@ const Filter = ({
   const handleApply = event => {
     setValue(localValue)
     onApply && onApply(localValue)
+
     setOpen(false)
+    onClose && onClose()
 
     // Prevent form submission.
     event.preventDefault()
@@ -59,8 +63,11 @@ const Filter = ({
   }
 
   const handleTriggerClick = () => {
-    if (!open) {
+    if (open) {
+      onClose && onClose()
+    } else {
       setLocalValue(value)
+      onOpen && onOpen()
     }
     setOpen(!open)
   }
@@ -127,9 +134,11 @@ Filter.propTypes = {
   className: PropTypes.string,
   extraFooterContent: PropTypes.node,
   initialValue: PropTypes.any,
+  onApply: PropTypes.func,
+  onClose: PropTypes.func,
   onChange: PropTypes.func,
   onClear: PropTypes.func,
-  onApply: PropTypes.func,
+  onOpen: PropTypes.func,
   selectedText: PropTypes.func,
   text: PropTypes.string.isRequired,
   value: PropTypes.any
