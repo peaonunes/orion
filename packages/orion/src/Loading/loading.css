@@ -1,7 +1,11 @@
 .ui.loading-spinner {
-  @apply w-48;
+  @apply h-full mx-auto w-48;
 }
 
 .ui.loading-spinner.small {
   width: 20px;
+}
+
+.ui.loading-spinner-inline {
+  @apply h-auto m-0;
 }

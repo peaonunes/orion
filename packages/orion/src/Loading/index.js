@@ -6,20 +6,26 @@ import Lottie from 'react-lottie'
 import { Sizes, sizePropType } from '../utils/sizes'
 import animationData from './animationData'
 
-const Loading = ({ className, size, ...otherProps }) => (
-  <div className={cx('ui loading-spinner', className, size)} {...otherProps}>
-    <Lottie
-      options={{
-        loop: true,
-        autoplay: true,
-        animationData
-      }}
-    />
-  </div>
-)
+const Loading = ({ className, inline, size, ...otherProps }) => {
+  const classes = cx('ui loading-spinner', className, size, {
+    'loading-spinner-inline': inline
+  })
+  return (
+    <div className={classes} {...otherProps}>
+      <Lottie
+        options={{
+          loop: true,
+          autoplay: true,
+          animationData
+        }}
+      />
+    </div>
+  )
+}
 
 Loading.propTypes = {
   className: PropTypes.string,
+  inline: PropTypes.bool,
   size: sizePropType
 }
 
