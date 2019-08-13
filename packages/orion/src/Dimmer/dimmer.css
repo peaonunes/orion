@@ -1,5 +1,5 @@
 .ui.dimmer {
-  @apply bg-gray-50 flex;
+  @apply bg-gray-50 flex z-30;
   @apply absolute top-0 left-0 w-full h-full;
   @apply transition-default opacity-0 pointer-events-none;
   transition-property: opacity;
