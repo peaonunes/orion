@@ -4,19 +4,28 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Icon as SemanticIcon } from 'semantic-ui-react'
 
+import { CUSTOM_ICONS_MAP } from './custom'
 import { createShorthandFactory } from '../utils/factories'
 
-const Icon = ({ className, name, ...otherProps }) => {
-  const classes = cx(className, 'icon material-icons')
+const Icon = ({ className, color, name, ...otherProps }) => {
+  const isCustomIcon = !!CUSTOM_ICONS_MAP[name]
+  const ElementType = CUSTOM_ICONS_MAP[name] || 'i'
+  const classes = cx(className, 'icon', {
+    'material-icons': !isCustomIcon,
+    [`text-${color}`]: !isCustomIcon,
+
+    [`fill-${color}`]: isCustomIcon
+  })
   return (
-    <i className={classes} {...otherProps}>
+    <ElementType className={classes} {...otherProps}>
       {name}
-    </i>
+    </ElementType>
   )
 }
 
 Icon.propTypes = {
   className: PropTypes.string,
+  color: PropTypes.string,
   name: PropTypes.string
 }
 
