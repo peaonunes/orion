@@ -102,7 +102,7 @@ storiesOf('Button', module)
           primary
           subtle
           disabled={disabled}
-          icon={text('Second Icon', 'add')}
+          icon={text('Second Icon', 'apps')}
           {...actions}
         />
       </React.Fragment>
@@ -128,7 +128,7 @@ storiesOf('Button', module)
           secondary
           subtle
           disabled={disabled}
-          icon={text('Second Icon', 'add')}
+          icon={text('Second Icon', 'apps')}
           {...actions}
         />
       </React.Fragment>

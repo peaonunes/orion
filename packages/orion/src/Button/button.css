@@ -76,11 +76,7 @@
 /* Subtle */
 
 .ui.button.subtle {
-  @apply bg-transparent h-auto;
-}
-
-.ui.button.subtle.icon {
-  @apply h-24 w-24;
+  @apply bg-transparent;
 }
 
 /* Subtle Primary */
@@ -91,11 +87,11 @@
 
 .ui.button.subtle.primary:hover,
 .ui.button.subtle.primary:focus {
-  @apply bg-transparent text-wave-600;
+  @apply text-wave-600;
 }
 
 .ui.button.subtle.primary:active {
-  @apply bg-transparent text-wave-700;
+  @apply text-wave-700;
 }
 
 /* Subtle Secondary */
@@ -106,11 +102,34 @@
 
 .ui.button.subtle.secondary:hover,
 .ui.button.subtle.secondary:focus {
-  @apply bg-transparent text-gray-800;
+  @apply text-gray-800;
 }
 
 .ui.button.subtle.secondary:active {
-  @apply bg-transparent text-gray-900;
+  @apply text-gray-900;
+}
+
+/* Subtle Icon */
+.ui.button.subtle:not(.icon) {
+  @apply h-auto;
+}
+
+.ui.button.subtle.primary:not(.icon):hover,
+.ui.button.subtle.primary:not(.icon):focus,
+.ui.button.subtle.primary:not(.icon):active,
+.ui.button.subtle.secondary:not(.icon):hover,
+.ui.button.subtle.secondary:not(.icon):focus,
+.ui.button.subtle.secondary:not(.icon):active {
+  @apply bg-transparent;
+}
+
+.ui.button.subtle.icon:hover,
+.ui.button.subtle.icon:focus {
+  @apply bg-gray-900-8;
+}
+
+.ui.button.subtle.icon:active {
+  @apply bg-gray-900-12;
 }
 
 /* Ghost */
