@@ -191,9 +191,10 @@ module.exports = {
       move: 'move',
       'not-allowed': 'not-allowed'
     },
-    fill: {
-      current: 'currentColor'
-    },
+    fill: theme => ({
+      current: 'currentColor',
+      ...theme('textColor')
+    }),
     flex: {
       '1': '1 1 0%',
       auto: '1 1 auto',
