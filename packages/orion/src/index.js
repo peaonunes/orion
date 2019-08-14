@@ -1,4 +1,11 @@
-export * from 'semantic-ui-react'
+export {
+  Card,
+  Checkbox,
+  Dimmer,
+  Popup,
+  Search,
+  Select
+} from 'semantic-ui-react'
 
 export { default as Button } from './Button'
 export { default as ClickOutside } from './ClickOutside'
