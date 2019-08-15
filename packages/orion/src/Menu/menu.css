@@ -16,10 +16,6 @@
   @apply ml-0;
 }
 
-.ui.menu .item > .icon {
-  @apply mr-4;
-}
-
 .ui.menu .item.active {
   @apply font-medium text-space-900;
 }
@@ -30,4 +26,22 @@
 
 .ui.menu .menu.right {
   @apply flex ml-auto;
+}
+
+/** Menu item with icon **/
+
+.ui.menu .item > .icon {
+  @apply mr-4;
+}
+
+.ui.menu .item > svg.icon {
+  @apply fill-gray-800;
+}
+
+.ui.menu .item:hover > svg.icon {
+  @apply fill-gray-900;
+}
+
+.ui.menu .item.active > svg.icon {
+  @apply fill-space-900;
 }
