@@ -7,33 +7,15 @@
   @apply ml-0;
 }
 
-.ui.menu.switcher .item:not(.active):hover {
+.ui.menu.switcher .item:not(.active):hover,
+.ui.menu.switcher .item:not(.active):focus {
   @apply bg-gray-900-8;
 }
 
-.ui.menu.switcher .item:not(.active):active,
-.ui.menu.switcher .item:not(.active):focus {
+.ui.menu.switcher .item:not(.active):active {
   @apply bg-gray-900-16;
 }
 
 .ui.menu.switcher .item.active {
-  @apply bg-space-100 font-normal text-space-900;
-}
-
-/** Icon **/
-
-.ui.menu.switcher .item > .icon {
-  @apply text-gray-700;
-}
-
-.ui.menu.switcher .item.active > .icon {
-  @apply text-space-600;
-}
-
-.ui.menu.switcher .item > svg.icon {
-  @apply fill-gray-700;
-}
-
-.ui.menu.switcher .item.active > svg.icon {
-  @apply fill-space-600;
+  @apply bg-space-100 font-normal;
 }
