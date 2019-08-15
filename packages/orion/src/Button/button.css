@@ -49,6 +49,10 @@
   @apply bg-wave-500 text-white;
 }
 
+.ui.button.primary svg.icon {
+  @apply fill-white;
+}
+
 .ui.button.primary:hover,
 .ui.button.primary:focus {
   @apply bg-wave-600;
@@ -85,13 +89,26 @@
   @apply text-wave-500;
 }
 
+.ui.button.subtle.primary svg.icon {
+  @apply fill-wave-500;
+}
+
 .ui.button.subtle.primary:hover,
 .ui.button.subtle.primary:focus {
   @apply bg-transparent text-wave-600;
 }
 
+.ui.button.subtle.primary:hover svg.icon,
+.ui.button.subtle.primary:focus svg.icon {
+  @apply fill-wave-600;
+}
+
 .ui.button.subtle.primary:active {
   @apply bg-transparent text-wave-700;
+}
+
+.ui.button.subtle.primary:active svg.icon {
+  @apply fill-wave-700;
 }
 
 /* Subtle Secondary */
@@ -100,13 +117,26 @@
   @apply text-gray-700;
 }
 
+.ui.button.subtle.secondary svg.icon {
+  @apply fill-gray-700;
+}
+
 .ui.button.subtle.secondary:hover,
 .ui.button.subtle.secondary:focus {
   @apply bg-transparent text-gray-800;
 }
 
+.ui.button.subtle.secondary:hover svg.icon,
+.ui.button.subtle.secondary:focus svg.icon {
+  @apply fill-gray-800;
+}
+
 .ui.button.subtle.secondary:active {
   @apply bg-transparent text-gray-900;
+}
+
+.ui.button.subtle.secondary:active svg.icon {
+  @apply fill-gray-900;
 }
 
 /* Subtle Icon */
@@ -130,6 +160,10 @@
 
 .ui.button.ghost {
   @apply bg-white text-wave-500 border border-wave-500;
+}
+
+.ui.button.ghost svg.icon {
+  @apply fill-wave-500;
 }
 
 .ui.button.ghost:hover,

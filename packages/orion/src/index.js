@@ -1,11 +1,18 @@
-export * from 'semantic-ui-react'
+export {
+  Card,
+  Checkbox,
+  Dimmer,
+  Popup,
+  Search,
+  Select
+} from 'semantic-ui-react'
 
 export { default as Button } from './Button'
 export { default as ClickOutside } from './ClickOutside'
 export { default as Datepicker } from './Datepicker'
 export { default as Dropdown } from './Dropdown'
 export { default as Filter } from './Filter'
-export * from './Form'
+export { default as Form } from './Form'
 export { default as Icon } from './Icon'
 export { default as InfoIcon } from './InfoIcon'
 export { default as Input } from './Input'
