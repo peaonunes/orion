@@ -80,11 +80,7 @@
 /* Subtle */
 
 .ui.button.subtle {
-  @apply bg-transparent h-auto;
-}
-
-.ui.button.subtle.icon {
-  @apply h-24 w-24;
+  @apply bg-transparent;
 }
 
 /* Subtle Primary */
@@ -141,6 +137,23 @@
 
 .ui.button.subtle.secondary:active svg.icon {
   @apply fill-gray-900;
+}
+
+/* Subtle Icon */
+.ui.button.subtle:not(.icon) {
+  @apply h-auto;
+}
+
+.ui.button.subtle.primary.icon:hover,
+.ui.button.subtle.secondary.icon:hover,
+.ui.button.subtle.primary.icon:focus,
+.ui.button.subtle.secondary.icon:focus {
+  @apply bg-gray-900-8;
+}
+
+.ui.button.subtle.primary.icon:active,
+.ui.button.subtle.secondary.icon:active {
+  @apply bg-gray-900-12;
 }
 
 /* Ghost */
