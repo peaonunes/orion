@@ -10,7 +10,7 @@ const LayoutTopbar = ({ className, children, logo, ...otherProps }) => {
   const classes = cx('layout-topbar', className)
   return (
     <LayoutCenter className={classes} {...otherProps}>
-      {logo || <Logo />}
+      {logo || <Logo className="mb-4" />}
       {children}
     </LayoutCenter>
   )
