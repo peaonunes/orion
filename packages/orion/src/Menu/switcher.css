@@ -29,3 +29,11 @@
 .ui.menu.switcher .item.active > .icon {
   @apply text-space-600;
 }
+
+.ui.menu.switcher .item > svg.icon {
+  @apply fill-gray-700;
+}
+
+.ui.menu.switcher .item.active > svg.icon {
+  @apply fill-space-600;
+}
