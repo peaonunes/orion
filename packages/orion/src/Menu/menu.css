@@ -5,10 +5,15 @@
 }
 
 .ui.menu .item {
-  @apply cursor-pointer flex items-center ml-40 text-base text-gray-800;
+  @apply cursor-pointer flex items-center ml-40 outline-none text-base text-gray-800;
 }
 
-.ui.menu .item:hover {
+.ui.menu .item:hover,
+.ui.menu .item:focus {
+  @apply text-gray-700;
+}
+
+.ui.menu .item:active {
   @apply text-gray-900;
 }
 
@@ -31,17 +36,26 @@
 /** Menu item with icon **/
 
 .ui.menu .item > .icon {
-  @apply mr-4;
+  @apply mr-4 text-gray-700;
 }
 
 .ui.menu .item > svg.icon {
-  @apply fill-gray-800;
+  @apply fill-gray-700;
 }
 
-.ui.menu .item:hover > svg.icon {
+.ui.menu .item:hover > svg.icon,
+.ui.menu .item:focus > svg.icon {
+  @apply fill-gray-700;
+}
+
+.ui.menu .item:active > svg.icon {
   @apply fill-gray-900;
 }
 
+.ui.menu .item.active > .icon {
+  @apply text-space-600;
+}
+
 .ui.menu .item.active > svg.icon {
-  @apply fill-space-900;
+  @apply fill-space-600;
 }
