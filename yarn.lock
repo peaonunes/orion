@@ -1331,10 +1331,10 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@inloco/semantic-ui-react@^0.87.3-beta.1":
-  version "0.87.3-beta.1"
-  resolved "https://registry.yarnpkg.com/@inloco/semantic-ui-react/-/semantic-ui-react-0.87.3-beta.1.tgz#c83a3317207e3808f43cb587db21eae1139b6862"
-  integrity sha512-leefc1T3T/ZJmbq+Jfr56zrodJRAvQCdFRKwiFpegMEMalvspiUfDNsYxUG2hz1SB+tbKaHnzK/9VEJk1V+iyw==
+"@inloco/semantic-ui-react@^0.87.3":
+  version "0.87.3"
+  resolved "https://registry.yarnpkg.com/@inloco/semantic-ui-react/-/semantic-ui-react-0.87.3.tgz#5922122089314b83e476d3090647e99009bec6e8"
+  integrity sha512-Z6eJ7yfH7SqzudHCfcLjBGPemUzrAEdbZBhkhzdk171JBLN6p19txvB4hw9x4YoAbf8e7vYAcSJTNdiliNMNgA==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@semantic-ui-react/event-stack" "^3.1.0"
