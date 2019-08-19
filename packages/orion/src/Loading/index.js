@@ -7,7 +7,7 @@ import { Sizes, sizePropType } from '../utils/sizes'
 import animationData from './animationData'
 
 const Loading = ({ className, inline, size, ...otherProps }) => {
-  const classes = cx('ui loading-spinner', className, size, {
+  const classes = cx('orion loading-spinner', className, size, {
     'loading-spinner-inline': inline
   })
   return (

@@ -8,7 +8,7 @@ import LayoutMain from './LayoutMain'
 import LayoutTopbar from './LayoutTopbar'
 
 const Layout = ({ className, children, ...otherProps }) => {
-  const classes = cx('ui layout', className)
+  const classes = cx('orion layout', className)
   return (
     <div className={classes} {...otherProps}>
       {children}

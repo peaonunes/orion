@@ -8,7 +8,7 @@ import { Sizes, sizePropType } from '../utils/sizes'
 const Progress = ({ className, color, percent, size, ...otherProps }) => {
   return (
     <div
-      className={cx(className, size, 'ui progress')}
+      className={cx(className, size, 'orion progress')}
       data-percent={percent}
       {...otherProps}>
       <div className={`bar bg-${color}`} style={{ width: `${percent}%` }} />

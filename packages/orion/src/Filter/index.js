@@ -84,7 +84,7 @@ const Filter = ({
 
   return (
     <Popup
-      className={cx(className, 'ui filter')}
+      className={cx(className, 'orion filter')}
       basic
       trigger={trigger}
       open={open}

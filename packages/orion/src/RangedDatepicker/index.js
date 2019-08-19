@@ -29,7 +29,7 @@ const RangedDatepicker = ({
   }
 
   return (
-    <div className="ui ranged-datepicker">
+    <div className="orion ranged-datepicker">
       <ReactDatesDatepicker
         as={DayPickerRangeController}
         startDate={toMoment(_.get(dates, 'startDate'))}
