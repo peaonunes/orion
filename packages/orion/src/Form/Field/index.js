@@ -2,7 +2,7 @@ import _ from 'lodash'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Form } from 'semantic-ui-react'
+import { Form } from '@inloco/semantic-ui-react'
 
 import Input from '../../Input'
 import Dropdown from '../../Dropdown'

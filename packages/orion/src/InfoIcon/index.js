@@ -1,7 +1,7 @@
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Popup } from 'semantic-ui-react'
+import { Popup } from '@inloco/semantic-ui-react'
 
 import Icon from '../Icon'
 import { Sizes } from '../utils/sizes'

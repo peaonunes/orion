@@ -2,7 +2,7 @@ import _ from 'lodash'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Icon as SemanticIcon } from 'semantic-ui-react'
+import { Icon as SemanticIcon } from '@inloco/semantic-ui-react'
 
 import { CUSTOM_ICONS_MAP } from './custom'
 import { createShorthandFactory } from '../utils/factories'

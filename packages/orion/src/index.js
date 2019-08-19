@@ -5,7 +5,7 @@ export {
   Popup,
   Search,
   Select
-} from 'semantic-ui-react'
+} from '@inloco/semantic-ui-react'
 
 export { default as Button } from './Button'
 export { default as ClickOutside } from './ClickOutside'

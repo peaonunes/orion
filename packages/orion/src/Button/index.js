@@ -2,7 +2,7 @@ import _ from 'lodash'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Button as SemanticButton } from 'semantic-ui-react'
+import { Button as SemanticButton } from '@inloco/semantic-ui-react'
 
 import { createShorthandFactory } from '../utils/factories'
 
