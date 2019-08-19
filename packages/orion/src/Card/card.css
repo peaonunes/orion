@@ -1,20 +1,20 @@
-.ui.card {
+.orion.card {
   @apply bg-white border-1 border-gray-900-16 inline-block rounded;
 }
 
-.ui.card.fluid {
+.orion.card.fluid {
   @apply w-full;
 }
 
-.ui.card .header {
+.orion.card .header {
   @apply font-display mb-24 tracking-h2 text-lg text-gray-800;
 }
 
-.ui.card > .content {
+.orion.card > .content {
   @apply p-24;
 }
 
-.ui.card > .extra {
+.orion.card > .extra {
   @apply flex items-center justify-end px-24 py-8;
   @apply border-t-1 border-gray-900-16;
 }

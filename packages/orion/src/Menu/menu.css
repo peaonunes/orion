@@ -1,61 +1,61 @@
 @import './switcher.css';
 
-.ui.menu {
+.orion.menu {
   @apply flex font-default;
 }
 
-.ui.menu .item {
+.orion.menu .item {
   @apply cursor-pointer flex items-center ml-40 outline-none text-base text-gray-800;
 }
 
-.ui.menu .item:hover,
-.ui.menu .item:focus {
+.orion.menu .item:hover,
+.orion.menu .item:focus {
   @apply text-gray-700;
 }
 
-.ui.menu .item:active {
+.orion.menu .item:active {
   @apply text-gray-900;
 }
 
-.ui.menu .item:first-child {
+.orion.menu .item:first-child {
   @apply ml-0;
 }
 
-.ui.menu .item.active {
+.orion.menu .item.active {
   @apply font-medium text-space-900;
 }
 
-.ui.menu .item.right {
+.orion.menu .item.right {
   @apply ml-auto;
 }
 
-.ui.menu .menu.right {
+.orion.menu .menu.right {
   @apply flex ml-auto;
 }
 
 /** Menu item with icon **/
 
-.ui.menu .item > .icon {
+.orion.menu .item > .icon {
   @apply mr-4 text-gray-700;
 }
 
-.ui.menu .item > svg.icon {
+.orion.menu .item > svg.icon {
   @apply fill-gray-700;
 }
 
-.ui.menu .item:hover > svg.icon,
-.ui.menu .item:focus > svg.icon {
+.orion.menu .item:hover > svg.icon,
+.orion.menu .item:focus > svg.icon {
   @apply fill-gray-700;
 }
 
-.ui.menu .item:active > svg.icon {
+.orion.menu .item:active > svg.icon {
   @apply fill-gray-900;
 }
 
-.ui.menu .item.active > .icon {
+.orion.menu .item.active > .icon {
   @apply text-space-600;
 }
 
-.ui.menu .item.active > svg.icon {
+.orion.menu .item.active > svg.icon {
   @apply fill-space-600;
 }

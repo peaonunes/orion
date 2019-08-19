@@ -1,4 +1,4 @@
-.ui.button.filter-trigger {
+.orion.button.filter-trigger {
   @apply bg-white border border-gray-900-24 cursor-pointer font-normal rounded transition-default;
   @apply inline-flex h-32 items-center text-gray-800;
   @apply outline-none;
@@ -6,13 +6,13 @@
   transition-property: background-color, color;
 }
 
-.ui.button.filter-trigger:hover,
-.ui.button.filter-trigger:focus {
+.orion.button.filter-trigger:hover,
+.orion.button.filter-trigger:focus {
   @apply bg-gray-900-8;
 }
 
-.ui.button.filter-trigger.active,
-.ui.button.filter-trigger.selected {
+.orion.button.filter-trigger.active,
+.orion.button.filter-trigger.selected {
   @apply bg-space-100 border-none text-space-900;
 
   /*
@@ -24,20 +24,20 @@
   padding-right: 17px !important;
 }
 
-.ui.button.filter-trigger.active:hover,
-.ui.button.filter-trigger.selected:hover,
-.ui.button.filter-trigger.selected:focus {
+.orion.button.filter-trigger.active:hover,
+.orion.button.filter-trigger.selected:hover,
+.orion.button.filter-trigger.selected:focus {
   @apply bg-space-200;
 }
 
-.ui.popup.filter .filter-content {
+.orion.popup.filter .filter-content {
   @apply p-8 pb-24;
 }
 
-.ui.popup.filter .filter-buttons {
+.orion.popup.filter .filter-buttons {
   @apply flex justify-between;
 }
 
-.ui.popup.filter .filter-footer-content {
+.orion.popup.filter .filter-footer-content {
   @apply leading-14 font-display mr-8 text-sm text-gray-800;
 }

@@ -1,57 +1,57 @@
 @import './DropdownItem/dropdown-item.css';
 
-.ui.dropdown {
+.orion.dropdown {
   @apply flex-wrap inline-flex items-center relative;
   @apply cursor-pointer min-h-48 px-16 outline-none select-none;
   min-width: 256px;
 }
 
-.ui.dropdown.compact {
+.orion.dropdown.compact {
   @apply min-w-0;
 }
 
-.ui.dropdown.compact > .menu {
+.orion.dropdown.compact > .menu {
   min-width: max-content;
 }
 
-.ui.dropdown.fluid {
+.orion.dropdown.fluid {
   @apply w-full;
 }
 
-.ui.dropdown.small {
+.orion.dropdown.small {
   @apply min-h-24;
 }
 
-.ui.dropdown .text {
+.orion.dropdown .text {
   @apply text-gray-900 z-10;
 }
 
-.ui.dropdown .text.default {
+.orion.dropdown .text.default {
   @apply text-gray-800;
 }
 
-.ui.dropdown .text.default.filtered {
+.orion.dropdown .text.default.filtered {
   @apply invisible;
 }
 
-.ui.dropdown > .menu {
+.orion.dropdown > .menu {
   @apply absolute bg-white border border-gray-900-16 hidden mt-8 shadow-200 left-0 overflow-y-auto w-full;
   top: 100%;
 }
 
-.ui.dropdown.active > .menu {
+.orion.dropdown.active > .menu {
   @apply block rounded;
 }
 
-.ui.dropdown.disabled {
+.orion.dropdown.disabled {
   @apply pointer-events-none cursor-default;
 }
 
-.ui.dropdown > .icon {
+.orion.dropdown > .icon {
   @apply ml-auto -mr-8;
 }
 
-.ui.dropdown.active .dropdown-icon {
+.orion.dropdown.active .dropdown-icon {
   transform: rotate(-180deg);
 }
 
@@ -63,15 +63,15 @@
  * Search
  */
 
-.ui.dropdown.search {
+.orion.dropdown.search {
   @apply inline-flex cursor-text;
 }
 
-.ui.dropdown.search input {
+.orion.dropdown.search input {
   @apply absolute bg-transparent outline-none;
 }
 
-.ui.dropdown.search.active input:focus + .text {
+.orion.dropdown.search.active input:focus + .text {
   @apply text-gray-800;
 }
 
@@ -79,15 +79,15 @@
  * Multiple
  */
 
-.ui.dropdown.multiple .ui.label {
+.orion.dropdown.multiple .orion.label {
   @apply -ml-8 mr-16;
 }
 
-.ui.dropdown.multiple .ui.label + input {
+.orion.dropdown.multiple .orion.label + input {
   @apply -ml-8;
 }
 
-.ui.dropdown.multiple.small > .ui.label {
+.orion.dropdown.multiple.small > .orion.label {
   @apply h-24 !important;
 }
 
@@ -95,22 +95,22 @@
  * Multiple + Keep selected
  */
 
-.ui.dropdown.multiple.keep-selected > .menu > .item.active {
+.orion.dropdown.multiple.keep-selected > .menu > .item.active {
   @apply font-normal .relative;
 }
 
-.ui.dropdown.multiple.keep-selected > .menu > .item::after {
+.orion.dropdown.multiple.keep-selected > .menu > .item::after {
   @apply absolute text-lg text-wave-500;
   top: calc(50% - 10px);
   right: 16px;
 }
 
-.ui.dropdown.multiple.keep-selected > .menu > .item.active::after {
+.orion.dropdown.multiple.keep-selected > .menu > .item.active::after {
   content: 'check';
   font-family: 'Material Icons';
 }
 
-.ui.dropdown.multiple.keep-selected.disabled > .menu {
+.orion.dropdown.multiple.keep-selected.disabled > .menu {
   @apply hidden;
 }
 
@@ -118,27 +118,27 @@
  * Search + Multiple
  */
 
-.ui.dropdown.search.multiple {
+.orion.dropdown.search.multiple {
   @apply h-auto py-4;
 }
 
-.ui.dropdown.search.multiple > .ui.label {
+.orion.dropdown.search.multiple > .orion.label {
   @apply my-2;
 }
 
-.ui.dropdown.search.multiple > input {
+.orion.dropdown.search.multiple > input {
   @apply h-32 my-2 static w-32 max-w-full;
 }
 
-.ui.dropdown.search.multiple.small > input {
+.orion.dropdown.search.multiple.small > input {
   @apply h-24;
 }
 
-.ui.dropdown.search.multiple > .sizer {
+.orion.dropdown.search.multiple > .sizer {
   @apply hidden p-2;
 }
 
-.ui.dropdown.search.multiple > .text {
+.orion.dropdown.search.multiple > .text {
   @apply absolute;
 }
 
@@ -146,38 +146,38 @@
  * Selection
  */
 
-.ui.dropdown.selection {
+.orion.dropdown.selection {
   @apply bg-white border border-gray-900-24 rounded;
 }
 
-.ui.dropdown.selection.small {
+.orion.dropdown.selection.small {
   @apply min-h-32;
 }
 
-.ui.dropdown.selection.disabled {
+.orion.dropdown.selection.disabled {
   @apply bg-gray-900-8;
 }
 
-.ui.dropdown.selection:hover {
+.orion.dropdown.selection:hover {
   @apply shadow-field-hover;
 }
 
-.ui.dropdown.selection:active,
-.ui.dropdown.selection:focus {
+.orion.dropdown.selection:active,
+.orion.dropdown.selection:focus {
   @apply shadow-field-active;
 }
 
-.ui.dropdown.selection > .menu {
+.orion.dropdown.selection > .menu {
   @apply cursor-pointer;
 }
 
 /** Inline Menu **/
 
-.ui.dropdown.inline-menu > .menu {
+.orion.dropdown.inline-menu > .menu {
   @apply block border-0 shadow-none;
 }
 
-.ui.dropdown.inline-menu > .dropdown-icon {
+.orion.dropdown.inline-menu > .dropdown-icon {
   @apply hidden;
 }
 
@@ -185,43 +185,43 @@
  * Validation
  */
 
-.ui.dropdown.error {
+.orion.dropdown.error {
   @apply border-magenta-500;
 }
 
-.ui.dropdown.error.selection:hover {
+.orion.dropdown.error.selection:hover {
   @apply shadow-error-field-hover;
 }
 
-.ui.dropdown.error.selection:active,
-.ui.dropdown.error.selection:focus {
+.orion.dropdown.error.selection:active,
+.orion.dropdown.error.selection:focus {
   @apply shadow-error-field-active;
 }
 
-.ui.dropdown.warning {
+.orion.dropdown.warning {
   @apply border-yellow-500;
 }
 
-.ui.dropdown.warning.selection:hover {
+.orion.dropdown.warning.selection:hover {
   @apply shadow-warning-field-hover;
 }
 
-.ui.dropdown.warning.selection:active,
-.ui.dropdown.warning.selection:focus {
+.orion.dropdown.warning.selection:active,
+.orion.dropdown.warning.selection:focus {
   @apply shadow-warning-field-active;
 }
 
 /** Loading **/
 
-.ui.loading.dropdown > .dropdown-loading-icon {
+.orion.loading.dropdown > .dropdown-loading-icon {
   @apply relative;
 
   height: 20px;
   width: 20px;
 }
 
-.ui.loading.dropdown > .dropdown-loading-icon:before,
-.ui.loading.dropdown > .dropdown-loading-icon:after {
+.orion.loading.dropdown > .dropdown-loading-icon:before,
+.orion.loading.dropdown > .dropdown-loading-icon:after {
   @apply absolute;
   @apply border-2 rounded-full;
   @apply w-full h-full;
@@ -229,11 +229,11 @@
   content: '';
 }
 
-.ui.loading.dropdown > .dropdown-loading-icon:before {
+.orion.loading.dropdown > .dropdown-loading-icon:before {
   @apply border-gray-900-16;
 }
 
-.ui.loading.dropdown > .dropdown-loading-icon:after {
+.orion.loading.dropdown > .dropdown-loading-icon:after {
   animation: dropdown-spin 0.6s linear;
   animation-iteration-count: infinite;
 

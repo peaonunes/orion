@@ -1,12 +1,12 @@
-.ui.progress {
+.orion.progress {
   @apply bg-gray-900-8 rounded-small;
 }
 
-.ui.progress .bar {
+.orion.progress .bar {
   @apply h-24 rounded-small transition-default;
   transition-property: width;
 }
 
-.ui.progress.small .bar {
+.orion.progress.small .bar {
   @apply h-4;
 }
