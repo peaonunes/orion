@@ -4,7 +4,8 @@ export {
   Dimmer,
   Popup,
   Search,
-  Select
+  Select,
+  Table
 } from '@inloco/semantic-ui-react'
 
 export { default as Button } from './Button'

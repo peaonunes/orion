@@ -1,4 +1,6 @@
 #root {
+  background-color: #fafbfc;
+  height: 100vh;
   padding: 8px;
   position: relative;
 }
