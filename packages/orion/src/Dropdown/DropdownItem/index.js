@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React from 'react'
-import { Dropdown as SemanticDropdown } from 'semantic-ui-react'
+import { Dropdown as SemanticDropdown } from '@inloco/semantic-ui-react'
 
 import { createShorthandFactory } from '../../utils/factories'
 

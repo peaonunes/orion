@@ -1,4 +1,4 @@
-import { Form } from 'semantic-ui-react'
+import { Form } from '@inloco/semantic-ui-react'
 
 import './Field'
 import './Input'

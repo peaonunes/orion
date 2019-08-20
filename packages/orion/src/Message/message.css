@@ -1,24 +1,24 @@
-.ui.message {
+.orion.message {
   @apply border-1 border-green-500 rounded bg-green-50 p-16 text-base flex items-center;
 }
 
-.ui.message .header {
+.orion.message .header {
   @apply font-medium;
 }
 
-.ui.message.error {
+.orion.message.error {
   @apply border-magenta-500 bg-magenta-50;
 }
 
-.ui.message.warning {
+.orion.message.warning {
   @apply border-yellow-500 bg-yellow-50;
 }
 
-.ui.message > .icon:not(.close) {
+.orion.message > .icon:not(.close) {
   @apply pr-4;
 }
 
-.ui.message.header > .icon {
+.orion.message.header > .icon {
   @apply pr-16;
 }
 

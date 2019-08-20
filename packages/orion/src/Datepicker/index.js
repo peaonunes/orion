@@ -19,7 +19,7 @@ const Datepicker = ({
 
   const date = dateProp || dateState
   return (
-    <div className="ui datepicker">
+    <div className="orion datepicker">
       <ReactDatesDatepicker
         as={DayPickerSingleDateController}
         date={toMoment(date)}

@@ -42,7 +42,7 @@ describe('when an option is selected', () => {
 
     const [label] = getAllByText('Red')
     expect(label).toBeTruthy()
-    expect(label).toHaveClass('ui label')
+    expect(label).toHaveClass('orion label')
   })
 
   it('should show option on the list, as selected', () => {
@@ -61,7 +61,7 @@ describe('when an option is selected', () => {
 
     it('should stop rendering a label with the option', () => {
       const { getByText } = renderResult
-      expect(getByText('Red')).not.toHaveClass('ui label')
+      expect(getByText('Red')).not.toHaveClass('orion label')
     })
 
     it('should show option on the list, as unselected', () => {

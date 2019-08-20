@@ -1,24 +1,24 @@
-.ui.dropdown .menu > .item .text {
+.orion.dropdown .menu > .item .text {
   @apply leading-20 truncate;
 }
 
-.ui.dropdown .menu > .item,
-.ui.dropdown .menu > .message {
+.orion.dropdown .menu > .item,
+.orion.dropdown .menu > .message {
   @apply px-16 py-8;
 }
 
-.ui.dropdown .menu > .item.active {
+.orion.dropdown .menu > .item.active {
   @apply font-medium;
 }
 
-.ui.dropdown .menu > .item:hover {
+.orion.dropdown .menu > .item:hover {
   @apply bg-gray-900-8;
 }
 
-.ui.dropdown .menu > .item.selected {
+.orion.dropdown .menu > .item.selected {
   @apply bg-gray-100;
 }
 
-.ui.dropdown .menu > .item .description {
+.orion.dropdown .menu > .item .description {
   @apply mt-4 leading-14 text-gray-800 text-sm truncate;
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form } from 'semantic-ui-react'
+import { Form } from '@inloco/semantic-ui-react'
 
 import Field from '../Field'
 import Dropdown from '../../Dropdown'

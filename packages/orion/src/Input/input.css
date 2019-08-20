@@ -1,60 +1,60 @@
-.ui.input {
+.orion.input {
   @apply inline-flex relative;
 }
-.ui.input > input {
+.orion.input > input {
   @apply h-48 pl-16 flex justify-center outline-none;
 }
 
-.ui.input:not(.labeled) > input {
+.orion.input:not(.labeled) > input {
   @apply bg-white border border-gray-900-24 rounded;
 }
 
-.ui.input > input:disabled {
+.orion.input > input:disabled {
   @apply bg-gray-900-8 pointer-events-none;
 }
 
-.ui.input > input:hover {
+.orion.input > input:hover {
   @apply shadow-field-hover;
 }
 
-.ui.input > input:active,
-.ui.input > input:focus {
+.orion.input > input:active,
+.orion.input > input:focus {
   @apply shadow-field-active;
 }
 
-.ui.input.small > input {
+.orion.input.small > input {
   @apply h-32;
 }
 
 /* Error */
-.ui.input.error > input {
+.orion.input.error > input {
   @apply border-magenta-500;
 }
 
-.ui.input.error > input:hover {
+.orion.input.error > input:hover {
   @apply shadow-error-field-hover;
 }
 
-.ui.input.error > input:active,
-.ui.input.error > input:focus {
+.orion.input.error > input:active,
+.orion.input.error > input:focus {
   @apply shadow-error-field-active;
 }
 
 /* Warning */
-.ui.input.warning > input {
+.orion.input.warning > input {
   @apply border-yellow-500;
 }
 
-.ui.input.warning > input:hover {
+.orion.input.warning > input:hover {
   @apply shadow-warning-field-hover;
 }
 
-.ui.input.warning > input:active,
-.ui.input.warning > input:focus {
+.orion.input.warning > input:active,
+.orion.input.warning > input:focus {
   @apply shadow-warning-field-active;
 }
 
-.ui.input.fluid > input {
+.orion.input.fluid > input {
   @apply w-full;
 }
 
@@ -62,10 +62,10 @@
  * Icon
  */
 
-.ui.input.icon > input {
+.orion.input.icon > input {
   @apply pr-40;
 }
 
-.ui.input.icon > input ~ .icon {
+.orion.input.icon > input ~ .icon {
   @apply absolute right-0 w-40 h-full flex items-center justify-center;
 }

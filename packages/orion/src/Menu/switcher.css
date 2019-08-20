@@ -1,21 +1,21 @@
-.ui.menu.switcher .item {
+.orion.menu.switcher .item {
   @apply h-32 ml-8 outline-none px-8 rounded transition-default;
   transition-property: background-color, color;
 }
 
-.ui.menu.switcher .item:first-child {
+.orion.menu.switcher .item:first-child {
   @apply ml-0;
 }
 
-.ui.menu.switcher .item:not(.active):hover,
-.ui.menu.switcher .item:not(.active):focus {
+.orion.menu.switcher .item:not(.active):hover,
+.orion.menu.switcher .item:not(.active):focus {
   @apply bg-gray-900-8;
 }
 
-.ui.menu.switcher .item:not(.active):active {
+.orion.menu.switcher .item:not(.active):active {
   @apply bg-gray-900-16;
 }
 
-.ui.menu.switcher .item.active {
+.orion.menu.switcher .item.active {
   @apply bg-space-100 font-normal;
 }

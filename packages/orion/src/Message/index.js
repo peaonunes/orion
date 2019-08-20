@@ -1,7 +1,7 @@
 import React from 'react'
 import cx from 'classnames'
 import PropTypes from 'prop-types'
-import { Message as SemanticMessage } from 'semantic-ui-react'
+import { Message as SemanticMessage } from '@inloco/semantic-ui-react'
 
 import Icon from '../Icon'
 

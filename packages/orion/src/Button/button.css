@@ -1,176 +1,176 @@
-.ui.button {
+.orion.button {
   @apply h-40 rounded-full text-base font-default font-medium outline-none inline-flex items-center transition-default;
   transition-property: background-color, opacity;
 }
 
-.ui.button.fluid {
+.orion.button.fluid {
   @apply w-full justify-center;
 }
 
-.ui.button > .icon {
+.orion.button > .icon {
   @apply flex items-center;
 }
 
-.ui.button:not(.icon) > .icon {
+.orion.button:not(.icon) > .icon {
   @apply flex justify-center;
   @apply h-24 w-24;
   vertical-align: sub;
 }
 
-.ui.button:not(.icon):not(.subtle) {
+.orion.button:not(.icon):not(.subtle) {
   @apply px-24 justify-center;
   min-width: 96px;
 }
 
 /* Icon only */
 
-.ui.button.icon {
+.orion.button.icon {
   @apply justify-center p-0 w-40;
 }
 
-.ui.button.icon:hover,
-.ui.button.icon:focus {
+.orion.button.icon:hover,
+.orion.button.icon:focus {
   @apply bg-gray-900-8;
 }
 
-.ui.button.icon:active {
+.orion.button.icon:active {
   @apply bg-gray-900-12;
 }
 
 /* Disabled */
 
-.ui.button.disabled {
+.orion.button.disabled {
   @apply opacity-40 pointer-events-none;
 }
 
 /* Primary */
 
-.ui.button.primary {
+.orion.button.primary {
   @apply bg-wave-500 text-white;
 }
 
-.ui.button.primary svg.icon {
+.orion.button.primary svg.icon {
   @apply fill-white;
 }
 
-.ui.button.primary:hover,
-.ui.button.primary:focus {
+.orion.button.primary:hover,
+.orion.button.primary:focus {
   @apply bg-wave-600;
 }
 
-.ui.button.primary:active {
+.orion.button.primary:active {
   @apply bg-wave-700;
 }
 
 /* Secondary */
 
-.ui.button.secondary {
+.orion.button.secondary {
   @apply bg-gray-900-8 text-gray-900;
 }
 
-.ui.button.secondary:hover,
-.ui.button.secondary:focus {
+.orion.button.secondary:hover,
+.orion.button.secondary:focus {
   @apply bg-gray-900-12;
 }
 
-.ui.button.secondary:active {
+.orion.button.secondary:active {
   @apply bg-gray-900-16;
 }
 
 /* Subtle */
 
-.ui.button.subtle {
+.orion.button.subtle {
   @apply bg-transparent;
 }
 
 /* Subtle Primary */
 
-.ui.button.subtle.primary {
+.orion.button.subtle.primary {
   @apply text-wave-500;
 }
 
-.ui.button.subtle.primary svg.icon {
+.orion.button.subtle.primary svg.icon {
   @apply fill-wave-500;
 }
 
-.ui.button.subtle.primary:hover,
-.ui.button.subtle.primary:focus {
+.orion.button.subtle.primary:hover,
+.orion.button.subtle.primary:focus {
   @apply bg-transparent text-wave-600;
 }
 
-.ui.button.subtle.primary:hover svg.icon,
-.ui.button.subtle.primary:focus svg.icon {
+.orion.button.subtle.primary:hover svg.icon,
+.orion.button.subtle.primary:focus svg.icon {
   @apply fill-wave-600;
 }
 
-.ui.button.subtle.primary:active {
+.orion.button.subtle.primary:active {
   @apply bg-transparent text-wave-700;
 }
 
-.ui.button.subtle.primary:active svg.icon {
+.orion.button.subtle.primary:active svg.icon {
   @apply fill-wave-700;
 }
 
 /* Subtle Secondary */
 
-.ui.button.subtle.secondary {
+.orion.button.subtle.secondary {
   @apply text-gray-700;
 }
 
-.ui.button.subtle.secondary svg.icon {
+.orion.button.subtle.secondary svg.icon {
   @apply fill-gray-700;
 }
 
-.ui.button.subtle.secondary:hover,
-.ui.button.subtle.secondary:focus {
+.orion.button.subtle.secondary:hover,
+.orion.button.subtle.secondary:focus {
   @apply bg-transparent text-gray-800;
 }
 
-.ui.button.subtle.secondary:hover svg.icon,
-.ui.button.subtle.secondary:focus svg.icon {
+.orion.button.subtle.secondary:hover svg.icon,
+.orion.button.subtle.secondary:focus svg.icon {
   @apply fill-gray-800;
 }
 
-.ui.button.subtle.secondary:active {
+.orion.button.subtle.secondary:active {
   @apply bg-transparent text-gray-900;
 }
 
-.ui.button.subtle.secondary:active svg.icon {
+.orion.button.subtle.secondary:active svg.icon {
   @apply fill-gray-900;
 }
 
 /* Subtle Icon */
-.ui.button.subtle:not(.icon) {
+.orion.button.subtle:not(.icon) {
   @apply h-auto;
 }
 
-.ui.button.subtle.primary.icon:hover,
-.ui.button.subtle.secondary.icon:hover,
-.ui.button.subtle.primary.icon:focus,
-.ui.button.subtle.secondary.icon:focus {
+.orion.button.subtle.primary.icon:hover,
+.orion.button.subtle.secondary.icon:hover,
+.orion.button.subtle.primary.icon:focus,
+.orion.button.subtle.secondary.icon:focus {
   @apply bg-gray-900-8;
 }
 
-.ui.button.subtle.primary.icon:active,
-.ui.button.subtle.secondary.icon:active {
+.orion.button.subtle.primary.icon:active,
+.orion.button.subtle.secondary.icon:active {
   @apply bg-gray-900-12;
 }
 
 /* Ghost */
 
-.ui.button.ghost {
+.orion.button.ghost {
   @apply bg-white text-wave-500 border border-wave-500;
 }
 
-.ui.button.ghost svg.icon {
+.orion.button.ghost svg.icon {
   @apply fill-wave-500;
 }
 
-.ui.button.ghost:hover,
-.ui.button.ghost:focus {
+.orion.button.ghost:hover,
+.orion.button.ghost:focus {
   @apply bg-wave-500-8;
 }
 
-.ui.button.ghost:active {
+.orion.button.ghost:active {
   @apply bg-wave-500-16;
 }

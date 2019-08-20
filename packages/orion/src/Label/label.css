@@ -1,12 +1,12 @@
-.ui.label {
+.orion.label {
   @apply inline-flex items-center px-8 bg-gray-900-8 rounded leading-20 text-gray-900 h-32;
 }
 
-.ui.label.small {
+.orion.label.small {
   @apply h-24;
 }
 
-.ui.label > i.icon {
+.orion.label > i.icon {
   @apply flex items-center mr-4;
 }
 
@@ -24,6 +24,6 @@
   @apply bg-gray-900-16;
 }
 
-.ui.label.small .label-remove {
+.orion.label.small .label-remove {
   @apply -ml-8 rounded-r-none;
 }

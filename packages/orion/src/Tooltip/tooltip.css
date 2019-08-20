@@ -1,7 +1,7 @@
-.ui.popup.tooltip {
+.orion.popup.tooltip {
   @apply bg-gray-800 p-8 text-white;
 }
 
-.ui.popup.tooltip:before {
+.orion.popup.tooltip:before {
   @apply bg-gray-800;
 }

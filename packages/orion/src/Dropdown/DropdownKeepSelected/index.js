@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import React, { useState } from 'react'
-import { Dropdown as SemanticDropdown } from 'semantic-ui-react'
+import { Dropdown as SemanticDropdown } from '@inloco/semantic-ui-react'
 
 const DOUBLE_PREFIX = 'double:'
 

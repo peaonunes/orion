@@ -1,45 +1,45 @@
-.ui.form .field {
+.orion.form .field {
   @apply relative;
 }
 
 /* Floated label */
-.ui.form .field.floatingLabel label {
+.orion.form .field.floatingLabel label {
   @apply absolute border-l-1 top-0 block .cursor-text ml-16 text-gray-800 text-base transition-default z-10;
   transition-property: margin-top, font-size;
   border-color: transparent !important;
   margin-top: 17px;
 }
 
-.ui.form .field.floatingLabel.filled label,
-.ui.form .field.floatingLabel:focus-within label {
+.orion.form .field.floatingLabel.filled label,
+.orion.form .field.floatingLabel:focus-within label {
   @apply mt-8 text-sm;
 }
 
-.ui.form .field.floatingLabel .dropdown .text,
-.ui.form .field.floatingLabel input {
+.orion.form .field.floatingLabel .dropdown .text,
+.orion.form .field.floatingLabel input {
   @apply pt-16;
 }
 
-.ui.form .field.floatingLabel .dropdown .default.text,
-.ui.form .field.floatingLabel input::placeholder {
+.orion.form .field.floatingLabel .dropdown .default.text,
+.orion.form .field.floatingLabel input::placeholder {
   @apply transition-default;
   transition-property: color;
   color: transparent;
 }
 
-.ui.form .field.floatingLabel:focus-within .dropdown .default.text,
-.ui.form .field.floatingLabel:focus-within input::placeholder {
+.orion.form .field.floatingLabel:focus-within .dropdown .default.text,
+.orion.form .field.floatingLabel:focus-within input::placeholder {
   @apply text-gray-800;
 }
 
 /* Outside label */
-.ui.form .field label {
+.orion.form .field label {
   @apply block mb-4;
 }
 
 /* Error */
-.ui.form .field.error input,
-.ui.form .field.error .dropdown {
+.orion.form .field.error input,
+.orion.form .field.error .dropdown {
   @apply border-magenta-500;
 }
 

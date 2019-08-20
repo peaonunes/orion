@@ -2,7 +2,7 @@ import cx from 'classnames'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Dropdown as SemanticDropdown } from 'semantic-ui-react'
+import { Dropdown as SemanticDropdown } from '@inloco/semantic-ui-react'
 
 import { Sizes, sizePropType } from '../utils/sizes'
 import DropdownItem from './DropdownItem'

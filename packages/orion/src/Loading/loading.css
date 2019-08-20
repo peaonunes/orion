@@ -1,11 +1,11 @@
-.ui.loading-spinner {
+.orion.loading-spinner {
   @apply h-full mx-auto w-48;
 }
 
-.ui.loading-spinner.small {
+.orion.loading-spinner.small {
   width: 20px;
 }
 
-.ui.loading-spinner-inline {
+.orion.loading-spinner-inline {
   @apply h-auto m-0;
 }

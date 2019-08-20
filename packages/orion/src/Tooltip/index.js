@@ -1,6 +1,6 @@
 import cx from 'classnames'
 import React from 'react'
-import { Popup } from 'semantic-ui-react'
+import { Popup } from '@inloco/semantic-ui-react'
 
 import { Sizes } from '../utils/sizes'
 

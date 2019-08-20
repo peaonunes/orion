@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import cx from 'classnames'
 import React from 'react'
-import { Label as SemanticLabel } from 'semantic-ui-react'
+import { Label as SemanticLabel } from '@inloco/semantic-ui-react'
 
 import Icon from '../Icon'
 import { createShorthandFactory } from '../utils/factories'
