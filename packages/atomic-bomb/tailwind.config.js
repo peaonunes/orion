@@ -82,7 +82,7 @@ module.exports = {
       transparent: 'transparent',
       white: theme('colors').white,
       gray: {
-        ..._.pick(theme('colors.gray'), ['50', '100', '800']),
+        ..._.pick(theme('colors.gray'), ['50', '100', '200', '800']),
         '900-4': Color(theme('colors').gray['900'])
           .alpha(0.04)
           .string(),
