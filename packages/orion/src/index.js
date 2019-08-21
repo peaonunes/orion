@@ -11,6 +11,7 @@ export {
 export { default as Button } from './Button'
 export { default as ClickOutside } from './ClickOutside'
 export { default as Datepicker } from './Datepicker'
+export { default as Divider } from './Divider'
 export { default as Dropdown } from './Dropdown'
 export { default as Filter } from './Filter'
 export { default as Form } from './Form'
