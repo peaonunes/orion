@@ -329,7 +329,8 @@ module.exports = {
       green: _.pick(theme('colors.green'), ['500']),
       magenta: _.pick(theme('colors.magenta'), ['500', '600']),
       yellow: _.pick(theme('colors.yellow'), ['500', '700']),
-      space: _.pick(theme('colors.space'), ['600', '900'])
+      space: _.pick(theme('colors.space'), ['600', '900']),
+      purple: theme('colors.purple')
     }),
     width: theme => ({
       auto: 'auto',
