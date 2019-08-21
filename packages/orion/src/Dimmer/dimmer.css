@@ -1,10 +1,10 @@
 .orion.dimmer {
-  @apply bg-gray-50 flex z-30;
+  @apply bg-gray-50-80 flex z-30;
   @apply absolute top-0 left-0 w-full h-full;
   @apply transition-default opacity-0 pointer-events-none;
   transition-property: opacity;
 }
 
 .orion.dimmer.active {
-  @apply opacity-80 pointer-events-auto;
+  @apply opacity-100 pointer-events-auto;
 }
