@@ -5,8 +5,7 @@ export {
   Modal,
   Popup,
   Search,
-  Select,
-  Table
+  Select
 } from '@inloco/semantic-ui-react'
 
 export { default as Button } from './Button'
@@ -28,4 +27,5 @@ export { default as Message } from './Message'
 export { default as NotificationCenter } from './NotificationCenter'
 export { default as Progress } from './Progress'
 export { default as RangedDatepicker } from './RangedDatepicker'
+export { default as Table } from './Table'
 export { default as Tooltip } from './Tooltip'

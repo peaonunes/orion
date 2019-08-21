@@ -1,10 +1,5 @@
 .orion.table {
-  @apply border-separate -mt-8 table-fixed text-left w-full;
-  border-spacing: 0 8px;
-}
-
-.orion.table tr {
-  @apply my-4;
+  @apply table-fixed text-left w-full;
 }
 
 /** Header **/
@@ -14,38 +9,56 @@
 }
 
 .orion.table th {
-  @apply py-8;
+  @apply align-bottom px-12 py-0;
   @apply font-normal leading-14 text-gray-800 text-sm;
+}
+
+.orion.table th > .inner-cell {
+  @apply py-8;
 }
 
 .orion.table th:first-child {
   @apply pl-24;
-  border-radius: 4px 0 0 4px;
 }
 
 .orion.table th:last-child {
   @apply pr-24;
-  border-radius: 0 4px 4px 0;
+}
+
+.orion.table tr:first-child th:first-child {
+  border-top-left-radius: 4px;
+}
+
+.orion.table tr:first-child th:last-child {
+  border-top-right-radius: 4px;
+}
+
+.orion.table tr:last-child th:first-child {
+  border-bottom-left-radius: 4px;
+}
+
+.orion.table tr:last-child th:last-child {
+  border-bottom-right-radius: 4px;
 }
 
 /** Body **/
 
-.orion.table tbody tr {
-  @apply bg-white;
+.orion.table tbody > tr > td {
+  @apply font-normal leading-20 text-base text-gray-900 p-0;
 }
 
-.orion.table tbody td {
-  @apply border-t-1 border-b-1 border-gray-900-8;
-  @apply font-normal leading-20 text-base text-gray-900;
-  @apply py-8;
-}
-
-.orion.table tbody td:first-child {
+.orion.table tbody > tr > td:first-child > .inner-cell {
   @apply border-l-1 pl-24;
   border-radius: 4px 0 0 4px;
 }
 
-.orion.table tbody td:last-child {
+.orion.table tbody > tr > td:last-child > .inner-cell {
   @apply border-r-1 pr-24;
   border-radius: 0 4px 4px 0;
+}
+
+.orion.table tbody > tr > td > .inner-cell {
+  @apply bg-white;
+  @apply border-t-1 border-b-1 border-gray-900-8;
+  @apply px-12 py-8 mt-8;
 }
