@@ -4,7 +4,7 @@
 
 .orion.dropdown .menu > .item,
 .orion.dropdown .menu > .message {
-  @apply px-16 py-8;
+  @apply block px-16 py-8;
 }
 
 .orion.dropdown .menu > .item.active {
