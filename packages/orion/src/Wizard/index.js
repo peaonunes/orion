@@ -9,30 +9,30 @@ import WizardControls from './WizardControls'
 const Wizard = ({
   children,
   className,
-  currentStep: currentStepProp,
-  onStepChange,
+  currentStepIndex: currentStepProp,
+  onStepIndexChange,
   steps
 }) => {
   const [currentStepState, setCurrentStepState] = useState(currentStepProp || 0)
-  const currentStep = _.isNil(currentStepProp)
+  const currentStepIndex = _.isNil(currentStepProp)
     ? currentStepState
     : currentStepProp
 
   const handleStepChange = newStep => {
     setCurrentStepState(newStep)
-    onStepChange(newStep)
+    onStepIndexChange(newStep)
   }
 
   return (
     <div className={cx('orion wizard', className)}>
-      <StepsNav currentStep={currentStep} steps={steps} />
+      <StepsNav currentStep={currentStepIndex} steps={steps} />
       <div className="wizard-step">
-        {React.Children.toArray(children)[currentStep]}
+        {React.Children.toArray(children)[currentStepIndex]}
       </div>
 
       <WizardControls
-        currentStep={currentStep}
-        onStepChange={handleStepChange}
+        currentStepIndex={currentStepIndex}
+        onStepIndexChange={handleStepChange}
         totalSteps={steps.length}
       />
     </div>
@@ -42,13 +42,13 @@ const Wizard = ({
 Wizard.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
-  currentStep: PropTypes.number,
-  onStepChange: PropTypes.func,
+  currentStepIndex: PropTypes.number,
+  onStepIndexChange: PropTypes.func,
   steps: PropTypes.arrayOf(PropTypes.string).isRequired
 }
 
 Wizard.defaultProps = {
-  onStepChange: () => {}
+  onStepIndexChange: () => {}
 }
 
 export default Wizard

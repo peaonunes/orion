@@ -10,15 +10,20 @@ export const WizardButtons = {
   FINISH: 'finish'
 }
 
-const WizardControls = ({ buttons, currentStep, onStepChange, totalSteps }) => {
-  const isLastStep = currentStep === totalSteps - 1
+const WizardControls = ({
+  buttons,
+  currentStepIndex,
+  onStepIndexChange,
+  totalSteps
+}) => {
+  const isLastStep = currentStepIndex === totalSteps - 1
   return (
     <div className="wizard-controls">
-      {currentStep > 0 &&
+      {currentStepIndex > 0 &&
         Button.create(buttons[WizardButtons.BACK], {
           autoGenerateKey: false,
           defaultProps: {
-            onClick: () => onStepChange(currentStep - 1),
+            onClick: () => onStepIndexChange(currentStepIndex - 1),
             type: 'button'
           }
         })}
@@ -38,7 +43,7 @@ const WizardControls = ({ buttons, currentStep, onStepChange, totalSteps }) => {
             autoGenerateKey: false,
             defaultProps: {
               className: 'blue',
-              onClick: () => onStepChange(currentStep + 1),
+              onClick: () => onStepIndexChange(currentStepIndex + 1),
               primary: true,
               type: 'submit'
             }
@@ -64,8 +69,8 @@ WizardControls.propTypes = {
     [WizardButtons.NEXT]: PropTypes.any,
     [WizardButtons.FINISH]: PropTypes.any
   }),
-  currentStep: PropTypes.number.isRequired,
-  onStepChange: PropTypes.func,
+  currentStepIndex: PropTypes.number.isRequired,
+  onStepIndexChange: PropTypes.func,
   totalSteps: PropTypes.number.isRequired
 }
 
@@ -75,7 +80,7 @@ WizardControls.defaultProps = {
     [WizardButtons.NEXT]: 'Next',
     [WizardButtons.FINISH]: 'Finish'
   },
-  onStepChange: () => {}
+  onStepIndexChange: () => {}
 }
 
 export default WizardControls

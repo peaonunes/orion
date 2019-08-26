@@ -6,7 +6,7 @@ import { array, number, withKnobs } from '@storybook/addon-knobs'
 import Wizard from './'
 
 export const actions = {
-  onStepChange: action('onStepChange')
+  onStepIndexChange: action('onStepIndexChange')
 }
 
 storiesOf('Wizard', module)
