@@ -5,7 +5,7 @@
 }
 
 .orion.menu .item {
-  @apply cursor-pointer flex items-center ml-40 outline-none text-base text-gray-800;
+  @apply cursor-pointer flex items-center ml-24 outline-none text-base text-gray-800;
 }
 
 .orion.menu .item:hover,
