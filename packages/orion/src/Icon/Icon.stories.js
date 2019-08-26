@@ -32,3 +32,23 @@ storiesOf('Icon', module)
       </React.Fragment>
     )
   })
+  .add('Icon as element', () => {
+    const IconSVG = () => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="24"
+        height="24">
+        <g id="Layer_2">
+          <g id="Layer_1-2">
+            <path
+              d="M12,4.91l-8.32,7.5h2.5v6.68H17.82V12.41h2.5Zm-.83,11L9,13.71l.7-.71,1.49,1.49,3.08-3.09.71.71Z"
+              fill="#9e9fa0"
+            />
+            <rect width="24" height="24" fill="none" />
+          </g>
+        </g>
+      </svg>
+    )
+    return <Icon as={IconSVG} className="w-24" />
+  })

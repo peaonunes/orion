@@ -7,9 +7,9 @@ import { Icon as SemanticIcon } from '@inloco/semantic-ui-react'
 import { CUSTOM_ICONS_MAP } from './custom'
 import { createShorthandFactory } from '../utils/factories'
 
-const Icon = ({ className, color, name, ...otherProps }) => {
-  const isCustomIcon = !!CUSTOM_ICONS_MAP[name]
-  const ElementType = CUSTOM_ICONS_MAP[name] || 'i'
+const Icon = ({ as: AsElementType, className, color, name, ...otherProps }) => {
+  const isCustomIcon = !!CUSTOM_ICONS_MAP[name] || !!AsElementType
+  const ElementType = AsElementType || CUSTOM_ICONS_MAP[name] || 'i'
   const classes = cx(className, 'icon', {
     'material-icons': !isCustomIcon,
     [`text-${color}`]: !isCustomIcon && color,
@@ -25,7 +25,8 @@ const Icon = ({ className, color, name, ...otherProps }) => {
 Icon.propTypes = {
   className: PropTypes.string,
   color: PropTypes.string,
-  name: PropTypes.string
+  name: PropTypes.string,
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.func])
 }
 
 // Overriding original factory. See src/utils/factories.js for more details.
