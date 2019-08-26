@@ -1331,18 +1331,18 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@inloco/semantic-ui-react@^0.87.3":
-  version "0.87.3"
-  resolved "https://registry.yarnpkg.com/@inloco/semantic-ui-react/-/semantic-ui-react-0.87.3.tgz#5922122089314b83e476d3090647e99009bec6e8"
-  integrity sha512-Z6eJ7yfH7SqzudHCfcLjBGPemUzrAEdbZBhkhzdk171JBLN6p19txvB4hw9x4YoAbf8e7vYAcSJTNdiliNMNgA==
+"@inloco/semantic-ui-react@^0.88.0-orion":
+  version "0.88.0-orion"
+  resolved "https://registry.yarnpkg.com/@inloco/semantic-ui-react/-/semantic-ui-react-0.88.0-orion.tgz#3f41891d4a1d4a6c2d8bc395bc9fe49792affcdf"
+  integrity sha512-Brmkp7K62J67yEiLox7LBXaPfEofcT/NgPXwVR9nRohdTkcEO0SBgmMEPNwwUObBhdY2TSjDHdkO2jC4V6xvMw==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@semantic-ui-react/event-stack" "^3.1.0"
     classnames "^2.2.6"
     keyboard-key "^1.0.4"
-    lodash "^4.17.11"
-    prop-types "^15.6.2"
-    react-is "^16.7.0"
+    lodash "^4.17.15"
+    prop-types "^15.7.2"
+    react-is "^16.8.6"
     react-popper "^1.3.3"
     shallowequal "^1.1.0"
 
@@ -9647,7 +9647,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@^4.0.1, lodash@^4.1.1, lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.4, lodash@^4.2.1:
+lodash@^4.0.1, lodash@^4.1.1, lodash@^4.13.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4, lodash@^4.2.1:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
