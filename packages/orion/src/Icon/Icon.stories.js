@@ -50,5 +50,5 @@ storiesOf('Icon', module)
         </g>
       </svg>
     )
-    return <Icon as={IconSVG} className="w-24" />
+    return <Icon as={IconSVG} />
   })
