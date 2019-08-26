@@ -1,5 +1,5 @@
 import React from 'react'
-import { render } from '@testing-library/react'
+import { fireEvent, render } from '@testing-library/react'
 
 import WizardControls, { WizardButtons } from './'
 
@@ -72,5 +72,49 @@ describe('when the "Save" button is given', () => {
       <WizardControls buttons={buttons} currentStepIndex={2} totalSteps={3} />
     )
     expect(queryByText('Save')).toBeNull()
+  })
+})
+
+describe('when the "Next" button is clicked', () => {
+  it('should call the "onStepIndexChange" prop with the next step index', () => {
+    const onStepIndexChange = jest.fn()
+    const { getByText } = render(
+      <WizardControls
+        currentStepIndex={0}
+        onStepIndexChange={onStepIndexChange}
+        totalSteps={3}
+      />
+    )
+    fireEvent.click(getByText('Next'))
+    expect(onStepIndexChange).toHaveBeenCalledWith(1)
+  })
+
+  describe('when "onClick" is specified for the "Next" button', () => {
+    it('should call both the given "onClick" and "onStepIndexChange" when the button is clicked', () => {
+      const nextOnClick = jest.fn()
+      const buttons = {
+        [WizardButtons.BACK]: 'Back',
+        [WizardButtons.NEXT]: {
+          content: 'Next',
+          onClick: nextOnClick
+        },
+        [WizardButtons.FINISH]: 'Finish',
+        [WizardButtons.SAVE]: 'Save'
+      }
+
+      const onStepIndexChange = jest.fn()
+      const { getByText } = render(
+        <WizardControls
+          buttons={buttons}
+          currentStepIndex={0}
+          onStepIndexChange={onStepIndexChange}
+          totalSteps={3}
+        />
+      )
+
+      fireEvent.click(getByText('Next'))
+      expect(nextOnClick).toHaveBeenCalled()
+      expect(onStepIndexChange).toHaveBeenCalledWith(1)
+    })
   })
 })

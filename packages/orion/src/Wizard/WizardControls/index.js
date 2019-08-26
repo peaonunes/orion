@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
@@ -17,15 +18,25 @@ const WizardControls = ({
   totalSteps
 }) => {
   const isLastStep = currentStepIndex === totalSteps - 1
+
+  const overrideOnClick = onClickFromWizard => predefinedProps => ({
+    onClick: e => {
+      _.invoke(predefinedProps, 'onClick', e, predefinedProps)
+      onClickFromWizard()
+    }
+  })
+
   return (
     <div className="wizard-controls">
       {currentStepIndex > 0 &&
         Button.create(buttons[WizardButtons.BACK], {
           autoGenerateKey: false,
           defaultProps: {
-            onClick: () => onStepIndexChange(currentStepIndex - 1),
             type: 'button'
-          }
+          },
+          overrideProps: overrideOnClick(() =>
+            onStepIndexChange(currentStepIndex - 1)
+          )
         })}
       <div className="wizard-controls-right">
         {buttons[WizardButtons.SAVE] &&
@@ -43,10 +54,12 @@ const WizardControls = ({
             autoGenerateKey: false,
             defaultProps: {
               className: 'blue',
-              onClick: () => onStepIndexChange(currentStepIndex + 1),
               primary: true,
               type: 'submit'
-            }
+            },
+            overrideProps: overrideOnClick(() =>
+              onStepIndexChange(currentStepIndex + 1)
+            )
           })}
         {isLastStep &&
           Button.create(buttons[WizardButtons.FINISH], {
