@@ -26,5 +26,5 @@
 }
 
 .orion.layout .layout-main {
-  @apply flex-1 py-24 mt-48;
+  @apply flex-1 py-24 mt-64;
 }
