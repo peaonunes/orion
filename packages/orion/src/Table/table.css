@@ -60,5 +60,13 @@
 .orion.table tbody > tr > td > .inner-cell {
   @apply bg-white;
   @apply border-t-1 border-b-1 border-gray-900-8;
-  @apply px-12 py-16 mt-8;
+  @apply px-12 mt-8;
+}
+
+.orion.table tbody > tr > td .inner-cell-wrapper {
+  @apply inline-block py-16;
+}
+
+.orion.table tbody > tr > td.highlight .inner-cell-wrapper {
+  @apply bg-gray-900-4 px-16;
 }
