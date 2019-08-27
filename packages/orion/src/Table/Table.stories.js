@@ -67,3 +67,37 @@ storiesOf('Table', module)
       </Table>
     )
   })
+  .add('Highlight', () => {
+    return (
+      <Table>
+        <Table.Header>
+          <Table.Row></Table.Row>
+          <Table.Row>
+            <Table.HeaderCell>Name</Table.HeaderCell>
+            <Table.HeaderCell className="text-right">
+              Visits Share
+            </Table.HeaderCell>
+            <Table.HeaderCell className="text-right">
+              Region Potential
+            </Table.HeaderCell>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Loja de sorvete da esquina</Table.Cell>
+            <Table.Cell className="text-right" highlight>
+              30%
+            </Table.Cell>
+            <Table.Cell className="text-right">0.32</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Mercadinho da esquina</Table.Cell>
+            <Table.Cell className="text-right" highlight>
+              45%
+            </Table.Cell>
+            <Table.Cell className="text-right">0.67</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table>
+    )
+  })
