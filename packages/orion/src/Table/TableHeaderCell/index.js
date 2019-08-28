@@ -1,3 +1,4 @@
+import _ from 'lodash'
 import PropTypes from 'prop-types'
 import { Table } from '@inloco/semantic-ui-react'
 import React from 'react'
@@ -5,7 +6,9 @@ import React from 'react'
 import Divider from '../../Divider'
 
 const TableHeaderCell = ({ children, divider, ...otherProps }) => (
-  <Table.HeaderCell {...otherProps}>
+  <Table.HeaderCell
+    title={_.isString(children) ? children : null}
+    {...otherProps}>
     <div className="orion inner-cell">{children}</div>
     {divider === true ? <Divider /> : divider}
   </Table.HeaderCell>
