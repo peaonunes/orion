@@ -11,10 +11,14 @@ const TableCell = ({
   ...otherProps
 }) => {
   const classes = cx(className, { highlight })
+  const childContent = content || children
   return (
-    <Table.Cell className={classes} {...otherProps}>
+    <Table.Cell
+      className={classes}
+      title={_.isString(childContent) ? childContent : null}
+      {...otherProps}>
       <div className="orion inner-cell">
-        <div className="orion inner-cell-wrapper">{content || children}</div>
+        <div className="orion inner-cell-wrapper">{childContent}</div>
       </div>
     </Table.Cell>
   )
