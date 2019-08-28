@@ -14,7 +14,7 @@
 }
 
 .orion.table th > .inner-cell {
-  @apply py-8;
+  @apply truncate py-8;
 }
 
 .orion.table th:first-child {
@@ -58,7 +58,7 @@
 }
 
 .orion.table tbody > tr > td > .inner-cell {
-  @apply bg-white;
+  @apply bg-white truncate;
   @apply border-t-1 border-b-1 border-gray-900-8;
   @apply px-12 mt-8;
 }
