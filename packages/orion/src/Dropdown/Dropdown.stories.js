@@ -62,22 +62,20 @@ storiesOf('Dropdown', module)
       </div>
     )
   })
-  .add('Detailed items', () => {
-    const fruits = [
-      { text: 'Strawberry', description: 'Red', value: 1 },
-      { text: 'Banana', description: 'Yellow', value: 2 },
-      { text: 'Watermelon', description: 'Green', value: 3 }
-    ]
-    return (
-      <div style={{ width: '400px' }}>
-        <Dropdown
-          placeholder="Select Developer"
-          selection
-          search
-          multiple="keep"
-          fluid
-          options={object('Options', fruits)}
-        />
-      </div>
-    )
-  })
+  .add('Detailed items', () => (
+    <div style={{ width: '400px' }}>
+      <Dropdown
+        placeholder="Select Developer"
+        selection
+        search
+        multiple="keep"
+        fluid>
+        <Dropdown.Menu>
+          <Dropdown.Item text="Strawberry" description="Red" value="1" />
+          <Dropdown.Divider />
+          <Dropdown.Item text="Banana" description="Yellow" value="2" />
+          <Dropdown.Item text="Banana" description="Yellow" value="3" />
+        </Dropdown.Menu>
+      </Dropdown>
+    </div>
+  ))

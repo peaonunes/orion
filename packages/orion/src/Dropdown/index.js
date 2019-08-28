@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { Dropdown as SemanticDropdown } from '@inloco/semantic-ui-react'
 
+import Divider from '../Divider'
 import { Sizes, sizePropType } from '../utils/sizes'
 import DropdownItem from './DropdownItem'
 import DropdownKeepSelected from './DropdownKeepSelected'
@@ -80,7 +81,7 @@ Dropdown.defaultProps = {
   size: Sizes.DEFAULT
 }
 
-Dropdown.Divider = SemanticDropdown.Divider
+Dropdown.Divider = Divider
 Dropdown.Header = SemanticDropdown.Header
 Dropdown.Item = DropdownItem
 Dropdown.Menu = SemanticDropdown.Menu
