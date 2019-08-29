@@ -40,14 +40,18 @@ storiesOf('Table', module)
         <Table.Header>
           <Table.Row>
             <Table.HeaderCell></Table.HeaderCell>
-            <Table.HeaderCell className="text-center w-384" colspan="2" divider>
+            <Table.HeaderCell
+              className="w-384"
+              horizontalAlign="center"
+              colSpan="2"
+              divider>
               Visits
             </Table.HeaderCell>
           </Table.Row>
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell className="text-center">Count</Table.HeaderCell>
-            <Table.HeaderCell className="text-center">
+            <Table.HeaderCell horizontalAlign="center">Count</Table.HeaderCell>
+            <Table.HeaderCell horizontalAlign="center">
               vs Comparison Average
             </Table.HeaderCell>
           </Table.Row>
@@ -55,13 +59,13 @@ storiesOf('Table', module)
         <Table.Body>
           <Table.Row>
             <Table.Cell>Loja de sorvete da esquina</Table.Cell>
-            <Table.Cell className="text-center">30</Table.Cell>
-            <Table.Cell className="text-center">-15</Table.Cell>
+            <Table.Cell horizontalAlign="center">30</Table.Cell>
+            <Table.Cell horizontalAlign="center">-15</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>Mercadinho da esquina</Table.Cell>
-            <Table.Cell className="text-center">45</Table.Cell>
-            <Table.Cell className="text-center">+15</Table.Cell>
+            <Table.Cell horizontalAlign="center">45</Table.Cell>
+            <Table.Cell horizontalAlign="center">+15</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>
@@ -74,10 +78,10 @@ storiesOf('Table', module)
           <Table.Row></Table.Row>
           <Table.Row>
             <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell className="text-right">
+            <Table.HeaderCell horizontalAlign="right">
               Visits Share
             </Table.HeaderCell>
-            <Table.HeaderCell className="text-right">
+            <Table.HeaderCell horizontalAlign="right">
               Region Potential
             </Table.HeaderCell>
           </Table.Row>
@@ -85,17 +89,17 @@ storiesOf('Table', module)
         <Table.Body>
           <Table.Row>
             <Table.Cell>Loja de sorvete da esquina</Table.Cell>
-            <Table.Cell className="text-right" highlight>
+            <Table.Cell horizontalAlign="right" highlight>
               30%
             </Table.Cell>
-            <Table.Cell className="text-right">0.32</Table.Cell>
+            <Table.Cell horizontalAlign="right">0.32</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>Mercadinho da esquina</Table.Cell>
-            <Table.Cell className="text-right" highlight>
+            <Table.Cell horizontalAlign="right" highlight>
               45%
             </Table.Cell>
-            <Table.Cell className="text-right">0.67</Table.Cell>
+            <Table.Cell horizontalAlign="right">0.67</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>
