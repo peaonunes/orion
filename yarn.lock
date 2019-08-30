@@ -1331,10 +1331,10 @@
   resolved "https://registry.yarnpkg.com/@icons/material/-/material-0.2.4.tgz#e90c9f71768b3736e76d7dd6783fc6c2afa88bc8"
   integrity sha512-QPcGmICAPbGLGb6F/yNf/KzKqvFx8z5qx3D1yFqVAjoFmXK35EgyW+cJ57Te3CNsmzblwtzakLGFqHPqrfb4Tw==
 
-"@inloco/semantic-ui-react@^0.88.0-orion":
-  version "0.88.0-orion"
-  resolved "https://registry.yarnpkg.com/@inloco/semantic-ui-react/-/semantic-ui-react-0.88.0-orion.tgz#3f41891d4a1d4a6c2d8bc395bc9fe49792affcdf"
-  integrity sha512-Brmkp7K62J67yEiLox7LBXaPfEofcT/NgPXwVR9nRohdTkcEO0SBgmMEPNwwUObBhdY2TSjDHdkO2jC4V6xvMw==
+"@inloco/semantic-ui-react@^0.88.0-orion-2":
+  version "0.88.0-orion-2"
+  resolved "https://registry.yarnpkg.com/@inloco/semantic-ui-react/-/semantic-ui-react-0.88.0-orion-2.tgz#284ca57bad68105ea28cfde77519efc3ca728e3d"
+  integrity sha512-3+ClBt/lBGoAVgc0hor20bBZXyE9R0iOmo38vuH9/nneYWpYqIPE4HQYX8Oi1EYGRQUzVYpsaS1tB2dZdRA0wg==
   dependencies:
     "@babel/runtime" "^7.1.2"
     "@semantic-ui-react/event-stack" "^3.1.0"

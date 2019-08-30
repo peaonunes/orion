@@ -28,7 +28,7 @@
   "license": "ISC",
   "homepage": "https://inloco.github.io/orion",
   "dependencies": {
-    "@inloco/semantic-ui-react": "^0.88.0-orion",
+    "@inloco/semantic-ui-react": "^0.88.0-orion-2",
     "classnames": "^2.2.6",
     "keyboard-key": "^1.0.4",
     "lodash": "^4.17.14",
