@@ -2,7 +2,7 @@
 
 .orion.dropdown {
   @apply flex-wrap inline-flex items-center relative;
-  @apply cursor-pointer min-h-48 px-16 outline-none select-none;
+  @apply cursor-pointer min-h-48 outline-none select-none;
   min-width: 256px;
 }
 
@@ -147,7 +147,7 @@
  */
 
 .orion.dropdown.selection {
-  @apply bg-white border border-gray-900-24 rounded;
+  @apply bg-white border border-gray-900-24 px-16 rounded;
 }
 
 .orion.dropdown.selection.small {
