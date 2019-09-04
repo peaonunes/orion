@@ -216,7 +216,8 @@ module.exports = {
     },
     fontFamily: {
       default: ['neue-haas-grotesk-text', 'sans-serif'],
-      display: ['neue-haas-grotesk-display', 'sans-serif']
+      display: ['neue-haas-grotesk-display', 'sans-serif'],
+      icons: ['Material Icons']
     },
     fontSize: {
       sm: '12px',
