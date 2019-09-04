@@ -1,7 +1,7 @@
 import _ from 'lodash'
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { object, withKnobs } from '@storybook/addon-knobs'
+import { number, object, radios, withKnobs } from '@storybook/addon-knobs'
 
 import { Table } from '../'
 
@@ -71,6 +71,40 @@ storiesOf('Table', module)
             </Table.Cell>
             <Table.Cell horizontalAlign="center">+15</Table.Cell>
           </Table.Row>
+        </Table.Body>
+      </Table>
+    )
+  })
+  .add('Sortable', () => {
+    const headers = object('Headers', DEFAULT_HEADERS)
+    const data = object('Data', DEFAULT_DATA)
+    const sortableColumnIndex = number('Sortable Column Index', 0)
+    const order = radios(
+      'Order',
+      { Ascending: 'ascending', Descending: 'descending' },
+      'ascending'
+    )
+    return (
+      <Table sortable>
+        <Table.Header>
+          <Table.Row>
+            {_.map(headers, (title, index) => (
+              <Table.HeaderCell
+                key={index}
+                sorted={sortableColumnIndex === index ? order : null}>
+                {title}
+              </Table.HeaderCell>
+            ))}
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {_.map(data, (row, index) => (
+            <Table.Row key={index}>
+              {_.map(row, (value, rowIndex) => (
+                <Table.Cell key={rowIndex}>{value}</Table.Cell>
+              ))}
+            </Table.Row>
+          ))}
         </Table.Body>
       </Table>
     )
