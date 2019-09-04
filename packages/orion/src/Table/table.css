@@ -67,3 +67,7 @@
 .orion.table tbody > tr > td > .inner-cell.highlight {
   @apply bg-gray-900-4;
 }
+
+.orion.table tbody .inner-cell > .inner-cell-wrapper {
+  @apply truncate;
+}

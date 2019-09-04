@@ -29,7 +29,9 @@ const TableCell = ({
     <Table.Cell
       title={_.isString(childContent) ? childContent : null}
       {...otherProps}>
-      <div className={classes}>{childContent}</div>
+      <div className={classes}>
+        <div className="inner-cell-wrapper">{childContent}</div>
+      </div>
     </Table.Cell>
   )
 }
