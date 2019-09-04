@@ -59,47 +59,17 @@ storiesOf('Table', module)
         <Table.Body>
           <Table.Row>
             <Table.Cell>Loja de sorvete da esquina</Table.Cell>
-            <Table.Cell horizontalAlign="center">30</Table.Cell>
+            <Table.Cell horizontalAlign="center" highlight>
+              30
+            </Table.Cell>
             <Table.Cell horizontalAlign="center">-15</Table.Cell>
           </Table.Row>
           <Table.Row>
             <Table.Cell>Mercadinho da esquina</Table.Cell>
-            <Table.Cell horizontalAlign="center">45</Table.Cell>
+            <Table.Cell horizontalAlign="center" highlight>
+              45
+            </Table.Cell>
             <Table.Cell horizontalAlign="center">+15</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
-    )
-  })
-  .add('Highlight', () => {
-    return (
-      <Table>
-        <Table.Header>
-          <Table.Row></Table.Row>
-          <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell horizontalAlign="right">
-              Visits Share
-            </Table.HeaderCell>
-            <Table.HeaderCell horizontalAlign="right">
-              Region Potential
-            </Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Loja de sorvete da esquina</Table.Cell>
-            <Table.Cell horizontalAlign="right" highlight>
-              30%
-            </Table.Cell>
-            <Table.Cell horizontalAlign="right">0.32</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Mercadinho da esquina</Table.Cell>
-            <Table.Cell horizontalAlign="right" highlight>
-              45%
-            </Table.Cell>
-            <Table.Cell horizontalAlign="right">0.67</Table.Cell>
           </Table.Row>
         </Table.Body>
       </Table>

@@ -29,9 +29,7 @@ const TableCell = ({
     <Table.Cell
       title={_.isString(childContent) ? childContent : null}
       {...otherProps}>
-      <div className={classes}>
-        <div className="orion inner-cell-wrapper">{childContent}</div>
-      </div>
+      <div className={classes}>{childContent}</div>
     </Table.Cell>
   )
 }
