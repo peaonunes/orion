@@ -1,10 +1,11 @@
 import cx from 'classnames'
-import { Table } from '@inloco/semantic-ui-react'
+import { Table as SemanticTable } from '@inloco/semantic-ui-react'
 import _ from 'lodash'
 import PropTypes from 'prop-types'
 import React from 'react'
 
 import { HorizontalAlignValues } from '../constants'
+import { createShorthandFactory } from '../../utils/factories'
 
 const ALIGN_TO_JUSTIFY_CONTENT = {
   [HorizontalAlignValues.LEFT]: 'justify-start',
@@ -26,13 +27,13 @@ const TableCell = ({
   })
   const childContent = content || children
   return (
-    <Table.Cell
+    <SemanticTable.Cell
       title={_.isString(childContent) ? childContent : null}
       {...otherProps}>
       <div className={classes}>
         <div className="inner-cell-wrapper">{childContent}</div>
       </div>
-    </Table.Cell>
+    </SemanticTable.Cell>
   )
 }
 
@@ -43,5 +44,12 @@ TableCell.propTypes = {
   highlight: PropTypes.bool,
   horizontalAlign: PropTypes.oneOf(_.values(HorizontalAlignValues))
 }
+
+// Overriding original factory. See src/utils/factories.js for more details.
+SemanticTable.Cell.create = createShorthandFactory(TableCell, content => ({
+  content
+}))
+
+TableCell.create = SemanticTable.Cell.create
 
 export default TableCell

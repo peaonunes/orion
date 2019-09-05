@@ -28,4 +28,6 @@ Input.defaultProps = {
 // Overriding original factory. See src/utils/factories.js for more details.
 SemanticInput.create = createShorthandFactory(Input, type => ({ type }))
 
+Input.create = SemanticInput.create
+
 export default Input
