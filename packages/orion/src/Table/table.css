@@ -58,18 +58,18 @@
 }
 
 .orion.table tbody > tr > td > .inner-cell {
-  @apply bg-white flex items-center truncate;
+  @apply bg-white;
   @apply border-t-1 border-b-1 border-gray-900-8;
   @apply px-12 mt-8;
   height: 54px;
 }
 
-.orion.table tbody > tr > td > .inner-cell.highlight {
-  @apply bg-gray-900-4;
+.orion.table tbody .inner-cell > .inner-cell-wrapper {
+  @apply flex items-center h-full truncate;
 }
 
-.orion.table tbody .inner-cell > .inner-cell-wrapper {
-  @apply truncate;
+.orion.table tbody .inner-cell.highlight > .inner-cell-wrapper {
+  @apply bg-gray-900-4;
 }
 
 /** Sortable **/

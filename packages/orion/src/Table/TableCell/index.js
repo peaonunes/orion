@@ -20,8 +20,8 @@ const TableCell = ({
   horizontalAlign,
   ...otherProps
 }) => {
-  const classes = cx('orion inner-cell', className, {
-    highlight,
+  const classes = cx('orion inner-cell', className, { highlight })
+  const wrapperClasses = cx('inner-cell-wrapper', {
     [ALIGN_TO_JUSTIFY_CONTENT[horizontalAlign]]: !!horizontalAlign
   })
   const childContent = content || children
@@ -30,7 +30,7 @@ const TableCell = ({
       title={_.isString(childContent) ? childContent : null}
       {...otherProps}>
       <div className={classes}>
-        <div className="inner-cell-wrapper">{childContent}</div>
+        <div className={wrapperClasses}>{childContent}</div>
       </div>
     </Table.Cell>
   )
