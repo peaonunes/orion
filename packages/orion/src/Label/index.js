@@ -48,4 +48,6 @@ SemanticLabel.create = createShorthandFactory(Label, value => ({
   content: value
 }))
 
+Label.create = SemanticLabel.create
+
 export default Label

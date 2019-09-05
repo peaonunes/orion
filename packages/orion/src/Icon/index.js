@@ -32,4 +32,6 @@ Icon.propTypes = {
 // Overriding original factory. See src/utils/factories.js for more details.
 SemanticIcon.create = createShorthandFactory(Icon, value => ({ name: value }))
 
+Icon.create = SemanticIcon.create
+
 export default Icon

@@ -62,4 +62,7 @@ Message.defaultProps = {
   success: true
 }
 
+Message.Content = SemanticMessage.Content
+Message.Header = SemanticMessage.Header
+
 export default Message
