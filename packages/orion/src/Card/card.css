@@ -1,5 +1,6 @@
 .orion.card {
   @apply relative bg-white border-1 border-gray-900-16 inline-block rounded;
+  @apply inline-flex flex-col;
 }
 
 .orion.card.fluid {
@@ -11,11 +12,11 @@
 }
 
 .orion.card > .content {
-  @apply p-24;
+  @apply flex-grow p-24;
 }
 
 .orion.card > .extra {
-  @apply flex items-center justify-end px-24 py-8;
+  @apply flex flex-grow-0 flex-shrink-0 items-center justify-end px-24 py-8;
   @apply border-t-1 border-gray-900-16;
 }
 
