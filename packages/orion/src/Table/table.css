@@ -87,8 +87,12 @@
   @apply text-gray-900;
 }
 
+.orion.table.sortable th.sorted > .inner-cell {
+  @apply mr-16;
+}
+
 .orion.table.sortable th.sorted > .inner-cell::after {
-  @apply absolute ml-4 text-gray-700 text-lg transition-default font-icons;
+  @apply absolute text-gray-700 text-lg transition-default font-icons;
   content: 'keyboard_arrow_up';
   transition-property: transform;
 }
