@@ -108,7 +108,14 @@ module.exports = {
           .string()
       },
       wave: {
-        ..._.pick(theme('colors.wave'), ['50', '500', '600', '700']),
+        ..._.pick(theme('colors.wave'), [
+          '50',
+          '200',
+          '500',
+          '600',
+          '700',
+          '800'
+        ]),
         '500-8': Color(theme('colors').wave['500'])
           .alpha(0.08)
           .string(),
