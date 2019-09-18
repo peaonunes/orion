@@ -218,8 +218,8 @@ describe("when the filter's value changes", () => {
       expect(onClear).toHaveBeenCalled()
     })
 
-    it('should call "onChange" with the initial value', () => {
-      expect(onChange).toHaveBeenCalledWith(undefined)
+    it('should call "onChange" with the "null"', () => {
+      expect(onChange).toHaveBeenCalledWith(null)
     })
   })
 })
