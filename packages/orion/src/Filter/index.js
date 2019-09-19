@@ -31,8 +31,6 @@ const Filter = ({
   const [localValue, setLocalValue] = useState(value)
 
   const isSelected = !_.isEmpty(value)
-  const isPristine =
-    (_.isEmpty(value) && _.isEmpty(localValue)) || _.isEqual(value, localValue)
 
   const handleApply = event => {
     setValue(localValue)
@@ -46,8 +44,8 @@ const Filter = ({
   }
 
   const handleClear = () => {
-    setLocalValue(value)
-    onChange && onChange(value)
+    setLocalValue(null)
+    onChange && onChange(null)
     onClear && onClear()
   }
 
@@ -98,7 +96,7 @@ const Filter = ({
           {children({ onChange: handleChange, value: localValue })}
         </div>
         <div className="filter-buttons">
-          <div className={cx({ invisible: isPristine })}>
+          <div className={cx({ invisible: _.isEmpty(localValue) })}>
             {Button.create(clearButton, {
               autoGenerateKey: false,
               defaultProps: {
