@@ -36,7 +36,7 @@ module.exports = {
         600: '#C92C46'
       },
       space: {
-        50: '#FAF4F7',
+        50: '#F0F4F7',
         100: '#DDE5ED',
         200: '#C3CFE0',
         300: '#A8BACE',
@@ -126,7 +126,7 @@ module.exports = {
           .alpha(0.4)
           .string()
       },
-      space: _.pick(theme('colors.space'), ['100', '200', '300']),
+      space: _.pick(theme('colors.space'), ['100', '200', '300', '500']),
       green: _.pick(theme('colors.green'), ['50']),
       yellow: _.pick(theme('colors.yellow'), ['50']),
       magenta: _.pick(theme('colors.magenta'), ['50']),
@@ -338,7 +338,7 @@ module.exports = {
       green: _.pick(theme('colors.green'), ['500', '800']),
       magenta: _.pick(theme('colors.magenta'), ['500', '600']),
       yellow: _.pick(theme('colors.yellow'), ['500', '700']),
-      space: _.pick(theme('colors.space'), ['600', '900']),
+      space: _.pick(theme('colors.space'), ['500', '600', '900']),
       purple: theme('colors.purple')
     }),
     width: theme => ({
