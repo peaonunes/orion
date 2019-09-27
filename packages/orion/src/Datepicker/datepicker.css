@@ -84,12 +84,12 @@
   border-color: #e0e0e0;
 }
 
-.CalendarDay:hover {
+.CalendarDay:not(.CalendarDay__blocked_calendar):hover,
+.CalendarDay:not(.CalendarDay__blocked_calendar):focus {
   @apply bg-gray-900-12;
 }
 
-.CalendarDay:active,
-.CalendarDay:focus {
+.CalendarDay:not(.CalendarDay__blocked_calendar):active {
   @apply bg-gray-900-16;
 }
 
@@ -97,11 +97,15 @@
   @apply bg-wave-500 border-wave-500 text-white;
 }
 
-.CalendarDay__selected:hover {
+.CalendarDay.CalendarDay__selected:hover,
+.CalendarDay.CalendarDay__selected:focus {
   @apply bg-wave-600;
 }
 
-.CalendarDay__selected:active,
-.CalendarDay__selected:focus {
+.CalendarDay.CalendarDay__selected:active {
   @apply bg-wave-700;
+}
+
+.CalendarDay__blocked_calendar {
+  @apply cursor-not-allowed opacity-40;
 }
