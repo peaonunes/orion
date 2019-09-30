@@ -3,13 +3,21 @@
 }
 
 .DayPicker_focusRegion {
-  @apply relative;
+  @apply outline-none relative;
 }
 
 /** Navigation **/
 
 .DayPickerNavigation {
   @apply absolute flex justify-between px-24 w-full z-10;
+}
+
+.DayPickerNavigation_button__disabled {
+  @apply cursor-not-allowed opacity-40;
+}
+
+.DayPickerNavigation_button__disabled .button {
+  @apply pointer-events-none select-none;
 }
 
 /** Week headers **/

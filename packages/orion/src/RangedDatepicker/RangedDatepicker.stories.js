@@ -1,3 +1,4 @@
+import moment from 'moment'
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { action } from '@storybook/addon-actions'
@@ -11,7 +12,7 @@ export const actions = {
 
 storiesOf('RangedDatepicker', module)
   .addDecorator(withKnobs)
-  .add('basic', () => {
+  .add('Basic', () => {
     const startDate = text('Start Date') || null
     const endDate = text('End Date') || null
     return (
@@ -24,4 +25,12 @@ storiesOf('RangedDatepicker', module)
   })
   .add('2 months', () => {
     return <RangedDatepicker numberOfMonths={2} {...actions} />
+  })
+  .add('Disabled months', () => {
+    return (
+      <RangedDatepicker
+        minDate={moment().subtract(2, 'months')}
+        maxDate={moment().add(2, 'months')}
+      />
+    )
   })
