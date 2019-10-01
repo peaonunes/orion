@@ -159,7 +159,7 @@
 /* Ghost */
 
 .orion.button.ghost {
-  @apply bg-white text-wave-500 border border-wave-500;
+  @apply bg-transparent text-wave-500 border border-wave-500;
 }
 
 .orion.button.ghost svg.icon {
