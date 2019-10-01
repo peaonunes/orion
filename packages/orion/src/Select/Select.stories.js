@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import {
   boolean,
   object,
@@ -18,20 +17,23 @@ const developerOptions = [
   { text: 'Maira Bello', value: 3 }
 ]
 
-storiesOf('Select', module)
-  .addDecorator(withKnobs)
-  .add('selection', () => {
-    return (
-      <Select
-        placeholder={text('Placeholder', 'Select Developer', 'Content')}
-        options={object('Options', developerOptions, 'Content')}
-        fluid={boolean('Fluid', false, 'Content')}
-        search={boolean('Search', false, 'Type')}
-        multiple={boolean('Multiple', false, 'Type')}
-        size={sizeKnob(Sizes.DEFAULT, 'Size')}
-        disabled={boolean('Disabled', false, 'State')}
-        error={boolean('Error', false, 'State')}
-        warning={boolean('Warning', false, 'State')}
-      />
-    )
-  })
+export default {
+  title: 'Select',
+  decorators: [withKnobs]
+}
+
+export const selection = () => {
+  return (
+    <Select
+      placeholder={text('Placeholder', 'Select Developer', 'Content')}
+      options={object('Options', developerOptions, 'Content')}
+      fluid={boolean('Fluid', false, 'Content')}
+      search={boolean('Search', false, 'Type')}
+      multiple={boolean('Multiple', false, 'Type')}
+      size={sizeKnob(Sizes.DEFAULT, 'Size')}
+      disabled={boolean('Disabled', false, 'State')}
+      error={boolean('Error', false, 'State')}
+      warning={boolean('Warning', false, 'State')}
+    />
+  )
+}

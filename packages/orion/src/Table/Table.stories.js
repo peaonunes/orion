@@ -1,6 +1,5 @@
 import _ from 'lodash'
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { number, object, radios, withKnobs } from '@storybook/addon-knobs'
 
 import { Table } from '../'
@@ -8,104 +7,109 @@ import { Table } from '../'
 const DEFAULT_HEADERS = ['Name', 'Project']
 const DEFAULT_DATA = [['Maíra', 'Insights'], ['Gileno', 'Accounts']]
 
-storiesOf('Table', module)
-  .addDecorator(withKnobs)
-  .add('Basic', () => {
-    const headers = object('Headers', DEFAULT_HEADERS)
-    const data = object('Data', DEFAULT_DATA)
-    return (
-      <Table>
-        <Table.Header>
-          <Table.Row>
-            {_.map(headers, (title, index) => (
-              <Table.HeaderCell key={index}>{title}</Table.HeaderCell>
+export default {
+  title: 'Table',
+  decorators: [withKnobs]
+}
+
+export const basic = () => {
+  const headers = object('Headers', DEFAULT_HEADERS)
+  const data = object('Data', DEFAULT_DATA)
+  return (
+    <Table>
+      <Table.Header>
+        <Table.Row>
+          {_.map(headers, (title, index) => (
+            <Table.HeaderCell key={index}>{title}</Table.HeaderCell>
+          ))}
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {_.map(data, (row, index) => (
+          <Table.Row key={index}>
+            {_.map(row, (value, rowIndex) => (
+              <Table.Cell key={rowIndex}>{value}</Table.Cell>
             ))}
           </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {_.map(data, (row, index) => (
-            <Table.Row key={index}>
-              {_.map(row, (value, rowIndex) => (
-                <Table.Cell key={rowIndex}>{value}</Table.Cell>
-              ))}
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
-    )
-  })
-  .add('Sub headers', () => {
-    return (
-      <Table>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell></Table.HeaderCell>
+        ))}
+      </Table.Body>
+    </Table>
+  )
+}
+
+export const subHeaders = () => {
+  return (
+    <Table>
+      <Table.Header>
+        <Table.Row>
+          <Table.HeaderCell></Table.HeaderCell>
+          <Table.HeaderCell
+            className="w-384"
+            horizontalAlign="center"
+            colSpan="2"
+            divider>
+            Visits
+          </Table.HeaderCell>
+        </Table.Row>
+        <Table.Row>
+          <Table.HeaderCell>Name</Table.HeaderCell>
+          <Table.HeaderCell horizontalAlign="center">Count</Table.HeaderCell>
+          <Table.HeaderCell horizontalAlign="center">
+            vs Comparison Average
+          </Table.HeaderCell>
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        <Table.Row>
+          <Table.Cell>Loja de sorvete da esquina</Table.Cell>
+          <Table.Cell horizontalAlign="center" highlight>
+            30
+          </Table.Cell>
+          <Table.Cell horizontalAlign="center">-15</Table.Cell>
+        </Table.Row>
+        <Table.Row>
+          <Table.Cell>Mercadinho da esquina</Table.Cell>
+          <Table.Cell horizontalAlign="center" highlight>
+            45
+          </Table.Cell>
+          <Table.Cell horizontalAlign="center">+15</Table.Cell>
+        </Table.Row>
+      </Table.Body>
+    </Table>
+  )
+}
+
+export const sortable = () => {
+  const headers = object('Headers', DEFAULT_HEADERS)
+  const data = object('Data', DEFAULT_DATA)
+  const sortableColumnIndex = number('Sortable Column Index', 0)
+  const order = radios(
+    'Order',
+    { Ascending: 'ascending', Descending: 'descending' },
+    'ascending'
+  )
+  return (
+    <Table sortable>
+      <Table.Header>
+        <Table.Row>
+          {_.map(headers, (title, index) => (
             <Table.HeaderCell
-              className="w-384"
-              horizontalAlign="center"
-              colSpan="2"
-              divider>
-              Visits
+              key={index}
+              sorted={sortableColumnIndex === index ? order : null}>
+              {title}
             </Table.HeaderCell>
-          </Table.Row>
-          <Table.Row>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell horizontalAlign="center">Count</Table.HeaderCell>
-            <Table.HeaderCell horizontalAlign="center">
-              vs Comparison Average
-            </Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>Loja de sorvete da esquina</Table.Cell>
-            <Table.Cell horizontalAlign="center" highlight>
-              30
-            </Table.Cell>
-            <Table.Cell horizontalAlign="center">-15</Table.Cell>
-          </Table.Row>
-          <Table.Row>
-            <Table.Cell>Mercadinho da esquina</Table.Cell>
-            <Table.Cell horizontalAlign="center" highlight>
-              45
-            </Table.Cell>
-            <Table.Cell horizontalAlign="center">+15</Table.Cell>
-          </Table.Row>
-        </Table.Body>
-      </Table>
-    )
-  })
-  .add('Sortable', () => {
-    const headers = object('Headers', DEFAULT_HEADERS)
-    const data = object('Data', DEFAULT_DATA)
-    const sortableColumnIndex = number('Sortable Column Index', 0)
-    const order = radios(
-      'Order',
-      { Ascending: 'ascending', Descending: 'descending' },
-      'ascending'
-    )
-    return (
-      <Table sortable>
-        <Table.Header>
-          <Table.Row>
-            {_.map(headers, (title, index) => (
-              <Table.HeaderCell
-                key={index}
-                sorted={sortableColumnIndex === index ? order : null}>
-                {title}
-              </Table.HeaderCell>
+          ))}
+        </Table.Row>
+      </Table.Header>
+      <Table.Body>
+        {_.map(data, (row, index) => (
+          <Table.Row key={index}>
+            {_.map(row, (value, rowIndex) => (
+              <Table.Cell key={rowIndex}>{value}</Table.Cell>
             ))}
           </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          {_.map(data, (row, index) => (
-            <Table.Row key={index}>
-              {_.map(row, (value, rowIndex) => (
-                <Table.Cell key={rowIndex}>{value}</Table.Cell>
-              ))}
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
-    )
-  })
+        ))}
+      </Table.Body>
+    </Table>
+  )
+}

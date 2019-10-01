@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import {
   boolean,
   object,
@@ -17,17 +16,20 @@ const developerOptions = [
   { title: 'Maira Bello', value: 3 }
 ]
 
-storiesOf('Search', module)
-  .addDecorator(withKnobs)
-  .add('basic', () => {
-    return (
-      <Search
-        placeholder={text('Placeholder', 'Search Developer')}
-        results={object('Results', developerOptions)}
-        size={sizeKnob()}
-        disabled={boolean('Disabled', false)}
-        error={boolean('Error', false)}
-        warning={boolean('Warning', false)}
-      />
-    )
-  })
+export default {
+  title: 'Search',
+  decorators: [withKnobs]
+}
+
+export const basic = () => {
+  return (
+    <Search
+      placeholder={text('Placeholder', 'Search Developer')}
+      results={object('Results', developerOptions)}
+      size={sizeKnob()}
+      disabled={boolean('Disabled', false)}
+      error={boolean('Error', false)}
+      warning={boolean('Warning', false)}
+    />
+  )
+}
