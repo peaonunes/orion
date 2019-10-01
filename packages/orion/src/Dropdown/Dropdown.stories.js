@@ -1,5 +1,4 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
 import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 
 import Dropdown from './'
@@ -12,70 +11,80 @@ const developerOptions = [
   { text: 'Maíra Bello', value: 3 }
 ]
 
-storiesOf('Dropdown', module)
-  .addDecorator(withKnobs)
-  .add('Basic', () => {
-    const menuOptions = [{ text: 'Account' }, { text: 'Logout' }]
-    return (
-      <Dropdown
-        text={text('Label', 'Maira Bello')}
-        options={object('Menu options', menuOptions)}
-        compact={boolean('Compact', true)}
-        size={sizeKnob('small')}
-      />
-    )
-  })
-  .add('Selection', () => {
-    const icon = text('Icon', '', 'Content')
-    return (
-      <Dropdown
-        placeholder={text('Placeholder', 'Select Developer', 'Content')}
-        selection
-        options={object('Options', developerOptions, 'Content')}
-        icon={icon || Dropdown.ICON}
-        fluid={boolean('Fluid', false, 'Size')}
-        compact={boolean('Compact', false, 'Size')}
-        search={boolean('Search', false, 'Type')}
-        multiple={boolean('Multiple', false, 'Type')}
-        inlineMenu={boolean('Inline Menu', false, 'Type')}
-        size={sizeKnob(Sizes.DEFAULT, 'Size')}
-        disabled={boolean('Disabled', false, 'State')}
-        loading={boolean('Loading', false, 'State')}
-        error={boolean('Error', false, 'State')}
-        warning={boolean('Warning', false, 'State')}
-      />
-    )
-  })
-  .add('Multiple selection, keeping selected', () => {
-    return (
-      <div style={{ width: '400px' }}>
-        <Dropdown
-          placeholder="Select Developer"
-          selection
-          icon="search"
-          search
-          multiple="keep"
-          inlineMenu
-          fluid
-          options={object('Options', developerOptions)}
-        />
-      </div>
-    )
-  })
-  .add('Detailed items', () => (
+export default {
+  title: 'Dropdown',
+  decorators: [withKnobs]
+}
+
+export const basic = () => {
+  const menuOptions = [{ text: 'Account' }, { text: 'Logout' }]
+  return (
+    <Dropdown
+      text={text('Label', 'Maira Bello')}
+      options={object('Menu options', menuOptions)}
+      compact={boolean('Compact', true)}
+      size={sizeKnob('small')}
+    />
+  )
+}
+
+export const selection = () => {
+  const icon = text('Icon', '', 'Content')
+  return (
+    <Dropdown
+      placeholder={text('Placeholder', 'Select Developer', 'Content')}
+      selection
+      options={object('Options', developerOptions, 'Content')}
+      icon={icon || Dropdown.ICON}
+      fluid={boolean('Fluid', false, 'Size')}
+      compact={boolean('Compact', false, 'Size')}
+      search={boolean('Search', false, 'Type')}
+      multiple={boolean('Multiple', false, 'Type')}
+      inlineMenu={boolean('Inline Menu', false, 'Type')}
+      size={sizeKnob(Sizes.DEFAULT, 'Size')}
+      disabled={boolean('Disabled', false, 'State')}
+      loading={boolean('Loading', false, 'State')}
+      error={boolean('Error', false, 'State')}
+      warning={boolean('Warning', false, 'State')}
+    />
+  )
+}
+
+export const multipleSelectionKeepingSelected = () => {
+  return (
     <div style={{ width: '400px' }}>
       <Dropdown
         placeholder="Select Developer"
         selection
+        icon="search"
         search
         multiple="keep"
-        fluid>
-        <Dropdown.Menu>
-          <Dropdown.Item text="Strawberry" description="Red" value="1" />
-          <Dropdown.Divider />
-          <Dropdown.Item text="Banana" description="Yellow" value="2" />
-          <Dropdown.Item text="Banana" description="Yellow" value="3" />
-        </Dropdown.Menu>
-      </Dropdown>
+        inlineMenu
+        fluid
+        options={object('Options', developerOptions)}
+      />
     </div>
-  ))
+  )
+}
+
+multipleSelectionKeepingSelected.story = {
+  name: 'Multiple Selection, Keeping Selected'
+}
+
+export const detailedItems = () => (
+  <div style={{ width: '400px' }}>
+    <Dropdown
+      placeholder="Select Developer"
+      selection
+      search
+      multiple="keep"
+      fluid>
+      <Dropdown.Menu>
+        <Dropdown.Item text="Strawberry" description="Red" value="1" />
+        <Dropdown.Divider />
+        <Dropdown.Item text="Banana" description="Yellow" value="2" />
+        <Dropdown.Item text="Banana" description="Yellow" value="3" />
+      </Dropdown.Menu>
+    </Dropdown>
+  </div>
+)
