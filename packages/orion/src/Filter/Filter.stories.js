@@ -22,13 +22,8 @@ export const withInput = () => (
     text={text('Label', 'Open')}
     extraFooterContent={text('Extra footer content', '')}
     {...actions}>
-    {({ onChange, value }) => (
-      <Input
-        autoFocus
-        placeholder="Type your name"
-        onChange={(event, { value }) => onChange(value)}
-        value={value || ''}
-      />
+    {filterProps => (
+      <FilterStoryInput {...filterProps} placeholder="Type your name" />
     )}
   </Filter>
 )
@@ -62,3 +57,27 @@ export const withDropdown = () => {
     </Filter>
   )
 }
+
+export const multiple = () => (
+  <React.Fragment>
+    <Filter text="Filter 1" {...actions}>
+      {filterProps => <FilterStoryInput {...filterProps} />}
+    </Filter>
+    <Filter text="Filter 2" {...actions}>
+      {filterProps => <FilterStoryInput {...filterProps} />}
+    </Filter>
+    <Filter text="Filter 3" {...actions}>
+      {filterProps => <FilterStoryInput {...filterProps} />}
+    </Filter>
+  </React.Fragment>
+)
+
+const FilterStoryInput = ({ onChange, value, ...otherProps }) => (
+  <Input
+    autoFocus
+    onChange={(event, { value }) => onChange(value)}
+    placeholder="Type here"
+    value={value || ''}
+    {...otherProps}
+  />
+)
