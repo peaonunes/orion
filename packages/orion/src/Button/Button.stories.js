@@ -141,3 +141,13 @@ export const subtleSecondary = () => {
     </React.Fragment>
   )
 }
+
+export const multiple = () => {
+  return (
+    <React.Fragment>
+      <Button primary content="Button 1" />
+      <Button primary content="Button 2" />
+      <Button primary content="Button 3" />
+    </React.Fragment>
+  )
+}

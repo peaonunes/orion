@@ -174,3 +174,9 @@
 .orion.button.ghost:active {
   @apply bg-wave-500-16;
 }
+
+/* Multiple */
+
+.orion.button + .orion.button {
+  @apply ml-16;
+}
