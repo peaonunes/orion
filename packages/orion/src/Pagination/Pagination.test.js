@@ -1,6 +1,7 @@
 import React from 'react'
 import { fireEvent, render } from '@testing-library/react'
 
+import Icon from '../Icon' //This import is needed to prevent warnings on Test envirionment
 import Pagination from './'
 
 describe('Exceptions', () => {
@@ -37,13 +38,13 @@ describe('Exceptions', () => {
 })
 
 describe('Happy path', () => {
-  it('should show first item as 1 and lastItem as the size of the page when there is no activePage set', () => {
+  it('should show items range stating with 1 when there is no activePage set', () => {
     const { queryByText } = render(<Pagination pageSize={10} totalItems={20} />)
     const expectedResult = '1-10'
     expect(queryByText(expectedResult)).toBeTruthy()
   })
 
-  it('should show first item as 11 and last page item as totalItems (15) when active page is 2 and totalItems is 15', () => {
+  it('should show items range ending with "totalItems" when on the last page', () => {
     const { queryByText } = render(
       <Pagination activePage={2} pageSize={10} totalItems={15} />
     )
@@ -51,7 +52,7 @@ describe('Happy path', () => {
     expect(queryByText(expectedResult)).toBeTruthy()
   })
 
-  it('should show first item as 16 and last page item as activePage multiplied by pageSize since it is bigger than totalItems', () => {
+  it('should show items range ending with the activePage multiplied by pageSize when not on the last page', () => {
     const { queryByText } = render(
       <Pagination activePage={2} totalItems={35} pageSize={15} />
     )
@@ -88,7 +89,7 @@ describe('Happy path', () => {
       expect(queryByTitle('next')).toBeDisabled()
     })
 
-    it('should return activePage = 2 if it is on first page and the next button is clicked', () => {
+    it('should call "onChange" with the next active page when the "next" button is clicked', () => {
       const handleChange = jest.fn()
       const { queryByTitle } = render(
         <Pagination

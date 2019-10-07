@@ -13,17 +13,17 @@ const Pagination = ({
   i18n,
   onPageChange,
   pageSize,
-  right,
+  alignButtonsLeft,
   totalItems,
   ...otherProps
 }) => {
   if (totalItems <= 1 || pageSize < 1 || totalItems <= pageSize) return null
 
   const orionPaginationClasses = cx('orion-pagination', className, {
-    'orion-pagination--right': right
+    'orion-pagination-align-buttons-left': alignButtonsLeft
   })
 
-  const activePageMax = Math.floor((totalItems - 1) / pageSize) + 1
+  const activePageMax = Math.ceil(totalItems / pageSize)
   const possibleActivePage = Math.max(
     Math.min(activePage, activePageMax),
     ACTIVE_PAGE_MIN
@@ -33,14 +33,14 @@ const Pagination = ({
   return (
     <div className={orionPaginationClasses} {...otherProps}>
       <div>
-        <span className="orion-pagination__value">
+        <span className="orion-pagination-value">
           {firstPageItem}-{lastPageItem}
         </span>
-        <span className="orion-pagination__text">{i18n.of}</span>
-        <span className="orion-pagination__value">{totalItems}</span>
-        <span className="orion-pagination__text">{i18n.results}</span>
+        <span className="orion-pagination-text">{i18n.of}</span>
+        <span className="orion-pagination-value">{totalItems}</span>
+        <span className="orion-pagination-text">{i18n.results}</span>
       </div>
-      <div className="orion-pagination__actions">
+      <div className="orion-pagination-actions">
         <Button
           disabled={disabled || possibleActivePage === ACTIVE_PAGE_MIN}
           icon="keyboard_arrow_left"
@@ -62,7 +62,7 @@ Pagination.propTypes = {
   activePage: PropTypes.number,
   onPageChange: PropTypes.func,
   pageSize: PropTypes.number,
-  right: PropTypes.bool,
+  alignButtonsLeft: PropTypes.bool,
   totalItems: PropTypes.number.isRequired,
   className: PropTypes.string,
   i18n: PropTypes.shape({

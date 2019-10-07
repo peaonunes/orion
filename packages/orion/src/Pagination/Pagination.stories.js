@@ -20,7 +20,7 @@ export const basic = () => (
     disabled={boolean('disabled', false)}
     totalItems={number('totalItems', 232)}
     pageSize={number('pageSize', 15)}
-    right={boolean('right', false)}
+    alignButtonsLeft={boolean('alignButtonsLeft', false)}
     i18n={object('i18n', {
       of: 'of',
       results: 'results'
@@ -35,7 +35,7 @@ export const disabled = () => (
     disabled={boolean('disabled', true)}
     totalItems={number('totalItems', 232)}
     pageSize={number('pageSize', 15)}
-    right={boolean('right', true)}
+    alignButtonsLeft={boolean('alignButtonsLeft', false)}
     i18n={object('i18n', {
       of: 'of',
       results: 'results'
@@ -44,13 +44,13 @@ export const disabled = () => (
   />
 )
 
-export const right = () => (
+export const alignButtonsLeft = () => (
   <Pagination
     activePage={number('activePage', 1)}
     disabled={boolean('disabled', false)}
     totalItems={number('totalItems', 232)}
     pageSize={number('pageSize', 15)}
-    right={boolean('right', true)}
+    alignButtonsLeft={boolean('alignButtonsLeft', true)}
     i18n={object('i18n', {
       of: 'of',
       results: 'results'

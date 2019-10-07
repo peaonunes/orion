@@ -2,26 +2,26 @@
   @apply inline-flex items-center;
 }
 
-.orion-pagination--right {
+.orion-pagination-align-buttons-left {
   @apply flex-row-reverse;
 }
 
-.orion-pagination__actions {
+.orion-pagination-actions {
   @apply ml-8;
 }
 
-.orion-pagination--right .orion-pagination__actions {
+.orion-pagination-align-buttons-left .orion-pagination-actions {
   @apply mx-0 mr-8;
 }
 
-.orion-pagination__text:not(:last-child) {
+.orion-pagination-text:not(:last-child) {
   @apply mr-4;
 }
 
-.orion-pagination__value {
+.orion-pagination-value {
   @apply font-medium mr-4;
 }
 
-.orion-pagination__actions .orion.button + .orion.button {
+.orion-pagination-actions .orion.button + .orion.button {
   @apply ml-4;
 }
