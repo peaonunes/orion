@@ -23,6 +23,10 @@ const Pagination = ({
     'orion-pagination-align-buttons-left': alignButtonsLeft
   })
 
+  const orionPaginationContent = cx({
+    'orion-pagination-content-disabled': disabled
+  })
+
   const activePageMax = Math.ceil(totalItems / pageSize)
   const possibleActivePage = Math.max(
     Math.min(activePage, activePageMax),
@@ -32,7 +36,7 @@ const Pagination = ({
   const lastPageItem = Math.min(pageSize * possibleActivePage, totalItems)
   return (
     <div className={orionPaginationClasses} {...otherProps}>
-      <div>
+      <div className={orionPaginationContent}>
         <span className="orion-pagination-value">
           {firstPageItem}-{lastPageItem}
         </span>
