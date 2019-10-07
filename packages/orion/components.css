@@ -18,6 +18,7 @@
 @import './src/Message/message.css';
 @import './src/Modal/modal.css';
 @import './src/NotificationCenter/notificationCenter.css';
+@import './src/Pagination/pagination.css';
 @import './src/Popup/popup.css';
 @import './src/Progress/progress.css';
 @import './src/RangedDatepicker/rangedDatepicker.css';
