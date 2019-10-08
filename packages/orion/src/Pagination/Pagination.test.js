@@ -68,30 +68,30 @@ describe('Happy path', () => {
 
   describe('buttons', () => {
     it('should show previous button disabled if it is on first page', () => {
-      const { queryByTitle } = render(
+      const { queryByTestId } = render(
         <Pagination activePage={1} pageSize={10} totalItems={20} />
       )
-      expect(queryByTitle('previous')).toBeDisabled()
+      expect(queryByTestId('previous')).toBeDisabled()
     })
 
     it('should show next button disabled if it is on last page', () => {
-      const { queryByTitle } = render(
+      const { queryByTestId } = render(
         <Pagination activePage={2} pageSize={10} totalItems={20} />
       )
-      expect(queryByTitle('next')).toBeDisabled()
+      expect(queryByTestId('next')).toBeDisabled()
     })
 
     it('should show both buttons disabled if disabled prop is passed', () => {
-      const { queryByTitle } = render(
+      const { queryByTestId } = render(
         <Pagination activePage={2} disabled pageSize={10} totalItems={50} />
       )
-      expect(queryByTitle('previous')).toBeDisabled()
-      expect(queryByTitle('next')).toBeDisabled()
+      expect(queryByTestId('previous')).toBeDisabled()
+      expect(queryByTestId('next')).toBeDisabled()
     })
 
     it('should call "onChange" with the next active page when the "next" button is clicked', () => {
       const handleChange = jest.fn()
-      const { queryByTitle } = render(
+      const { queryByTestId } = render(
         <Pagination
           activePage={1}
           pageSize={10}
@@ -99,7 +99,7 @@ describe('Happy path', () => {
           onPageChange={handleChange}
         />
       )
-      fireEvent.click(queryByTitle('next'))
+      fireEvent.click(queryByTestId('next'))
 
       expect(handleChange).toHaveBeenCalledWith(
         expect.any(Object),
@@ -111,7 +111,7 @@ describe('Happy path', () => {
 
     it('should return activePage = 1 if it is on second page and the previous button is clicked', () => {
       const handleChange = jest.fn()
-      const { queryByTitle } = render(
+      const { queryByTestId } = render(
         <Pagination
           activePage={2}
           pageSize={10}
@@ -119,7 +119,7 @@ describe('Happy path', () => {
           onPageChange={handleChange}
         />
       )
-      fireEvent.click(queryByTitle('previous'))
+      fireEvent.click(queryByTestId('previous'))
 
       expect(handleChange).toHaveBeenCalledWith(
         expect.any(Object),

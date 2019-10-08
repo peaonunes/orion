@@ -48,13 +48,13 @@ const Pagination = ({
         <Button
           disabled={disabled || possibleActivePage === ACTIVE_PAGE_MIN}
           icon="keyboard_arrow_left"
-          title="previous"
+          data-testid="previous"
           onClick={e => onPageChange(e, { activePage: possibleActivePage - 1 })}
         />
         <Button
           disabled={disabled || possibleActivePage === activePageMax}
           icon="keyboard_arrow_right"
-          title="next"
+          data-testid="next"
           onClick={e => onPageChange(e, { activePage: possibleActivePage + 1 })}
         />
       </div>
