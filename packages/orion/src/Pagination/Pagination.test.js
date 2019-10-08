@@ -38,7 +38,7 @@ describe('Exceptions', () => {
 })
 
 describe('Happy path', () => {
-  it('should show items range stating with 1 when there is no activePage set', () => {
+  it('should show items range starting with 1 when there is no activePage set', () => {
     const { queryByText } = render(<Pagination pageSize={10} totalItems={20} />)
     const expectedResult = '1-10'
     expect(queryByText(expectedResult)).toBeTruthy()
@@ -109,7 +109,7 @@ describe('Happy path', () => {
       )
     })
 
-    it('should return activePage = 1 if it is on second page and the previous button is clicked', () => {
+    it('should call "onPageChange" with the previous active page when the previous button is clicked', () => {
       const handleChange = jest.fn()
       const { queryByTestId } = render(
         <Pagination
