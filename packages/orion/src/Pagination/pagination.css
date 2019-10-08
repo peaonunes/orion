@@ -1,0 +1,31 @@
+.orion-pagination {
+  @apply inline-flex items-center;
+}
+
+.orion-pagination-align-buttons-left {
+  @apply flex-row-reverse;
+}
+
+.orion-pagination-actions {
+  @apply ml-8;
+}
+
+.orion-pagination-align-buttons-left .orion-pagination-actions {
+  @apply mx-0 mr-8;
+}
+
+.orion-pagination-content-disabled {
+  @apply opacity-40;
+}
+
+.orion-pagination-text:not(:last-child) {
+  @apply mr-4;
+}
+
+.orion-pagination-value {
+  @apply font-medium mr-4;
+}
+
+.orion-pagination-actions .orion.button + .orion.button {
+  @apply ml-4;
+}
