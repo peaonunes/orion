@@ -6,6 +6,7 @@ import { Dropdown as SemanticDropdown } from '@inloco/semantic-ui-react'
 
 import Divider from '../Divider'
 import { Sizes, sizePropType } from '../utils/sizes'
+import { Directions, directionPropType } from '../utils/directions'
 import DropdownItem from './DropdownItem'
 import DropdownKeepSelected from './DropdownKeepSelected'
 import useInlineMenuWrapper from './useInlineMenuWrapper'
@@ -72,13 +73,15 @@ Dropdown.propTypes = {
     PropTypes.oneOf(_.values(MultipleModes))
   ]),
   size: sizePropType,
+  direction: directionPropType,
   warning: PropTypes.bool
 }
 
 Dropdown.defaultProps = {
   deburr: true,
   icon: DROPDOWN_ICON,
-  size: Sizes.DEFAULT
+  size: Sizes.DEFAULT,
+  direction: Directions.LEFT
 }
 
 Dropdown.Divider = Divider

@@ -39,6 +39,10 @@
   top: 100%;
 }
 
+.orion.dropdown > .right {
+  @apply right-0 left-auto;
+}
+
 .orion.dropdown.active > .menu {
   @apply block rounded;
 }

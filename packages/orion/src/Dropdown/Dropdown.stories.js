@@ -3,6 +3,7 @@ import { boolean, object, text, withKnobs } from '@storybook/addon-knobs'
 
 import Dropdown from './'
 import { Sizes } from '../utils/sizes'
+import { Directions } from '../utils/directions'
 import { sizeKnob } from '../utils/stories'
 
 const developerOptions = [
@@ -25,6 +26,27 @@ export const basic = () => {
       compact={boolean('Compact', true)}
       size={sizeKnob('small')}
     />
+  )
+}
+
+export const direction = () => {
+  return (
+    <div className="flex justify-between" style={{ width: '300px' }}>
+      <Dropdown
+        text={text('Left Label', 'Left menu')}
+        options={object('Menu options', developerOptions)}
+        compact={boolean('Compact', true)}
+        size={sizeKnob('small')}
+        direction={Directions.LEFT}
+      />
+      <Dropdown
+        text={text('Right Label', 'Right menu')}
+        options={object('Menu options', developerOptions)}
+        compact={boolean('Compact', true)}
+        size={sizeKnob('small')}
+        direction={Directions.RIGHT}
+      />
+    </div>
   )
 }
 
