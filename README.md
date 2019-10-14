@@ -32,6 +32,19 @@ To update css on file change:
   yarn orion:watch
 ```
 
+### Lint
+
+We're using [ESLint-Config-React-App](https://www.npmjs.com/package/eslint-config-react-app) to easily lint the source files.
+
+Run it with:
+
+```sh
+  yarn run orion:lint
+```
+
+In order to update eslint configurations please refer to the package.
+In order to extend and add more rules edit `.eslintrc.json` file.
+
 ### Storybook
 
 We're using [Storybook](https://storybook.js.org/), to easily see and test the components.
