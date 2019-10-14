@@ -26,6 +26,7 @@
     "orion:watch": "yarn workspace @inloco/orion start",
     "orion:storybook": "yarn workspace @inloco/orion storybook",
     "orion:deploy:storybook": "yarn workspace @inloco/orion deploy:storybook",
+    "orion:lint": "yarn workspace @inloco/orion lint",
     "release": "lerna publish"
   }
 }
